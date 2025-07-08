@@ -1,0 +1,2324 @@
+<html lang="en" data-bs-theme="dark" data-bs-navigation-position="topnav">
+<link rel="stylesheet" href="dist/apexcharts.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<head>
+  <script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Settings -->
+  <script>
+    /*!
+     * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+     * Copyright 2011-2024 The Bootstrap Authors
+     * Licensed under the Creative Commons Attribution 3.0 Unported License.
+     * Modified by Simpleqode
+     */
+
+    (() => {
+      'use strict';
+
+      const getStoredTheme = () => localStorage.getItem('theme');
+      const setStoredTheme = (theme) => localStorage.setItem('theme', theme);
+
+      const getStoredNavigationPosition = () => localStorage.getItem('navigationPosition');
+      const setStoredNavigationPosition = (navigationPosition) => localStorage.setItem('navigationPosition',
+        navigationPosition);
+
+      const getPreferredTheme = () => {
+        const storedTheme = getStoredTheme();
+        if (storedTheme) {
+          return storedTheme;
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
+
+      const getPreferredNavigationPosition = () => {
+        const storedNavigationPosition = getStoredNavigationPosition();
+        if (storedNavigationPosition) {
+          return storedNavigationPosition;
+        }
+        return 'sidenav';
+      };
+
+      const setTheme = (theme) => {
+        if (theme === 'auto') {
+          document.documentElement.setAttribute('data-bs-theme', window.matchMedia(
+            '(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } else {
+          document.documentElement.setAttribute('data-bs-theme', theme);
+        }
+      };
+
+      const setNavigationPosition = (navigationPosition) => {
+        document.documentElement.setAttribute('data-bs-navigation-position', navigationPosition);
+      };
+
+      setTheme(getPreferredTheme());
+      setNavigationPosition(getPreferredNavigationPosition());
+
+      const showActiveTheme = (theme, settingsSwitcher) => {
+        document.querySelectorAll('[data-bs-theme-value]').forEach((element) => {
+          element.classList.remove('active');
+          element.setAttribute('aria-pressed', 'false');
+
+          if (element.getAttribute('data-bs-theme-value') === theme) {
+            element.classList.add('active');
+            element.setAttribute('aria-pressed', 'true');
+          }
+        });
+        if (settingsSwitcher) {
+          settingsSwitcher.focus();
+        }
+      };
+
+      const showActiveNavigationPosition = (navigationPosition, settingsSwitcher) => {
+        document.querySelectorAll('[data-bs-navigation-position-value]').forEach((element) => {
+          element.classList.remove('active');
+          element.setAttribute('aria-pressed', 'false');
+
+          if (element.getAttribute('data-bs-navigation-position-value') ===
+            navigationPosition) {
+            element.classList.add('active');
+            element.setAttribute('aria-pressed', 'true');
+          }
+        });
+
+        if (settingsSwitcher) {
+          settingsSwitcher.focus();
+        }
+      };
+
+      const refreshCharts = () => {
+        const charts = document.querySelectorAll('.chart-canvas');
+
+        charts.forEach((chart) => {
+          const chartId = chart.getAttribute('id');
+          const instance = Chart.getChart(chartId);
+
+          if (!instance) {
+            return;
+          }
+
+          if (instance.options.scales.y) {
+            instance.options.scales.y.grid.color = getComputedStyle(document
+              .documentElement).getPropertyValue('--bs-border-color');
+            instance.options.scales.y.ticks.color = getComputedStyle(document
+              .documentElement).getPropertyValue('--bs-secondary-color');
+          }
+
+          if (instance.options.scales.x) {
+            instance.options.scales.x.ticks.color = getComputedStyle(document
+              .documentElement).getPropertyValue('--bs-secondary-color');
+          }
+
+          if (instance.options.elements.arc) {
+            instance.options.elements.arc.borderColor = getComputedStyle(document
+              .documentElement).getPropertyValue('--bs-body-bg');
+            instance.options.elements.arc.hoverBorderColor = getComputedStyle(document
+              .documentElement).getPropertyValue('--bs-body-bg');
+          }
+
+          instance.update();
+        });
+      };
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        const storedTheme = getStoredTheme();
+        if (storedTheme !== 'light' && storedTheme !== 'dark') {
+          setTheme(getPreferredTheme());
+        }
+      });
+
+      window.addEventListener('DOMContentLoaded', () => {
+        showActiveTheme(getPreferredTheme());
+        showActiveNavigationPosition(getPreferredNavigationPosition());
+
+        document.querySelectorAll('[data-bs-theme-value]').forEach((toggle) => {
+          toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const theme = toggle.getAttribute('data-bs-theme-value');
+            const settingsSwitcher = toggle.closest('.nav-item').querySelector(
+              '[data-bs-settings-switcher]');
+            console.log(settingsSwitcher);
+            setStoredTheme(theme);
+            setTheme(theme);
+            showActiveTheme(theme, settingsSwitcher);
+            refreshCharts();
+          });
+        });
+
+        document.querySelectorAll('[data-bs-navigation-position-value]').forEach((toggle) => {
+          toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const navigationPosition = toggle.getAttribute(
+              'data-bs-navigation-position-value');
+            const settingsSwitcher = toggle.closest('.nav-item').querySelector(
+              '[data-bs-settings-switcher]');
+            setStoredNavigationPosition(navigationPosition);
+            setNavigationPosition(navigationPosition);
+            showActiveNavigationPosition(navigationPosition, settingsSwitcher);
+          });
+        });
+      });
+    })();
+
+    function updateDateTime() {
+      let now = new Date();
+      let options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      };
+
+      document.getElementById("datetime").innerHTML = now.toLocaleString(undefined, options);
+    }
+
+    setInterval(updateDateTime, 100); // Update every minute
+    updateDateTime(); // Initial call
+  </script>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
+
+  <!-- Fonts and icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
+
+  <!-- Libs CSS -->
+  <link rel="stylesheet" href="/CSS/libs.bundle.css">
+
+
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="/CSS/theme.bundle.css">
+
+  <!-- Title -->
+  <title>Classroom</title>
+  <style id="apexcharts-css">
+    @keyframes opaque {
+      0% {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes resizeanim {
+
+      0%,
+      to {
+        opacity: 0
+      }
+    }
+
+    .apexcharts-canvas {
+      position: relative;
+      direction: ltr !important;
+      user-select: none
+    }
+
+    .apexcharts-canvas ::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 6px
+    }
+
+    .apexcharts-canvas ::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, .5);
+      box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+      -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5)
+    }
+
+    .apexcharts-inner {
+      position: relative
+    }
+
+    .apexcharts-text tspan {
+      font-family: inherit
+    }
+
+    rect.legend-mouseover-inactive,
+    .legend-mouseover-inactive rect,
+    .legend-mouseover-inactive path,
+    .legend-mouseover-inactive circle,
+    .legend-mouseover-inactive line,
+    .legend-mouseover-inactive text.apexcharts-yaxis-title-text,
+    .legend-mouseover-inactive text.apexcharts-yaxis-label {
+      transition: .15s ease all;
+      opacity: .2
+    }
+
+    .apexcharts-legend-text {
+      padding-left: 15px;
+      margin-left: -15px;
+    }
+
+    .apexcharts-series-collapsed {
+      opacity: 0
+    }
+
+    .apexcharts-tooltip {
+      border-radius: 5px;
+      box-shadow: 2px 2px 6px -4px #999;
+      cursor: default;
+      font-size: 14px;
+      left: 62px;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 20px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      white-space: nowrap;
+      z-index: 12;
+      transition: .15s ease all
+    }
+
+    .apexcharts-tooltip.apexcharts-active {
+      opacity: 1;
+      transition: .15s ease all
+    }
+
+    .apexcharts-tooltip.apexcharts-theme-light {
+      border: 1px solid #e3e3e3;
+      background: rgba(255, 255, 255, .96)
+    }
+
+    .apexcharts-tooltip.apexcharts-theme-dark {
+      color: #fff;
+      background: rgba(30, 30, 30, .8)
+    }
+
+    .apexcharts-tooltip * {
+      font-family: inherit
+    }
+
+    .apexcharts-tooltip-title {
+      padding: 6px;
+      font-size: 15px;
+      margin-bottom: 4px
+    }
+
+    .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+      background: #eceff1;
+      border-bottom: 1px solid #ddd
+    }
+
+    .apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-title {
+      background: rgba(0, 0, 0, .7);
+      border-bottom: 1px solid #333
+    }
+
+    .apexcharts-tooltip-text-goals-value,
+    .apexcharts-tooltip-text-y-value,
+    .apexcharts-tooltip-text-z-value {
+      display: inline-block;
+      margin-left: 5px;
+      font-weight: 600
+    }
+
+    .apexcharts-tooltip-text-goals-label:empty,
+    .apexcharts-tooltip-text-goals-value:empty,
+    .apexcharts-tooltip-text-y-label:empty,
+    .apexcharts-tooltip-text-y-value:empty,
+    .apexcharts-tooltip-text-z-value:empty,
+    .apexcharts-tooltip-title:empty {
+      display: none
+    }
+
+    .apexcharts-tooltip-text-goals-label,
+    .apexcharts-tooltip-text-goals-value {
+      padding: 6px 0 5px
+    }
+
+    .apexcharts-tooltip-goals-group,
+    .apexcharts-tooltip-text-goals-label,
+    .apexcharts-tooltip-text-goals-value {
+      display: flex
+    }
+
+    .apexcharts-tooltip-text-goals-label:not(:empty),
+    .apexcharts-tooltip-text-goals-value:not(:empty) {
+      margin-top: -6px
+    }
+
+    .apexcharts-tooltip-marker {
+      display: inline-block;
+      position: relative;
+      width: 16px;
+      height: 16px;
+      font-size: 16px;
+      line-height: 16px;
+      margin-right: 4px;
+      text-align: center;
+      vertical-align: middle;
+      color: inherit;
+    }
+
+    .apexcharts-tooltip-marker::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      color: currentcolor;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      font-size: 26px;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 14px;
+      font-weight: 900;
+    }
+
+    .apexcharts-tooltip-marker[shape="circle"]::before {
+      content: "\25CF";
+    }
+
+    .apexcharts-tooltip-marker[shape="square"]::before,
+    .apexcharts-tooltip-marker[shape="rect"]::before {
+      content: "\25A0";
+      transform: translate(-1px, -2px);
+    }
+
+    .apexcharts-tooltip-marker[shape="line"]::before {
+      content: "\2500";
+    }
+
+    .apexcharts-tooltip-marker[shape="diamond"]::before {
+      content: "\25C6";
+      font-size: 28px;
+    }
+
+    .apexcharts-tooltip-marker[shape="triangle"]::before {
+      content: "\25B2";
+      font-size: 22px;
+    }
+
+    .apexcharts-tooltip-marker[shape="cross"]::before {
+      content: "\2715";
+      font-size: 18px;
+    }
+
+    .apexcharts-tooltip-marker[shape="plus"]::before {
+      content: "\2715";
+      transform: rotate(45deg) translate(-1px, -1px);
+      font-size: 18px;
+    }
+
+    .apexcharts-tooltip-marker[shape="star"]::before {
+      content: "\2605";
+      font-size: 18px;
+    }
+
+    .apexcharts-tooltip-marker[shape="sparkle"]::before {
+      content: "\2726";
+      font-size: 20px;
+    }
+
+    .apexcharts-tooltip-series-group {
+      padding: 0 10px;
+      display: none;
+      text-align: left;
+      justify-content: left;
+      align-items: center
+    }
+
+    .apexcharts-tooltip-series-group.apexcharts-active .apexcharts-tooltip-marker {
+      opacity: 1
+    }
+
+    .apexcharts-tooltip-series-group.apexcharts-active,
+    .apexcharts-tooltip-series-group:last-child {
+      padding-bottom: 4px
+    }
+
+    .apexcharts-tooltip-y-group {
+      padding: 6px 0 5px
+    }
+
+    .apexcharts-custom-tooltip,
+    .apexcharts-tooltip-box {
+      padding: 4px 8px
+    }
+
+    .apexcharts-tooltip-boxPlot {
+      display: flex;
+      flex-direction: column-reverse
+    }
+
+    .apexcharts-tooltip-box>div {
+      margin: 4px 0
+    }
+
+    .apexcharts-tooltip-box span.value {
+      font-weight: 700
+    }
+
+    .apexcharts-tooltip-rangebar {
+      padding: 5px 8px
+    }
+
+    .apexcharts-tooltip-rangebar .category {
+      font-weight: 600;
+      color: #777
+    }
+
+    .apexcharts-tooltip-rangebar .series-name {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 5px
+    }
+
+    .apexcharts-xaxistooltip,
+    .apexcharts-yaxistooltip {
+      opacity: 0;
+      pointer-events: none;
+      color: #373d3f;
+      font-size: 13px;
+      text-align: center;
+      border-radius: 2px;
+      position: absolute;
+      z-index: 10;
+      background: #eceff1;
+      border: 1px solid #90a4ae
+    }
+
+    .apexcharts-xaxistooltip {
+      padding: 9px 10px;
+      transition: .15s ease all
+    }
+
+    .apexcharts-xaxistooltip.apexcharts-theme-dark {
+      background: rgba(0, 0, 0, .7);
+      border: 1px solid rgba(0, 0, 0, .5);
+      color: #fff
+    }
+
+    .apexcharts-xaxistooltip:after,
+    .apexcharts-xaxistooltip:before {
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none
+    }
+
+    .apexcharts-xaxistooltip:after {
+      border-color: transparent;
+      border-width: 6px;
+      margin-left: -6px
+    }
+
+    .apexcharts-xaxistooltip:before {
+      border-color: transparent;
+      border-width: 7px;
+      margin-left: -7px
+    }
+
+    .apexcharts-xaxistooltip-bottom:after,
+    .apexcharts-xaxistooltip-bottom:before {
+      bottom: 100%
+    }
+
+    .apexcharts-xaxistooltip-top:after,
+    .apexcharts-xaxistooltip-top:before {
+      top: 100%
+    }
+
+    .apexcharts-xaxistooltip-bottom:after {
+      border-bottom-color: #eceff1
+    }
+
+    .apexcharts-xaxistooltip-bottom:before {
+      border-bottom-color: #90a4ae
+    }
+
+    .apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:after,
+    .apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:before {
+      border-bottom-color: rgba(0, 0, 0, .5)
+    }
+
+    .apexcharts-xaxistooltip-top:after {
+      border-top-color: #eceff1
+    }
+
+    .apexcharts-xaxistooltip-top:before {
+      border-top-color: #90a4ae
+    }
+
+    .apexcharts-xaxistooltip-top.apexcharts-theme-dark:after,
+    .apexcharts-xaxistooltip-top.apexcharts-theme-dark:before {
+      border-top-color: rgba(0, 0, 0, .5)
+    }
+
+    .apexcharts-xaxistooltip.apexcharts-active {
+      opacity: 1;
+      transition: .15s ease all
+    }
+
+    .apexcharts-yaxistooltip {
+      padding: 4px 10px
+    }
+
+    .apexcharts-yaxistooltip.apexcharts-theme-dark {
+      background: rgba(0, 0, 0, .7);
+      border: 1px solid rgba(0, 0, 0, .5);
+      color: #fff
+    }
+
+    .apexcharts-yaxistooltip:after,
+    .apexcharts-yaxistooltip:before {
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none
+    }
+
+    .apexcharts-yaxistooltip:after {
+      border-color: transparent;
+      border-width: 6px;
+      margin-top: -6px
+    }
+
+    .apexcharts-yaxistooltip:before {
+      border-color: transparent;
+      border-width: 7px;
+      margin-top: -7px
+    }
+
+    .apexcharts-yaxistooltip-left:after,
+    .apexcharts-yaxistooltip-left:before {
+      left: 100%
+    }
+
+    .apexcharts-yaxistooltip-right:after,
+    .apexcharts-yaxistooltip-right:before {
+      right: 100%
+    }
+
+    .apexcharts-yaxistooltip-left:after {
+      border-left-color: #eceff1
+    }
+
+    .apexcharts-yaxistooltip-left:before {
+      border-left-color: #90a4ae
+    }
+
+    .apexcharts-yaxistooltip-left.apexcharts-theme-dark:after,
+    .apexcharts-yaxistooltip-left.apexcharts-theme-dark:before {
+      border-left-color: rgba(0, 0, 0, .5)
+    }
+
+    .apexcharts-yaxistooltip-right:after {
+      border-right-color: #eceff1
+    }
+
+    .apexcharts-yaxistooltip-right:before {
+      border-right-color: #90a4ae
+    }
+
+    .apexcharts-yaxistooltip-right.apexcharts-theme-dark:after,
+    .apexcharts-yaxistooltip-right.apexcharts-theme-dark:before {
+      border-right-color: rgba(0, 0, 0, .5)
+    }
+
+    .apexcharts-yaxistooltip.apexcharts-active {
+      opacity: 1
+    }
+
+    .apexcharts-yaxistooltip-hidden {
+      display: none
+    }
+
+    .apexcharts-xcrosshairs,
+    .apexcharts-ycrosshairs {
+      pointer-events: none;
+      opacity: 0;
+      transition: .15s ease all
+    }
+
+    .apexcharts-xcrosshairs.apexcharts-active,
+    .apexcharts-ycrosshairs.apexcharts-active {
+      opacity: 1;
+      transition: .15s ease all
+    }
+
+    .apexcharts-ycrosshairs-hidden {
+      opacity: 0
+    }
+
+    .apexcharts-selection-rect {
+      cursor: move
+    }
+
+    .svg_select_shape {
+      stroke-width: 1;
+      stroke-dasharray: 10 10;
+      stroke: black;
+      stroke-opacity: 0.1;
+      pointer-events: none;
+      fill: none;
+    }
+
+    .svg_select_handle {
+      stroke-width: 3;
+      stroke: black;
+      fill: none;
+    }
+
+    .svg_select_handle_r {
+      cursor: e-resize;
+    }
+
+    .svg_select_handle_l {
+      cursor: w-resize;
+    }
+
+    .apexcharts-svg.apexcharts-zoomable.hovering-zoom {
+      cursor: crosshair
+    }
+
+    .apexcharts-svg.apexcharts-zoomable.hovering-pan {
+      cursor: move
+    }
+
+    .apexcharts-menu-icon,
+    .apexcharts-pan-icon,
+    .apexcharts-reset-icon,
+    .apexcharts-selection-icon,
+    .apexcharts-toolbar-custom-icon,
+    .apexcharts-zoom-icon,
+    .apexcharts-zoomin-icon,
+    .apexcharts-zoomout-icon {
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      line-height: 24px;
+      color: #6e8192;
+      text-align: center
+    }
+
+    .apexcharts-menu-icon svg,
+    .apexcharts-reset-icon svg,
+    .apexcharts-zoom-icon svg,
+    .apexcharts-zoomin-icon svg,
+    .apexcharts-zoomout-icon svg {
+      fill: #6e8192
+    }
+
+    .apexcharts-selection-icon svg {
+      fill: #444;
+      transform: scale(.76)
+    }
+
+    .apexcharts-theme-dark .apexcharts-menu-icon svg,
+    .apexcharts-theme-dark .apexcharts-pan-icon svg,
+    .apexcharts-theme-dark .apexcharts-reset-icon svg,
+    .apexcharts-theme-dark .apexcharts-selection-icon svg,
+    .apexcharts-theme-dark .apexcharts-toolbar-custom-icon svg,
+    .apexcharts-theme-dark .apexcharts-zoom-icon svg,
+    .apexcharts-theme-dark .apexcharts-zoomin-icon svg,
+    .apexcharts-theme-dark .apexcharts-zoomout-icon svg {
+      fill: #f3f4f5
+    }
+
+    .apexcharts-canvas .apexcharts-reset-zoom-icon.apexcharts-selected svg,
+    .apexcharts-canvas .apexcharts-selection-icon.apexcharts-selected svg,
+    .apexcharts-canvas .apexcharts-zoom-icon.apexcharts-selected svg {
+      fill: #008ffb
+    }
+
+    .apexcharts-theme-light .apexcharts-menu-icon:hover svg,
+    .apexcharts-theme-light .apexcharts-reset-icon:hover svg,
+    .apexcharts-theme-light .apexcharts-selection-icon:not(.apexcharts-selected):hover svg,
+    .apexcharts-theme-light .apexcharts-zoom-icon:not(.apexcharts-selected):hover svg,
+    .apexcharts-theme-light .apexcharts-zoomin-icon:hover svg,
+    .apexcharts-theme-light .apexcharts-zoomout-icon:hover svg {
+      fill: #333
+    }
+
+    .apexcharts-menu-icon,
+    .apexcharts-selection-icon {
+      position: relative
+    }
+
+    .apexcharts-reset-icon {
+      margin-left: 5px
+    }
+
+    .apexcharts-menu-icon,
+    .apexcharts-reset-icon,
+    .apexcharts-zoom-icon {
+      transform: scale(.85)
+    }
+
+    .apexcharts-zoomin-icon,
+    .apexcharts-zoomout-icon {
+      transform: scale(.7)
+    }
+
+    .apexcharts-zoomout-icon {
+      margin-right: 3px
+    }
+
+    .apexcharts-pan-icon {
+      transform: scale(.62);
+      position: relative;
+      left: 1px;
+      top: 0
+    }
+
+    .apexcharts-pan-icon svg {
+      fill: #fff;
+      stroke: #6e8192;
+      stroke-width: 2
+    }
+
+    .apexcharts-pan-icon.apexcharts-selected svg {
+      stroke: #008ffb
+    }
+
+    .apexcharts-pan-icon:not(.apexcharts-selected):hover svg {
+      stroke: #333
+    }
+
+    .apexcharts-toolbar {
+      position: absolute;
+      z-index: 11;
+      max-width: 176px;
+      text-align: right;
+      border-radius: 3px;
+      padding: 0 6px 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .apexcharts-menu {
+      background: #fff;
+      position: absolute;
+      top: 100%;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 3px;
+      right: 10px;
+      opacity: 0;
+      min-width: 110px;
+      transition: .15s ease all;
+      pointer-events: none
+    }
+
+    .apexcharts-menu.apexcharts-menu-open {
+      opacity: 1;
+      pointer-events: all;
+      transition: .15s ease all
+    }
+
+    .apexcharts-menu-item {
+      padding: 6px 7px;
+      font-size: 12px;
+      cursor: pointer
+    }
+
+    .apexcharts-theme-light .apexcharts-menu-item:hover {
+      background: #eee
+    }
+
+    .apexcharts-theme-dark .apexcharts-menu {
+      background: rgba(0, 0, 0, .7);
+      color: #fff
+    }
+
+    @media screen and (min-width:768px) {
+      .apexcharts-canvas:hover .apexcharts-toolbar {
+        opacity: 1
+      }
+    }
+
+    .apexcharts-canvas .apexcharts-element-hidden,
+    .apexcharts-datalabel.apexcharts-element-hidden,
+    .apexcharts-hide .apexcharts-series-points {
+      opacity: 0;
+    }
+
+    .apexcharts-hidden-element-shown {
+      opacity: 1;
+      transition: 0.25s ease all;
+    }
+
+    .apexcharts-datalabel,
+    .apexcharts-datalabel-label,
+    .apexcharts-datalabel-value,
+    .apexcharts-datalabels,
+    .apexcharts-pie-label {
+      cursor: default;
+      pointer-events: none
+    }
+
+    .apexcharts-pie-label-delay {
+      opacity: 0;
+      animation-name: opaque;
+      animation-duration: .3s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease
+    }
+
+    .apexcharts-radialbar-label {
+      cursor: pointer;
+    }
+
+    .apexcharts-annotation-rect,
+    .apexcharts-area-series .apexcharts-area,
+    .apexcharts-gridline,
+    .apexcharts-line,
+    .apexcharts-point-annotation-label,
+    .apexcharts-radar-series path:not(.apexcharts-marker),
+    .apexcharts-radar-series polygon,
+    .apexcharts-toolbar svg,
+    .apexcharts-tooltip .apexcharts-marker,
+    .apexcharts-xaxis-annotation-label,
+    .apexcharts-yaxis-annotation-label,
+    .apexcharts-zoom-rect,
+    .no-pointer-events {
+      pointer-events: none
+    }
+
+    .apexcharts-tooltip-active .apexcharts-marker {
+      transition: .15s ease all
+    }
+
+    .apexcharts-radar-series .apexcharts-yaxis {
+      pointer-events: none;
+    }
+
+    .resize-triggers {
+      animation: 1ms resizeanim;
+      visibility: hidden;
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden
+    }
+
+    .contract-trigger:before,
+    .resize-triggers,
+    .resize-triggers>div {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0
+    }
+
+    .resize-triggers>div {
+      height: 100%;
+      width: 100%;
+      background: #eee;
+      overflow: auto
+    }
+
+    .contract-trigger:before {
+      overflow: hidden;
+      width: 200%;
+      height: 200%
+    }
+
+    .apexcharts-bar-goals-markers {
+      pointer-events: none
+    }
+
+    .apexcharts-bar-shadows {
+      pointer-events: none
+    }
+
+    .apexcharts-rangebar-goals-markers {
+      pointer-events: none
+    }
+  </style>
+
+  <!-- for the week bar -->
+  <style>
+    /* General Page Styling */
+    body {
+      background-color: #121212f3;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    /* Chart Container */
+    .chart-container {
+      width: 80%;
+      max-width: 700px;
+      height: 350px;
+      margin: 1px auto;
+      position: relative;
+      padding-bottom: 20px;
+    }
+
+    /* Animated Axes */
+    .chart-container::before,
+    .chart-container::after {
+      content: "";
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0);
+      transition: width 1s ease-in-out, height 1s ease-in-out;
+
+    }
+
+    /* Left Axis (Y-Axis) */
+    .chart-container::before {
+      width: 2px;
+      height: 0%;
+      left: 0;
+      bottom: 0;
+      animation: drawY 2s ease-in-out forwards;
+
+    }
+
+    /* Bottom Axis (X-Axis) */
+    .chart-container::after {
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      animation: drawX 2.5s ease-in-out forwards;
+    }
+
+    /* Bars */
+    .chart {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      height: 100%;
+      position: relative;
+    }
+
+    /* Individual Bar Containers */
+    .bar-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90px;
+      position: relative;
+    }
+
+    /* Bars Group */
+    .bar-group {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    /* Bars */
+    .bar {
+      width: 30px;
+      border-radius: 5px;
+      opacity: 0;
+      animation: fadeInUp 1s ease-in forwards;
+    }
+
+    /* Labels */
+    .label {
+      margin-top: 10px;
+      font-size: 14px;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+    }
+
+    /* Value Labels */
+    .value-label {
+      margin-bottom: 27px;
+      margin-left: 2px;
+      position: absolute;
+      font-size: 14px;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+      white-space: nowrap;
+    }
+
+    .current-value {
+      transform: translateX(-50%);
+    }
+
+    .previous-value {
+      transform: translateX(-50%);
+    }
+
+
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Line Draw Animations */
+    @keyframes drawY {
+      from {
+        height: 0%;
+      }
+
+      to {
+        height: 100%;
+      }
+    }
+
+    @keyframes drawX {
+      from {
+        width: 0%;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .bar-container {
+        width: 100%;
+      }
+
+      .bar {
+        width: 20px;
+      }
+
+      .value-label {
+        margin-bottom: 30px;
+        margin-left: 2px;
+        position: absolute;
+        font-size: 14px;
+        font-weight: bold;
+        opacity: 0;
+        animation: fadeIn 1s ease-in forwards;
+        white-space: nowrap;
+      }
+    }
+  </style>
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1217.0" data-gr-ext-installed="">
+
+
+  <div id="customBackdrop"></div>
+
+  <!-- Sign In Modal -->
+  <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true"
+    data-bs-backdrop="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            onclick="hideCustomBackdrop()"></button>
+        </div>
+        <div class="modal-body p-4 pt-0">
+          <h1 class="h4 mb-4 text-center">Sign in</h1>
+          <form id="signinForm">
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="you@example.com" id="signinEmail">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="••••••••" id="signinPassword">
+            </div>
+
+
+            <hr class="my-4">
+            <button type="submit" class="btn w-100 mb-3" style="background-color: #f9bc06; color: #000;">Sign
+              In</button>
+            <div class="text-center">
+              <a href="#" class="d-block text-muted small mb-2">Forget password?</a>
+              <span class="text-muted small">or</span>
+              <a href="#" class="d-block text-muted small mt-2" id="toSignup">Don't have an account? Sign up</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Up Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true"
+    data-bs-backdrop="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            onclick="hideCustomBackdrop()"></button>
+        </div>
+        <div class="modal-body p-4 pt-0">
+          <h1 class="h4 mb-4 text-center">Sign up</h1>
+          <br>
+          <form id="signupForm">
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" placeholder="Enter your name" id="signupFullname">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="you@example.com" id="signupEmail">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="••••••••" id="signupPassword">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" placeholder="••••••••" id="signupConfirmPassword">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="signupImage">Profile Image (Max 1MB)</label>
+              <input type="file" id="signupImage" accept="image/*" required />
+            </div>
+            <hr class="my-4">
+            <button type="submit" class="btn w-100 mb-3" style="background-color: #f9bc06; color: #000;">Create
+              Account</button>
+            <div class="text-center">
+              <span class="text-muted small">Already have an account?</span>
+              <a href="#" class="d-block text-muted small mt-2" id="toSignin">Sign in</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Screenshot-->
+ <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Required Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Sidenav -->
+  <!-- Sidenav (toolbar) -->
+  <aside class="aside aside-sm sidenav-toolbar d-none d-xl-flex">
+    <nav class="navbar navbar-expand-xl navbar-vertical">
+      <div class="container-fluid">
+        <!-- Nav -->
+        <nav class="navbar-nav nav-pills h-100">
+          <div class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Go to product page">
+            <a class="nav-link" href="https://themes.getbootstrap.com/product/dashbrd/" target="_blank">
+              <span class="material-symbols-outlined">local_mall</span>
+            </a>
+          </div>
+          <div class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Contact us">
+            <a class="nav-link" href="mailto:yevgenysim+simpleqode@gmail.com">
+              <span class="material-symbols-outlined">support</span>
+            </a>
+          </div>
+          <div class="nav-item dropend mt-auto">
+            <a href="#" role="button" data-bs-toggle="dropdown" data-bs-settings-switcher="" aria-expanded="false">
+              <div class="nav-link">
+                <span class="material-symbols-outlined">settings</span>
+              </div>
+            </a>
+            <div class="dropdown-menu top-auto bottom-0 ms-xl-3">
+              <!-- Color mode -->
+              <h6 class="dropdown-header">Color mode</h6>
+              <a class="dropdown-item d-flex" data-bs-theme-value="light" href="#" role="button" aria-pressed="false">
+                <span class="material-symbols-outlined me-2">light_mode</span> Light </a>
+              <a class="dropdown-item d-flex active" data-bs-theme-value="dark" href="#" role="button"
+                aria-pressed="true"> <span class="material-symbols-outlined me-2">dark_mode</span> Dark </a>
+              <a class="dropdown-item d-flex" data-bs-theme-value="auto" href="#" role="button" aria-pressed="false">
+                <span class="material-symbols-outlined me-2">contrast</span> Auto </a>
+
+              <!-- Navigation position -->
+              <hr class="dropdown-divider">
+              <h6 class="dropdown-header">Navigation position</h6>
+              <a class="dropdown-item d-flex active" data-bs-navigation-position-value="sidenav" href="#" role="button"
+                aria-pressed="true">
+                <span class="material-symbols-outlined me-2">keyboard_tab_rtl</span> Sidenav
+              </a>
+              <a class="dropdown-item d-flex" data-bs-navigation-position-value="topnav" href="#" role="button"
+                aria-pressed="false">
+                <span class="material-symbols-outlined me-2">vertical_align_top</span> Topnav
+              </a>
+
+              <!-- Sidenav sizing -->
+              <div class="sidenav-sizing">
+                <hr class="dropdown-divider">
+                <h6 class="dropdown-header">Sidenav sizing</h6>
+                <a class="dropdown-item d-flex active" data-bs-sidenav-sizing-value="base" href="#" role="button"
+                  aria-pressed="true">
+                  <span class="material-symbols-outlined me-2">density_large</span> Base
+                </a>
+                <a class="dropdown-item d-flex" data-bs-sidenav-sizing-value="md" href="#" role="button"
+                  aria-pressed="false">
+                  <span class="material-symbols-outlined me-2">density_medium</span> Medium
+                </a>
+                <a class="dropdown-item d-flex" data-bs-sidenav-sizing-value="sm" href="#" role="button"
+                  aria-pressed="false">
+                  <span class="material-symbols-outlined me-2">density_small</span> Small
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Sidenav (lg) -->
+  <aside class="aside" id="sidenav-lg">
+    <nav class="navbar navbar-expand-xl navbar-vertical">
+      <div id = "dashboardContent" class="container-lg">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/index.html">
+          <img src="/Pictures/classroom.png" alt="Classroom Logo"
+            style="width: 221px; height: auto; margin-left: 1vw; margin-top: -2vh;">
+        </a>
+
+
+
+        <!-- User -->
+        <div class="ms-auto d-xl-none">
+          <div class="dropdown my-n2">
+            <a class="btn btn-link d-inline-flex align-items-center dropdown-toggle" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="avatar avatar-sm avatar-status avatar-status-success me-3">
+                <img class="avatar-img" src="https://yevgenysim-turkey.github.io/dashbrd/assets/img/photos/photo-6.jpg"
+                  alt="...">
+              </span>
+              John Williams
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="account.html">Account</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Toggler -->
+        <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse"
+          data-bs-target="#sidenavLargeCollapse" aria-controls="sidenavLargeCollapse" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="sidenavLargeCollapse">
+          <!-- Search -->
+          <div class="input-group d-xl-none my-4 my-xl-0">
+            <input class="form-control" id="topnavSearchInputMobile" type="search" placeholder="Search"
+              aria-label="Search" aria-describedby="navbarSearchMobile">
+            <span class="input-group-text" id="navbarSearchMobile">
+              <span class="material-symbols-outlined"> search </span>
+            </span>
+          </div>
+
+          <!-- Nav -->
+          <nav class="navbar-nav nav-pills mb-7">
+            <div class="nav-item">
+              <a class="nav-link active" href="/index.html" role="button">
+                <span class="material-symbols-outlined me-3">space_dashboard</span> Dashboards
+              </a>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="HTML/leaderboard.html" role="button">
+                <span class="material-symbols-outlined me-3">leaderboard</span> Leaderboard
+              </a>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#projects" role="button"
+                aria-expanded="false" aria-controls="projects">
+                <span class="material-symbols-outlined me-3">list_alt</span> Arrays
+              </a>
+              <div class="collapse" id="projects" data-bs-parent="#sidenavLargeCollapse">
+                <nav class="nav nav-pills flex-column align-items-start">
+                  <a class="nav-link" href="projects.html">Easy</a>
+                  <a class="nav-link" href="project.html">Medium</a>
+                  <a class="nav-link" href="project-new.html">Hard</a>
+                </nav>
+              </div>
+            </div>
+
+
+            <div class="nav-item">
+              <a class="nav-link " href="#" data-bs-toggle="collapse" data-bs-target="#strings" role="button"
+                aria-expanded="false" aria-controls="strings">
+                <span class="material-symbols-outlined">text_fields</span>&nbsp;
+                Strings
+              </a>
+              <div class="collapse " id="strings" data-bs-parent="#sidenavLargeCollapse">
+                <nav class="nav nav-pills flex-column align-items-start">
+                  <a class="nav-link " href="string1.html">Easy</a>
+                  <a class="nav-link " href="string2.html">Medium</a>
+                  <a class="nav-link " href="string3.html">Hard</a>
+                </nav>
+              </div>
+            </div>
+
+
+            <div class="nav-item">
+              <a class="nav-link " href="#" data-bs-toggle="collapse" data-bs-target="#linkedlist" role="button"
+                aria-expanded="false" aria-controls="linkedlist">
+                <span class="material-symbols-outlined">merge_type</span>&nbsp; Linked List
+              </a>
+              <div class="collapse " id="linkedlist" data-bs-parent="#sidenavLargeCollapse">
+                <nav class="nav nav-pills flex-column align-items-start">
+                  <a class="nav-link " href="ll1.html">Easy</a>
+                  <a class="nav-link " href="ll2.html">Medium</a>
+                  <a class="nav-link " href="ll3.html">Hard</a>
+                </nav>
+              </div>
+            </div>
+
+
+            <div class="nav-item">
+              <a class="nav-link " href="#" data-bs-toggle="collapse" data-bs-target="#trees" role="button"
+                aria-expanded="false" aria-controls="trees">
+                <span class="material-symbols-outlined">share</span>&nbsp; Trees
+              </a>
+              <div class="collapse " id="trees" data-bs-parent="#sidenavLargeCollapse">
+                <nav class="nav nav-pills flex-column align-items-start">
+                  <a class="nav-link " href="trees1.html">Easy</a>
+                  <a class="nav-link " href="trees2.html">Medium</a>
+                  <a class="nav-link " href="trees3.html">Hard</a>
+                </nav>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link " href="#" data-bs-toggle="collapse" data-bs-target="#graphs" role="button"
+                aria-expanded="false" aria-controls="graphs">
+                <span class="material-symbols-outlined">account_tree</span>&nbsp; Graphs
+              </a>
+              <div class="collapse " id="graphs" data-bs-parent="#sidenavLargeCollapse">
+                <nav class="nav nav-pills flex-column align-items-start">
+                  <a class="nav-link " href="graph1.html">Easy</a>
+                  <a class="nav-link " href="graph2.html">Medium</a>
+                  <a class="nav-link " href="graph3.html">Hard</a>
+                </nav>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link " href="#" data-bs-toggle="collapse" data-bs-target="#dps" role="button"
+                aria-expanded="false" aria-controls="projects">
+                <span class="material-symbols-outlined">grid_on</span>&nbsp; Dynamic Programming
+
+              </a>
+              <div class="collapse " id="dps" data-bs-parent="#sidenavLargeCollapse">
+                <nav class="nav nav-pills flex-column align-items-start">
+                  <a class="nav-link " href="DP1.html">Easy</a>
+                  <a class="nav-link " href="DP2.html">Medium</a>
+                  <a class="nav-link " href="DP3.html">Hard</a>
+                </nav>
+              </div>
+            </div>
+             <div class="nav-item">
+  <a class="nav-link" href="post.html" role="button">
+    <span class="material-symbols-outlined me-3" style="font-variation-settings: 'FILL' 1, 'wght' 400;">post_add</span> Posts
+  </a>
+</div>
+
+
+
+            <div class="nav-item">
+              <a class="nav-link" href="account.html" role="button">
+                <span class="material-symbols-outlined me-3">person</span> Account
+              </a>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#mdoals" role="button"
+                aria-expanded="false" aria-controls="mdoals">
+                <span class="material-symbols-outlined me-3">login</span> Authentication
+              </a>
+              <div class="collapse" id="mdoals">
+                <nav class="nav nav-pills flex-column align-items-start">
+                  <!-- Corrected Modal Trigger -->
+                  <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signinModal">Sign In</a>
+                  <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a>
+
+                </nav>
+              </div>
+            </div>
+          </nav>
+
+
+
+
+          <!-- Heading -->
+          <h3 class="fs-base px-3 mb-4 text-start">About Us</h3>
+
+          <!-- Nav -->
+          <nav class="navbar-nav nav-pills mb-xl-7 flex-column align-items-start">
+            <div class="nav-item">
+              <a class="nav-link " href="faqs.html">
+                <span class="material-symbols-outlined me-3">sticky_note_2</span>Common FAQs</a>
+            </div>
+            <div class="nav-item">
+              <a class="nav-link " href="contactus.html">
+                <span class="material-symbols-outlined">support_agent</span>&nbsp; &nbsp;Contact Us</a>
+            </div>
+          </nav>
+
+          <!-- Divider -->
+          <hr class="my-4 d-xl-none">
+
+          <!-- Nav -->
+          <nav class="navbar-nav nav-pills d-xl-none mb-7">
+            <div class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" data-bs-settings-switcher=""
+                aria-expanded="false">
+                <span class="material-symbols-outlined"> settings </span> <span class="d-xl-none ms-3">Settings</span>
+              </a>
+              <div class="dropdown-menu">
+                <!-- Color mode -->
+                <h6 class="dropdown-header">Color mode</h6>
+                <a class="dropdown-item d-flex" data-bs-theme-value="light" href="#" role="button" aria-pressed="false">
+                  <span class="material-symbols-outlined me-2"> light_mode </span> Light
+                </a>
+                <a class="dropdown-item d-flex active" data-bs-theme-value="dark" href="#" role="button"
+                  aria-pressed="true"> <span class="material-symbols-outlined me-2"> dark_mode
+                  </span> Dark </a>
+                <a class="dropdown-item d-flex" data-bs-theme-value="auto" href="#" role="button" aria-pressed="false">
+                  <span class="material-symbols-outlined me-2"> contrast </span>
+                  Auto </a>
+
+                <!-- Divider -->
+                <hr class="dropdown-divider">
+
+                <!-- Navigation position -->
+                <h6 class="dropdown-header">Navigation position</h6>
+                <a class="dropdown-item d-flex" data-bs-navigation-position-value="sidenav" href="#" role="button"
+                  aria-pressed="false">
+                  <span class="material-symbols-outlined me-2"> thumbnail_bar </span> Sidenav
+                </a>
+                <a class="dropdown-item d-flex active" data-bs-navigation-position-value="topnav" href="#" role="button"
+                  aria-pressed="true">
+                  <span class="material-symbols-outlined me-2"> toolbar </span> Topnav
+                </a>
+              </div>
+            </div>
+            <div class="nav-item">
+              <a class="nav-link" href="https://themes.getbootstrap.com/product/dashbrd/" target="_blank">
+                <span class="material-symbols-outlined me-3">local_mall</span> Go to product page
+              </a>
+            </div>
+            <div class="nav-item">
+              <a class="nav-link" href="mailto:yevgenysim+simpleqode@gmail.com">
+                <span class="material-symbols-outlined me-3">alternate_email</span> Contact us
+              </a>
+            </div>
+          </nav>
+
+          <!-- Card -->
+          <div class="card mt-auto">
+            <div class="card-body text-start">
+              <!-- Added text-start -->
+              <!-- Heading -->
+              <h6>Need help?</h6>
+
+              <!-- Text -->
+              <p class="text-body-secondary mb-0">
+                Feel free to reach out to us via the 'Contact Us' option, or click
+                <a href="contactus.html" target="_blank">here</a>.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      </div>
+    </nav>
+  </aside>
+  <!-- Topnav -->
+  <!-- Topnav (lg) -->
+  <nav class="navbar navbar-expand-xl" id="topnav-lg">
+    <div id = "dashboardContent" class="container-lg">
+      <!-- Brand -->
+      <a class="navbar-brand fs-5 fw-bold" href="./index.html"> <svg xmlns="http://www.w3.org/2000/svg" width="24"
+          height="24" viewBox="0 0 24 24" class="fs-4 text-secondary me-1 duo-icon duo-icon-box-2" data-duoicon="box-2">
+          <path fill="currentColor"
+            d="m20.765 7.982.022.19.007.194v7.268a2.5 2.5 0 0 1-1.099 2.07l-.15.095-6.295 3.634-.124.067-.126.06v-8.99l7.765-4.588Z"
+            class="duoicon-secondary-layer" opacity=".3"></path>
+          <path fill="currentColor"
+            d="m13.25 2.567 6.294 3.634c.05.03.1.06.148.092L12 10.838 4.308 6.293a2.81 2.81 0 0 1 .148-.092l6.294-3.634a2.498 2.498 0 0 1 2.5 0Z"
+            class="duoicon-primary-layer"></path>
+          <path fill="currentColor"
+            d="M3.235 7.982 11 12.571v8.988a2.339 2.339 0 0 1-.25-.126l-6.294-3.634a2.502 2.502 0 0 1-1.25-2.165V8.366c0-.13.01-.258.03-.384h-.001Z"
+            class="duoicon-secondary-layer" opacity=".3"></path>
+        </svg>Classroom</a>
+
+      <!-- User -->
+      <div class="ms-auto d-xl-none">
+        <div class="dropdown my-n2">
+          <a class="btn btn-link d-inline-flex align-items-center dropdown-toggle" href="#" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="avatar avatar-sm avatar-status avatar-status-success me-3">
+              <img class="avatar-img" src="https://yevgenysim-turkey.github.io/dashbrd/assets/img/photos/photo-6.jpg"
+                alt="...">
+            </span>
+            John Williams
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Account</a></li>
+            <li><a class="dropdown-item" href="#">Change password</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#topnavLargeCollapse"
+        aria-controls="topnavLargeCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="topnavLargeCollapse">
+        <!-- Search -->
+        <div class="input-group d-xl-none my-4 my-xl-0">
+          <input class="form-control" id="topnavSearchInputMobile" type="search" placeholder="Search"
+            aria-label="Search" aria-describedby="navbarSearchMobile">
+          <span class="input-group-text" id="navbarSearchMobile">
+            <span class="material-symbols-outlined"> search </span>
+          </span>
+        </div>
+
+        <!-- Nav -->
+        <nav class="navbar-nav nav-pills mx-auto">
+          <div class="nav-item">
+            <a class="nav-link active" href="index.html">
+              <span class="material-symbols-outlined me-3">space_dashboard</span> Dashboards
+            </a>
+          </div>
+
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="material-symbols-outlined me-3">list_alt</span> Arrays
+            </a>
+            <div class="dropdown-menu" style="text-align: left;">
+              <a class="dropdown-item " href="projects.html">Easy</a>
+              <a class="dropdown-item " href="project.html">Medium</a>
+              <a class="dropdown-item " href="project-new.html">Hard</a>
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="material-symbols-outlined">text_fields</span>&nbsp; Strings
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item " href="./projects/projects.html">Easy</a>
+              <a class="dropdown-item " href="./projects/project.html">Medium</a>
+              <a class="dropdown-item " href="./projects/project-new.html">Hard</a>
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="material-symbols-outlined">merge_type</span>&nbsp; Linked List
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item " href="./projects/projects.html">Easy</a>
+              <a class="dropdown-item " href="./projects/project.html">Medium</a>
+              <a class="dropdown-item " href="./projects/project-new.html">Hard</a>
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="material-symbols-outlined">share</span>&nbsp; Trees
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item " href="./projects/projects.html">Easy</a>
+              <a class="dropdown-item " href="./projects/project.html">Medium</a>
+              <a class="dropdown-item " href="./projects/project-new.html">Hard</a>
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="material-symbols-outlined">account_tree</span>&nbsp; Graphs
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item " href="./projects/projects.html">Easy</a>
+              <a class="dropdown-item " href="./projects/project.html">Medium</a>
+              <a class="dropdown-item " href="./projects/project-new.html">Hard</a>
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="material-symbols-outlined">grid_on</span>&nbsp; DP
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item " href="./projects/projects.html">Easy</a>
+              <a class="dropdown-item " href="./projects/project.html">Medium</a>
+              <a class="dropdown-item " href="./projects/project-new.html">Hard</a>
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="material-symbols-outlined">draw</span>&nbsp; Gen. Prac.
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item " href="./projects/projects.html">Coding</a>
+              <a class="dropdown-item " href="./projects/project.html">Contest</a>
+
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle  " href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <span class="material-symbols-outlined me-3">person</span> Account
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item " href=".account.html">Account overview</a>
+              <a class="dropdown-item " href="./account/account-settings.html">Account settings</a>
+            </div>
+          </div>
+
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false"><span class="material-symbols-outlined me-3">login</span> Authetic.</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="./auth/sign-in.html">Sign in</a>
+              <a class="dropdown-item" href="./auth/sign-up.html">Sign up</a>
+              <a class="dropdown-item" href="./auth/password-reset.html">Password reset</a>
+              <a class="dropdown-item" href="./auth/error.html">Error</a>
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About Us
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item " href="./docs/getting-started.html"> Common FAQs </a>
+              <a class="dropdown-item " href="./docs/components.html">Contact Us</a>
+              <a class="dropdown-item d-flex " href="./docs/changelog.html">
+                Changelog
+                <span class="badge text-bg-primary ms-auto">1.0.4</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Divider -->
+        <hr class="my-4 d-xl-none">
+
+        <!-- Nav -->
+        <nav class="navbar-nav nav-pills">
+          <div class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" data-bs-settings-switcher=""
+              aria-expanded="false">
+              <span class="material-symbols-outlined"> settings </span> <span class="d-xl-none ms-3">Settings</span>
+            </a>
+            <div class="dropdown-menu">
+              <!-- Color mode -->
+              <h6 class="dropdown-header">Color mode</h6>
+              <a class="dropdown-item d-flex" data-bs-theme-value="light" href="#" role="button" aria-pressed="false">
+                <span class="material-symbols-outlined me-2"> light_mode </span> Light
+              </a>
+              <a class="dropdown-item d-flex active" data-bs-theme-value="dark" href="#" role="button"
+                aria-pressed="true"> <span class="material-symbols-outlined me-2"> dark_mode </span>
+                Dark </a>
+              <a class="dropdown-item d-flex" data-bs-theme-value="auto" href="#" role="button" aria-pressed="false">
+                <span class="material-symbols-outlined me-2"> contrast </span>
+                Auto </a>
+
+              <!-- Divider -->
+              <hr class="dropdown-divider">
+
+              <!-- Navigation position -->
+              <h6 class="dropdown-header">Navigation position</h6>
+              <a class="dropdown-item d-flex" data-bs-navigation-position-value="sidenav" href="#" role="button"
+                aria-pressed="false">
+                <span class="material-symbols-outlined me-2"> thumbnail_bar </span> Sidenav
+              </a>
+              <a class="dropdown-item d-flex active" data-bs-navigation-position-value="topnav" href="#" role="button"
+                aria-pressed="true">
+                <span class="material-symbols-outlined me-2"> toolbar </span> Topnav
+              </a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" href="https://themes.getbootstrap.com/product/dashbrd/" target="_blank">
+              <span class="material-symbols-outlined">local_mall</span> <span class="d-xl-none ms-3">Go to
+                product page</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" href="mailto:yevgenysim+simpleqode@gmail.com">
+              <span class="material-symbols-outlined">alternate_email</span> <span class="d-xl-none ms-3">Contact
+                us</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Topnav (sm) -->
+  <nav class="navbar d-none d-xl-flex px-xl-6" id="topnav-sm">
+    <div class="container flex-column align-items-stretch">
+      <div class="row">
+        <div class="col">
+          <!-- Search -->
+
+        </div>
+        <div class="col-auto">
+          <!-- User Dropdown -->
+          <div class="dropdown">
+            <a class="btn btn-link d-inline-flex align-items-center dropdown-toggle" href="#" role="button"
+              id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="avatar avatar-sm avatar-status avatar-status-success me-2">
+                <img id="userDropdownImage" class="rounded-circle" src="" alt="User"
+                  style="width: 30px; height: 30px;" />
+
+
+              </span>
+              <span id="userDropdownName">Guest User</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="account.html">Account</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#" id="signOutButton">Sign out</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main id="dashboardWrapper" class="main px-lg-6">
+
+    <!-- Leaderboard Section -->
+    <div class="row">
+      <!-- Heading -->
+
+      <div class="row align-items-center">
+        <!-- Left Side: Greeting & Summary -->
+        <div class="col-12 col-md order-md-0 text-center text-md-start">
+          <h1 id="welcomeUser">Hello! </h1>
+
+          <p class="fs-lg text-body-secondary mb-0">Here's a summary of your account activity for this week.</p>
+        </div>
+
+        <!-- Right Side: Time & Location -->
+        <div class="col-12 col-md-auto order-md-1 d-flex align-items-center justify-content-md-end mb-4 mb-md-0">
+          <div id="cameraButton" class="avatar text-info me-2" style="cursor: pointer;" title="Take Screenshot">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fs-4 duo-icon duo-icon-camera" data-duoicon="camera">
+      <path fill="currentColor" opacity=".3" d="M4 5h4l2-2h4l2 2h4v14H4z" class="duoicon-secondary-layer"></path>
+      <path fill="currentColor" d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z" class="duoicon-primary-layer"></path>
+    </svg>
+  </div>
+
+         <div class="avatar text-info me-2" style="cursor: pointer;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+    class="fs-4 duo-icon duo-icon-world" data-duoicon="world">
+    <path fill="currentColor" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2Z"
+      class="duoicon-secondary-layer" opacity=".3"></path>
+    <path fill="currentColor"
+      d="M12 4a7.988 7.988 0 0 0-6.335 3.114l-.165.221V9.02c0 1.25.775 2.369 1.945 2.809l.178.06 1.29.395c1.373.42 2.71-.697 2.577-2.096l-.019-.145-.175-1.049a1 1 0 0 1 .656-1.108l.108-.03.612-.14a2.667 2.667 0 0 0 1.989-3.263A7.987 7.987 0 0 0 12 4Zm2 9.4-1.564 1.251a.5.5 0 0 0-.041.744l1.239 1.239c.24.24.415.538.508.864l.175.613c.147.521.52.948 1.017 1.163a8.026 8.026 0 0 0 2.533-1.835l-.234-1.877a2 2 0 0 0-1.09-1.54l-1.47-.736A1 1 0 0 0 14 13.4Z"
+      class="duoicon-primary-layer"></path>
+  </svg>
+</div>
+
+          <div id="location">Kolkata, IND</div>
+          <div id="datetime" class="ms-2">-<time id="current-time">8:00 PM</time></div>
+        </div>
+      </div>
+
+      <!-- JavaScript to update time dynamically -->
+      <script>
+        function updateTime() {
+          const now = new Date();
+          const timeString = now.toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit'
+          });
+          document.getElementById('current-time').textContent = timeString;
+        }
+        updateTime(); // Update immediately
+        setInterval(updateTime, 60000); // Update every minute
+      </script>
+
+    </div>
+
+    <br> <br>
+
+    <!-- Top Performers Section -->
+    <div class="col-12 mb-6">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="fs-6 mb-0 text-start">Top Performers of the Week</h3>
+        </div>
+        <div class="card-body p-0">
+          <div class="row g-0">
+
+            <!-- Top Performer Box (Left) -->
+            <div class="col-md-4 border-end" id="topPerformerBox">
+              <!-- Will be filled by JS -->
+            </div>
+
+
+            <!-- Other Performers Box (Right) -->
+            <div class="col-md-8">
+              <div class="p-4">
+                <div class="row" id="topPerformersRow">
+  <!-- Top 1–4 performer cards will be injected here -->
+</div>
+
+
+                <!-- View All Button -->
+                <div class="text-center mt-2">
+                  <a href="leaderboard.html" class="btn btn-outline-primary btn-sm">View Full Leaderboard <i
+                      class="fas fa-chevron-right ms-1"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <style>
+      /* Custom colors for podium positions */
+      .bg-gold {
+        background-color: #FFD700 !important;
+        color: #000 !important;
+      }
+
+      .bg-silver {
+        background-color: #C0C0C0 !important;
+        color: #000 !important;
+      }
+
+      .bg-bronze {
+        background-color: #CD7F32 !important;
+        color: #000 !important;
+      }
+
+      .border-gold {
+        border-color: #FFD700 !important;
+      }
+
+      .border-silver {
+        border-color: #C0C0C0 !important;
+      }
+
+      .border-bronze {
+        border-color: #CD7F32 !important;
+      }
+    </style>
+    <!-- Content -->
+    <div id = "dashboardContent" class="container-lg">
+      <!-- Page content -->
+
+
+      <!-- Divider -->
+      <hr class="my-8">
+
+      <!-- Stats -->
+      <div class="row mb-8 text-start">
+        <div class="col-12 col-md-6 col-xxl-3 mb-4 mb-xxl-0">
+          <div class="card bg-body-tertiary border-transparent">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col">
+                  <!-- Heading -->
+                  <h4 class="fs-sm fw-normal text-body-secondary mb-1">Completed</h4>
+
+                  <!-- Text -->
+                  <div class="fs-4 fw-semibold">375</div>
+                </div>
+                <div class="col-auto">
+                  <!-- Avatar -->
+                  <div class="avatar avatar-lg bg-body text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                      class="fs-4 duo-icon duo-icon-credit-card" data-duoicon="credit-card">
+                      <path fill="currentColor" d="M22 10v7a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-7h20Z"
+                        class="duoicon-secondary-layer" opacity=".3"></path>
+                      <path fill="currentColor"
+                        d="M19 4a3 3 0 0 1 3 3v1H2V7a3 3 0 0 1 3-3h14Zm-1 10h-3a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2Z"
+                        class="duoicon-primary-layer"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xxl-3 mb-4 mb-xxl-0">
+          <div class="card bg-body-tertiary border-transparent">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col">
+                  <!-- Heading -->
+                  <h4 class="fs-sm fw-normal text-body-secondary mb-1">Attempted</h4>
+
+                  <!-- Text -->
+                  <div class="fs-4 fw-semibold">102</div>
+                </div>
+                <div class="col-auto">
+                  <!-- Avatar -->
+                  <div class="avatar avatar-lg bg-body text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                      class="fs-4 duo-icon duo-icon-clock" data-duoicon="clock">
+                      <path fill="currentColor"
+                        d="M12 4c6.928 0 11.258 7.5 7.794 13.5A8.998 8.998 0 0 1 12 22C5.072 22 .742 14.5 4.206 8.5A8.998 8.998 0 0 1 12 4Z"
+                        class="duoicon-secondary-layer" opacity=".3"></path>
+                      <path fill="currentColor"
+                        d="M7.366 2.971A1 1 0 0 1 7 4.337a10.063 10.063 0 0 0-2.729 2.316 1 1 0 1 1-1.544-1.27 12.046 12.046 0 0 1 3.271-2.777 1 1 0 0 1 1.367.365h.001ZM18 2.606a12.044 12.044 0 0 1 3.272 2.776 1 1 0 0 1-1.544 1.27 10.042 10.042 0 0 0-2.729-2.315 1 1 0 0 1 1.002-1.731H18ZM12 8a1 1 0 0 0-.993.883L11 9v3.986c-.003.222.068.44.202.617l.09.104 2.106 2.105a1 1 0 0 0 1.498-1.32l-.084-.094L13 12.586V9a1 1 0 0 0-1-1Z"
+                        class="duoicon-primary-layer"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xxl-3 mb-4 mb-md-0">
+          <div class="card bg-body-tertiary border-transparent">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col">
+                  <!-- Heading -->
+                  <h4 class="fs-sm fw-normal text-body-secondary mb-1">Unattepted</h4>
+
+                  <!-- Text -->
+                  <div class="fs-4 fw-semibold">75</div>
+                </div>
+                <div class="col-auto">
+                  <!-- Avatar -->
+                  <div class="avatar avatar-lg bg-body text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                      class="fs-4 duo-icon duo-icon-slideshow" data-duoicon="slideshow">
+                      <path fill="currentColor"
+                        d="M21 3a1 1 0 1 1 0 2v11a2 2 0 0 1-2 2h-5.055l2.293 2.293a1 1 0 0 1-1.414 1.414l-2.829-2.828-2.828 2.828a1 1 0 0 1-1.414-1.414L10.046 18H5a2 2 0 0 1-2-2V5a1 1 0 1 1 0-2h18Z"
+                        class="duoicon-secondary-layer" opacity=".3"></path>
+                      <path fill="currentColor"
+                        d="M8 11a1 1 0 0 0-1 1v1a1 1 0 1 0 2 0v-1a1 1 0 0 0-1-1Zm4-2a1 1 0 0 0-1 1v3a1 1 0 1 0 2 0v-3a1 1 0 0 0-1-1Zm4-2a1 1 0 0 0-.993.883L15 8v5a1 1 0 0 0 1.993.117L17 13V8a1 1 0 0 0-1-1Z"
+                        class="duoicon-primary-layer"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xxl-3">
+          <div class="card bg-body-tertiary border-transparent">
+            <div class="card-body">
+              <div class="row align-items-center">
+               <div class="col">
+  <h4 class="fs-sm fw-normal text-body-secondary mb-1">Weekly growth</h4>
+  <div class="fs-4 fw-semibold" id="weekly-growth">Loading...</div>
+</div>
+
+                <div class="col-auto">
+                  <!-- Avatar -->
+                  <div class="avatar avatar-lg bg-body text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                      class="fs-4 duo-icon duo-icon-discount" data-duoicon="discount">
+                      <path fill="currentColor" fill-rule="evenodd"
+                        d="M9.405 2.897a4 4 0 0 1 5.02-.136l.17.136.376.32c.274.234.605.389.96.45l.178.022.493.04a4 4 0 0 1 3.648 3.468l.021.2.04.494c.028.358.153.702.36.996l.11.142.322.376a4 4 0 0 1 .136 5.02l-.136.17-.321.376a1.997 1.997 0 0 0-.45.96l-.022.178-.039.493a4 4 0 0 1-3.468 3.648l-.201.021-.493.04a2.002 2.002 0 0 0-.996.36l-.142.111-.377.32a4 4 0 0 1-5.02.137l-.169-.136-.376-.321a1.997 1.997 0 0 0-.96-.45l-.178-.021-.493-.04a4 4 0 0 1-3.648-3.468l-.021-.2-.04-.494a2.002 2.002 0 0 0-.36-.996l-.111-.142-.321-.377a4 4 0 0 1-.136-5.02l.136-.169.32-.376c.234-.274.389-.605.45-.96l.022-.178.04-.493A4 4 0 0 1 7.197 3.75l.2-.021.494-.04c.358-.028.702-.153.996-.36l.142-.111.376-.32v-.001Z"
+                        class="duoicon-secondary-layer" opacity=".3"></path>
+                      <path fill="currentColor" fill-rule="evenodd"
+                        d="M9.5 8a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm4.793.293-6 6a1 1 0 1 0 1.414 1.414l6-6a1 1 0 0 0-1.414-1.414ZM14.5 13a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"
+                        class="duoicon-primary-layer"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-xxl-8">
+          <!-- Performance -->
+
+          <div class="card mb-6">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h3 class="fs-6 mb-0 text-start">Performance</h3>
+                </div>
+                <div class="col-auto fs-sm me-n3">
+                  <span class="material-symbols-outlined" style="color: #007bff;">
+                    circle
+                  </span>
+                  This Week
+                </div>
+                <div class="col-auto fs-sm">
+                  <span class="material-symbols-outlined" style="color: #555;">
+                    circle
+                  </span>
+                  Last Week
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- <div class="chart">
+                    <canvas class="chart-canvas" id="userPerformanceChart" width="806" height="350"
+                        style="display: block; box-sizing: border-box; height: 350px; width: 806px;"></canvas>
+                </div> -->
+              <!-- weekchart -->
+              <div class="chart-container">
+                <div class="chart" id="chart4"></div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <!-- Projects -->
+          <!-- Projects -->
+       <div class="card mb-6 mb-xxl-0">
+  <div class="card-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="fs-6 mb-0 text-start">Recent Solved Problems</h3>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-flush align-middle mb-0">
+      <thead>
+        <tr>
+          <th class="fs-sm" style="padding-left: 5vh;">Question</th>
+          <th class="fs-sm">Company</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be injected by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+        </div>
+        <div class="col-12 col-xxl-4">
+
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <!-- Topic-wise Questions Solved (Horizontal Bar Chart) -->
+          <div class="col-12 mb-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="fs-6 mb-0 text-start">Topic-wise Questions Solved</h3>
+              </div>
+              <div class="card-body">
+                <canvas id="topicWiseQuestionsSolvedChart"  style="height: 349px"></canvas>
+              </div>
+            </div>
+          </div>
+
+    
+
+          <!-- Goals -->
+
+
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <!-- JAVASCRIPT -->
+  <!-- Map JS -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+
+  <!-- Vendor JS -->
+  <script src="https://yevgenysim-turkey.github.io/dashbrd/assets/js/vendor.bundle.js"></script>
+
+  <!-- Theme JS -->
+  <script src="https://yevgenysim-turkey.github.io/dashbrd/assets/js/theme.bundle.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
+  <script src="/JS/auth.js"></script>
+  <script src="/JS/dashboard.js"></script>
+  <script src="/JS/index.js"></script>
+  <!-- <script src="chart.js"></script>
+  <script src="recentsolved.js"></script>
+  <script src="week.js"></script> -->
+
+  <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</body>
+
+<!-- weekchart -->
+<script>
+  const currentWeek = [{
+      day: "Mon",
+      work: 15
+    },
+    {
+      day: "Tue",
+      work: 28
+    },
+    {
+      day: "Wed",
+      work: 24
+    },
+    {
+      day: "Thu",
+      work: 33
+    },
+    {
+      day: "Fri",
+      work: 42
+    },
+    {
+      day: "Sat",
+      work: 12
+    },
+    {
+      day: "Sun",
+      work: 20
+    }
+  ];
+
+  const previousWeek = [{
+      day: "Mon",
+      work: 10
+    },
+    {
+      day: "Tue",
+      work: 22
+    },
+    {
+      day: "Wed",
+      work: 18
+    },
+    {
+      day: "Thu",
+      work: 27
+    },
+    {
+      day: "Fri",
+      work: 35
+    },
+    {
+      day: "Sat",
+      work: 8
+    },
+    {
+      day: "Sun",
+      work: 15
+    }
+  ];
+
+  const currentWeekColor = "#007bff"; // Blue
+  const previousWeekColor = "#555"; // Gray
+
+  const chart = document.getElementById("chart4");
+
+  currentWeek.forEach((item, index) => {
+    const prevWork = previousWeek[index].work;
+
+    const barContainer = document.createElement("div");
+    barContainer.className = "bar-container";
+
+    const barGroup = document.createElement("div");
+    barGroup.className = "bar-group";
+
+    // Create bars
+    const currBar = document.createElement("div");
+    currBar.className = "bar";
+    currBar.style.height = `${item.work * 5}px`;
+    currBar.style.backgroundColor = currentWeekColor;
+    currBar.style.animationDelay = `${index * 0.2}s`;
+
+    const prevBar = document.createElement("div");
+    prevBar.className = "bar";
+    prevBar.style.height = `${prevWork * 5}px`;
+    prevBar.style.backgroundColor = previousWeekColor;
+    prevBar.style.animationDelay = `${index * 0.2 + 0.2}s`;
+
+    // Create Value Labels & Position Them
+    const currentValueLabel = document.createElement("div");
+    currentValueLabel.className = "value-label current-value";
+    currentValueLabel.innerText = item.work;
+    currentValueLabel.style.animationDelay = `${index * 0.2}s`;
+    currentValueLabel.style.bottom = `${item.work * 5 + 5}px`;
+    currentValueLabel.style.left = "15px";
+
+    const previousValueLabel = document.createElement("div");
+    previousValueLabel.className = "value-label previous-value";
+    previousValueLabel.innerText = prevWork;
+    previousValueLabel.style.animationDelay = `${index * 0.2}s`;
+    previousValueLabel.style.bottom = `${prevWork * 5 + 5}px`;
+    previousValueLabel.style.left = "55px";
+
+    // Create Labels (Days)
+    const label = document.createElement("div");
+    label.className = "label";
+    label.innerText = item.day;
+    label.style.animationDelay = `${index * 0.2 + 0.5}s`;
+
+    // Append elements
+    barGroup.appendChild(currBar);
+    barGroup.appendChild(prevBar);
+    barContainer.appendChild(currentValueLabel);
+    barContainer.appendChild(previousValueLabel);
+    barContainer.appendChild(barGroup);
+    barContainer.appendChild(label);
+    chart.appendChild(barContainer);
+  });
+</script>
+
+
+</html>

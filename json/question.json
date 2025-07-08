@@ -1,0 +1,1192 @@
+{
+  "topics": [
+    {
+      "name": "Arrays",
+      "difficultyLevels": [
+        {
+          "level": "Easy",
+          "questions": [
+            {
+              "id": 1,
+              "title": "Largest element in an array",
+              "chapter": "Arrays",
+              "subtopic": "Easy",
+              "languages": ["Java", "C++", "Python", "C"],
+              "practiceLink": "https://www.geeksforgeeks.org/problems/largest-element-in-array4009/0",
+              "practiceSite": "../Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg", "../Pictures/accenture.png"]
+            },
+            {
+              "id": 2,
+              "title": "Second largest element",
+              "chapter": "Arrays",
+              "subtopic": "Easy",
+              "languages": ["Java", "C++", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/find-second-largest-element-array/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/accenture.png", "../Pictures/tcs.jpg"]
+            }
+          ]
+        },
+        {
+          "level": "Medium",
+          "questions": [
+            {
+              "id": 3,
+              "title": "Rotate array by K times",
+              "chapter": "Arrays",
+              "subtopic": "Medium",
+              "languages": ["Java", "Python", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/rotate-array-k-times/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg", "/Pictures/google.png"]
+            },
+            {
+              "id": 4,
+              "title": "Find the missing number",
+              "chapter": "Arrays",
+              "subtopic": "Medium",
+              "languages": ["Java", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/find-the-missing-number/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/microsoft.png", "../Pictures/tcs.jpg"]
+            }
+          ]
+        },
+        {
+          "level": "Hard",
+          "questions": [
+            {
+              "id": 5,
+              "title": "Trapping Rain Water",
+              "chapter": "Arrays",
+              "subtopic": "Hard",
+              "languages": ["Java", "C++", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/problems/trapping-rain-water/0",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg", "/Pictures/microsoft.png"]
+            },
+            {
+              "id": 6,
+              "title": "Word Ladder",
+              "chapter": "Graphs",
+              "subtopic": "Hard",
+              "languages": ["Python", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/word-ladder-set-1-graph/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png", "../Pictures/tcs.jpg"]
+            },
+            {
+              "id": 7,
+              "title": "Kth smallest element in a sorted matrix",
+              "chapter": "Heaps",
+              "subtopic": "Hard",
+              "languages": ["Java", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/kth-smallest-element-in-a-row-wise-and-column-wise-sorted-2d-array/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg", "../Pictures/accenture.png"]
+            },
+            {
+              "id": 8,
+              "title": "Palindrome Partitioning",
+              "chapter": "Dynamic Programming",
+              "subtopic": "Hard",
+              "languages": ["Python", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png", "/Pictures/netflix.png"]
+            },
+            {
+              "id": 9,
+              "title": "Largest Rectangle in Histogram",
+              "chapter": "Stacks",
+              "subtopic": "Hard",
+              "languages": ["C++", "Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/largest-rectangle-under-histogram/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/microsoft.png","../Pictures/accenture.png"]
+            },
+            {
+              "id": 10,
+              "title": "N-Queens Problem",
+              "chapter": "Backtracking",
+              "subtopic": "Hard",
+              "languages": ["Java", "C++", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg", "/Pictures/amazon.jpeg"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Strings",
+      "difficultyLevels": [
+        {
+          "level": "Easy",
+          "questions": [
+            {
+              "id": 11,
+              "title": "Reverse a string",
+              "chapter": "Strings",
+              "subtopic": "Easy",
+              "languages": ["Java", "C++", "Python", "C"],
+              "practiceLink": "https://www.geeksforgeeks.org/reverse-a-string/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/accenture.png", "../Pictures/tcs.jpg"]
+            },
+            {
+              "id": 12,
+              "title": "Check for palindrome",
+              "chapter": "Strings",
+              "subtopic": "Easy",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/python-program-check-string-palindrome-not/",
+              "practiceSite": " /Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg", "../Pictures/accenture.png"]
+            }
+          ]
+        },
+        {
+          "level": "Medium",
+          "questions": [
+            {
+              "id": 13,
+              "title": "Longest Substring Without Repeating Characters",
+              "chapter": "Strings",
+              "subtopic": "Medium",
+              "languages": ["Java", "Python", "C++"],
+              "practiceLink": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+              "practiceSite": "/Pictures/leetcode.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/amazon.jpeg", "/Pictures/google.png"]
+            },
+            {
+              "id": 14,
+              "title": "Group Anagrams",
+              "chapter": "Strings",
+              "subtopic": "Medium",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://leetcode.com/problems/group-anagrams/",
+              "practiceSite": "/Pictures/leetcode.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/netflix.png"]
+            },
+            {
+              "id": 15,
+              "title": "Longest Palindromic Substring",
+              "chapter": "Strings",
+              "subtopic": "Medium",
+              "languages": ["Java", "C++", "Python"],
+              "practiceLink": "https://leetcode.com/problems/longest-palindromic-substring/",
+              "practiceSite": "/Pictures/leetcode.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/amazon.jpeg"]
+            },
+            {
+              "id": 16,
+              "title": "Zigzag Conversion",
+              "chapter": "Strings",
+              "subtopic": "Medium",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://leetcode.com/problems/zigzag-conversion/",
+              "practiceSite": "/Pictures/leetcode.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/microsoft.png"]
+            },
+            {
+              "id": 17,
+              "title": "String to Integer (atoi)",
+              "chapter": "Strings",
+              "subtopic": "Medium",
+              "languages": ["Java", "C++", "Python"],
+              "practiceLink": "https://leetcode.com/problems/string-to-integer-atoi/",
+              "practiceSite": "/Pictures/leetcode.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+            },
+            {
+              "id": 18,
+              "title": "Multiply Strings",
+              "chapter": "Strings",
+              "subtopic": "Medium",
+              "languages": ["Java", "Python", "C++"],
+              "practiceLink": "https://leetcode.com/problems/multiply-strings/",
+              "practiceSite": "/Pictures/leetcode.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png", "../Pictures/accenture.png"]
+            }
+          ]
+        },
+        {
+          "level": "Hard",
+          "questions": [
+            {
+              "id": 19,
+              "title": "Wildcard Matching",
+              "chapter": "Strings",
+              "subtopic": "Hard",
+              "languages": ["Java", "C++", "Python"],
+              "practiceLink": "https://leetcode.com/problems/wildcard-matching/",
+              "practiceSite": "/Pictures/leetcode.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg", "/Pictures/microsoft.png"]
+            },
+            {
+              "id": 20,
+              "title": "Regular Expression Matching",
+              "chapter": "Strings",
+              "subtopic": "Hard",
+              "languages": ["Java", "C++", "Python"],
+              "practiceLink": "https://leetcode.com/problems/regular-expression-matching/",
+              "practiceSite": "/Pictures/leetcode.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png"]
+            },
+            {
+              "id": 21,
+              "title": "Minimum Window Substring",
+              "chapter": "Strings",
+              "subtopic": "Hard",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://leetcode.com/problems/minimum-window-substring/",
+              "practiceSite": "/Pictures/leetcode.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/netflix.png", "../Pictures/amazon.jpeg"]
+            },
+            {
+              "id": 22,
+              "title": "Palindrome Pairs",
+              "chapter": "Strings",
+              "subtopic": "Hard",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://leetcode.com/problems/palindrome-pairs/",
+              "practiceSite": "/Pictures/leetcode.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/microsoft.png"]
+            },
+            {
+              "id": 23,
+              "title": "Basic Calculator II",
+              "chapter": "Strings",
+              "subtopic": "Hard",
+              "languages": ["Java", "C++", "Python"],
+              "practiceLink": "https://leetcode.com/problems/basic-calculator-ii/",
+              "practiceSite": "/Pictures/leetcode.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg"]
+            },
+            {
+              "id": 24,
+              "title": "Serialize and Deserialize String",
+              "chapter": "Strings",
+              "subtopic": "Hard",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/serialize-and-deserialize-strings/",
+              "practiceSite": " /Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Linked List",
+      "difficultyLevels": [
+        {
+          "level": "Easy",
+          "questions": [
+            {
+              "id": 25,
+              "title": "Reverse a linked list",
+              "chapter": "Linked List",
+              "subtopic": "Easy",
+              "languages": ["Java", "Python", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/reverse-a-linked-list/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+            },
+            {
+              "id": 26,
+              "title": "Detect loop in a linked list",
+              "chapter": "Linked List",
+              "subtopic": "Easy",
+              "languages": ["C", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg", "../Pictures/accenture.png"]
+            },
+            {
+              "id": 27,
+              "title": "Find middle of linked list",
+              "chapter": "Linked List",
+              "subtopic": "Easy",
+              "languages": ["Python", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/finding-middle-element-linked-list/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/Capgemini.png"]
+            },
+            {
+              "id": 28,
+              "title": "Count nodes in a linked list",
+              "chapter": "Linked List",
+              "subtopic": "Easy",
+              "languages": ["Java", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/count-nodes-in-a-linked-list/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg"]
+            },
+            {
+              "id": 29,
+              "title": "Delete a node",
+              "chapter": "Linked List",
+              "subtopic": "Easy",
+              "languages": ["C++", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/delete-a-node-in-linked-list/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg"]
+            },
+            {
+              "id": 30,
+              "title": "Search an element in Linked List",
+              "chapter": "Linked List",
+              "subtopic": "Easy",
+              "languages": ["C", "Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/search-an-element-in-a-linked-list/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg"]
+            }
+          ]
+        },
+        {
+          "level": "Medium",
+          "questions": [
+            {
+              "id": 31,
+              "title": "Remove duplicates from sorted list",
+              "chapter": "Linked List",
+              "subtopic": "Medium",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/remove-duplicates-from-a-sorted-linked-list/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png"]
+            },
+            {
+              "id": 32,
+              "title": "Intersection of two Linked Lists",
+              "chapter": "Linked List",
+              "subtopic": "Medium",
+              "languages": ["Java", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/write-a-function-to-get-the-intersection-point-of-two-linked-lists/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg"]
+            },
+            {
+              "id": 33,
+              "title": "Merge two sorted linked lists",
+              "chapter": "Linked List",
+              "subtopic": "Medium",
+              "languages": ["Python", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/merge-two-sorted-linked-lists/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/Capgemini.png"]
+            },
+            {
+              "id": 34,
+              "title": "Add two numbers represented by linked lists",
+              "chapter": "Linked List",
+              "subtopic": "Medium",
+              "languages": ["C++", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/add-two-numbers-represented-by-linked-lists/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/microsoft.png"]
+            },
+            {
+              "id": 35,
+              "title": "Clone a linked list with next and random pointer",
+              "chapter": "Linked List",
+              "subtopic": "Medium",
+              "languages": ["Java", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/clone-a-linked-list-with-next-and-random-pointer/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png"]
+            },
+            {
+              "id": 36,
+              "title": "Check if linked list is palindrome",
+              "chapter": "Linked List",
+              "subtopic": "Medium",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/function-to-check-if-a-singly-linked-list-is-palindrome/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg"]
+            }
+          ]
+        },
+        {
+          "level": "Hard",
+          "questions": [
+            {
+              "id": 37,
+              "title": "Flatten a multilevel linked list",
+              "chapter": "Linked List",
+              "subtopic": "Hard",
+              "languages": ["Java", "C++", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/flatten-a-linked-list-with-next-and-child-pointers/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png"]
+            },
+            {
+              "id": 38,
+              "title": "Sort a linked list",
+              "chapter": "Linked List",
+              "subtopic": "Hard",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/merge-sort-for-linked-list/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg"]
+            },
+            {
+              "id": 39,
+              "title": "Copy list with arbitrary pointer",
+              "chapter": "Linked List",
+              "subtopic": "Hard",
+              "languages": ["C++", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/microsoft.png"]
+            },
+            {
+              "id": 40,
+              "title": "LRU Cache",
+              "chapter": "Linked List",
+              "subtopic": "Hard",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/lru-cache-implementation/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png"]
+            },
+            {
+              "id": 41,
+              "title": "Reorder list",
+              "chapter": "Linked List",
+              "subtopic": "Hard",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/rearrange-a-given-linked-list-in-place/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/amazon.jpeg"]
+            },
+            {
+              "id": 42,
+              "title": "Reverse nodes in k-group",
+              "chapter": "Linked List",
+              "subtopic": "Hard",
+              "languages": ["C++", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/reverse-a-list-in-groups-of-given-size/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trees",
+      "difficultyLevels": [
+        {
+          "level": "Easy",
+          "questions": [
+            {
+              "id": 43,
+              "title": "Inorder Traversal",
+              "chapter": "Trees",
+              "subtopic": "Easy",
+              "languages": ["Java", "Python", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/inorder-tree-traversal/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+            },
+            {
+              "id": 44,
+              "title": "Preorder Traversal",
+              "chapter": "Trees",
+              "subtopic": "Easy",
+              "languages": ["C", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/preorder-tree-traversal/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/Capgemini.png"]
+            },
+            {
+              "id": 45,
+              "title": "Postorder Traversal",
+              "chapter": "Trees",
+              "subtopic": "Easy",
+              "languages": ["Python", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/postorder-tree-traversal/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/Capgemini.png"]
+            },
+            {
+              "id": 46,
+              "title": "Level Order Traversal",
+              "chapter": "Trees",
+              "subtopic": "Easy",
+              "languages": ["Java", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/level-order-tree-traversal/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg"]
+            },
+            {
+              "id": 47,
+              "title": "Height of Binary Tree",
+              "chapter": "Trees",
+              "subtopic": "Easy",
+              "languages": ["C++", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/height-of-binary-tree/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/netflix.png"]
+            },
+            {
+              "id": 48,
+              "title": "Count Leaf Nodes",
+              "chapter": "Trees",
+              "subtopic": "Easy",
+              "languages": ["C", "Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/count-leaves-in-binary-tree/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/amazon.jpeg"]
+            }
+          ]
+        },
+        {
+          "level": "Medium",
+          "questions": [
+            {
+              "id": 49,
+              "title": "Diameter of Binary Tree",
+              "chapter": "Trees",
+              "subtopic": "Medium",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/diameter-of-a-binary-tree/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png"]
+            },
+            {
+              "id": 50,
+              "title": "Check Balanced Tree",
+              "chapter": "Trees",
+              "subtopic": "Medium",
+              "languages": ["Java", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg"]
+            },
+            {
+              "id": 51,
+              "title": "Right View of Binary Tree",
+              "chapter": "Trees",
+              "subtopic": "Medium",
+              "languages": ["Python", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/print-right-view-binary-tree/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg"]
+            },
+            {
+              "id": 52,
+              "title": "Left View of Binary Tree",
+              "chapter": "Trees",
+              "subtopic": "Medium",
+              "languages": ["C++", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/print-left-view-binary-tree/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/microsoft.png"]
+            },
+            {
+              "id": 53,
+              "title": "Zigzag Level Order",
+              "chapter": "Trees",
+              "subtopic": "Medium",
+              "languages": ["Java", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/zigzag-tree-traversal/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png"]
+            },
+            {
+              "id": 54,
+              "title": "Lowest Common Ancestor",
+              "chapter": "Trees",
+              "subtopic": "Medium",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/netflix.png"]
+            }
+          ]
+        },
+        {
+          "level": "Hard",
+          "questions": [
+            {
+              "id": 55,
+              "title": "Binary Tree to DLL",
+              "chapter": "Trees",
+              "subtopic": "Hard",
+              "languages": ["Java", "C++", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/convert-a-given-binary-tree-to-doubly-linked-list/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png"]
+            },
+            {
+              "id": 56,
+              "title": "Construct Tree from Inorder and Preorder",
+              "chapter": "Trees",
+              "subtopic": "Hard",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/construct-tree-from-inorder-and-preorder-traversals/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg"]
+            },
+            {
+              "id": 57,
+              "title": "Boundary Traversal",
+              "chapter": "Trees",
+              "subtopic": "Hard",
+              "languages": ["C++", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/boundary-traversal-of-binary-tree/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/microsoft.png"]
+            },
+            {
+              "id": 58,
+              "title": "Maximum Path Sum",
+              "chapter": "Trees",
+              "subtopic": "Hard",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/find-maximum-path-sum-in-a-binary-tree/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/microsoft.png"]
+            },
+            {
+              "id": 59,
+              "title": "Serialize and Deserialize Binary Tree",
+              "chapter": "Trees",
+              "subtopic": "Hard",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/serialize-deserialize-binary-tree/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/microsoft.png"]
+            },
+            {
+              "id": 60,
+              "title": "Vertical Order Traversal",
+              "chapter": "Trees",
+              "subtopic": "Hard",
+              "languages": ["C++", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/vertical-order-traversal-binary-tree/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Graphs",
+      "difficultyLevels": [
+        {
+          "level": "Easy",
+          "questions": [
+            {
+              "id": 61,
+              "title": "DFS of Graph",
+              "chapter": "Graphs",
+              "subtopic": "Easy",
+              "languages": ["Java", "Python", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg", "../Pictures/accenture.png"]
+            },
+            {
+              "id": 62,
+              "title": "BFS of Graph",
+              "chapter": "Graphs",
+              "subtopic": "Easy",
+              "languages": ["C", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg"]
+            },
+            {
+              "id": 63,
+              "title": "Detect Cycle in Undirected Graph",
+              "chapter": "Graphs",
+              "subtopic": "Easy",
+              "languages": ["Python", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/detect-cycle-undirected-graph/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/Capgemini.png"]
+            },
+            {
+              "id": 64,
+              "title": "Number of Provinces",
+              "chapter": "Graphs",
+              "subtopic": "Easy",
+              "languages": ["Java", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/number-of-provinces/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg"]
+            },
+            {
+              "id": 65,
+              "title": "Find the Town Judge",
+              "chapter": "Graphs",
+              "subtopic": "Easy",
+              "languages": ["Python", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/find-the-town-judge/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg"]
+            },
+            {
+              "id": 66,
+              "title": "Path Exists",
+              "chapter": "Graphs",
+              "subtopic": "Easy",
+              "languages": ["C", "Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/find-if-path-exists-in-graph/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/Capgemini.png"]
+            }
+          ]
+        },
+        {
+          "level": "Medium",
+          "questions": [
+            {
+              "id": 67,
+              "title": "Topological Sort",
+              "chapter": "Graphs",
+              "subtopic": "Medium",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/topological-sorting/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png"]
+            },
+            {
+              "id": 68,
+              "title": "Course Schedule",
+              "chapter": "Graphs",
+              "subtopic": "Medium",
+              "languages": ["Java", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/course-schedule/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg"]
+            },
+            {
+              "id": 69,
+              "title": "Rotting Oranges",
+              "chapter": "Graphs",
+              "subtopic": "Medium",
+              "languages": ["Python", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/rotting-oranges/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["../Pictures/tcs.jpg"]
+            },
+            {
+              "id": 70,
+              "title": "Number of Islands",
+              "chapter": "Graphs",
+              "subtopic": "Medium",
+              "languages": ["C++", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/find-number-of-islands/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/microsoft.png"]
+            },
+            {
+              "id": 71,
+              "title": "Clone Graph",
+              "chapter": "Graphs",
+              "subtopic": "Medium",
+              "languages": ["Java", "C++"],
+              "practiceLink": "https://www.geeksforgeeks.org/clone-an-undirected-graph/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png"]
+            },
+            {
+              "id": 72,
+              "title": "Word Ladder",
+              "chapter": "Graphs",
+              "subtopic": "Medium",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/word-ladder-set-1/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg"]
+            }
+          ]
+        },
+        {
+          "level": "Hard",
+          "questions": [
+            {
+              "id": 73,
+              "title": "Minimum Spanning Tree (Kruskal)",
+              "chapter": "Graphs",
+              "subtopic": "Hard",
+              "languages": ["Java", "C++", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/kruskals-algorithm-simple-implementation-for-adjacency-matrix/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png"]
+            },
+            {
+              "id": 74,
+              "title": "Dijkstra's Algorithm",
+              "chapter": "Graphs",
+              "subtopic": "Hard",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg"]
+            },
+            {
+              "id": 75,
+              "title": "Bellman-Ford Algorithm",
+              "chapter": "Graphs",
+              "subtopic": "Hard",
+              "languages": ["C++", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/microsoft.png"]
+            },
+            {
+              "id": 76,
+              "title": "Floyd Warshall Algorithm",
+              "chapter": "Graphs",
+              "subtopic": "Hard",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/microsoft.png"]
+            },
+            {
+              "id":77,
+              "title": "Floyd Warshall Algorithm",
+              "chapter": "Graphs",
+              "subtopic": "Hard",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/google.png"]
+            },
+            {
+              "id": 78,
+              "title": "Articulation Points",
+              "chapter": "Graphs",
+              "subtopic": "Hard",
+              "languages": ["Java", "Python"],
+              "practiceLink": "https://www.geeksforgeeks.org/articulation-points-or-cut-vertices-in-a-graph/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg"]
+            },
+            {
+              "id": 79,
+              "title": "Bridge Edges in Graph",
+              "chapter": "Graphs",
+              "subtopic": "Hard",
+              "languages": ["C++", "Java"],
+              "practiceLink": "https://www.geeksforgeeks.org/bridge-in-a-graph/",
+              "practiceSite": "/Pictures/gfg.png",
+              "status": "Unattempted",
+              "companies": ["/Pictures/amazon.jpeg"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+  "name": "Dynamic Programming",
+  "difficultyLevels": [
+    {
+      "level": "Easy",
+      "questions": [
+        {
+          "id": 80,
+          "title": "Fibonacci Number",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Easy",
+          "languages": ["Python", "Java", "C++"],
+          "practiceLink": "https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["../Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+        },
+        {
+          "id": 81,
+          "title": "Climbing Stairs",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Easy",
+          "languages": ["Java", "Python"],
+          "practiceLink": "https://www.geeksforgeeks.org/count-ways-reach-nth-stair/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["/Pictures/microsoft.png"]
+        },
+        {
+          "id": 82,
+          "title": "House Robber",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Easy",
+          "languages": ["Python"],
+          "practiceLink": "https://www.geeksforgeeks.org/find-maximum-sum-without-adjacent/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["/Pictures/Capgemini.png"]
+        },
+        {
+          "id": 83,
+          "title": "Minimum Cost Climbing Stairs",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Easy",
+          "languages": ["Java", "C++"],
+          "practiceLink": "https://www.geeksforgeeks.org/minimum-cost-climbing-stairs/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["../Pictures/tcs.jpg"]
+        },
+        {
+          "id": 84,
+          "title": "Nth Tribonacci Number",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Easy",
+          "languages": ["Python", "C++"],
+          "practiceLink": "https://www.geeksforgeeks.org/tribonacci-numbers/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["/Pictures/amazon.jpeg"]
+        },
+        {
+          "id": 85,
+          "title": "Count Ways to Reach the Nth Stair",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Easy",
+          "languages": ["Java", "Python"],
+          "practiceLink": "https://www.geeksforgeeks.org/count-ways-reach-nth-stair/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["/Pictures/Capgemini.png"]
+        }
+      ]
+    },
+    {
+      "level": "Medium",
+      "questions": [
+        {
+          "id": 86,
+          "title": "Longest Increasing Subsequence",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Medium",
+          "languages": ["C++", "Java"],
+          "practiceLink": "https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["/Pictures/google.png"]
+        },
+        {
+          "id": 87,
+          "title": "0-1 Knapsack",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Medium",
+          "languages": ["Python", "C++"],
+          "practiceLink": "https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["/Pictures/amazon.jpeg"]
+        },
+        {
+          "id": 88,
+          "title": "Subset Sum",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Medium",
+          "languages": ["Java", "Python"],
+          "practiceLink": "https://www.geeksforgeeks.org/subset-sum-problem-dp-25/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["../Pictures/tcs.jpg"]
+        },
+        {
+          "id": 89,
+          "title": "Partition Equal Subset Sum",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Medium",
+          "languages": ["C++", "Java"],
+          "practiceLink": "https://www.geeksforgeeks.org/partition-problem-dp-18/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["/Pictures/microsoft.png"]
+        },
+        {
+          "id": 90,
+          "title": "Target Sum",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Medium",
+          "languages": ["Python", "Java"],
+          "practiceLink": "https://www.geeksforgeeks.org/target-sum-dp-20/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["/Pictures/google.png"]
+        },
+        {
+          "id": 91,
+          "title": "Coin Change",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Medium",
+          "languages": ["Java", "Python"],
+          "practiceLink": "https://www.geeksforgeeks.org/coin-change-dp-7/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["/Pictures/amazon.jpeg"]
+        }
+      ]
+    },
+    {
+      "level": "Hard",
+      "questions": [
+        {
+          "id": 92,
+          "title": "Egg Dropping Puzzle",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Hard",
+          "languages": ["Java", "Python"],
+          "practiceLink": "https://www.geeksforgeeks.org/egg-dropping-puzzle-dp-11/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["/Pictures/google.png"]
+        },
+        {
+          "id": 93,
+          "title": "Matrix Chain Multiplication",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Hard",
+          "languages": ["Java", "C++"],
+          "practiceLink": "https://www.geeksforgeeks.org/matrix-chain-multiplication-dp-8/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["/Pictures/amazon.jpeg"]
+        },
+        {
+          "id": 94,
+          "title": "Palindrome Partitioning",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Hard",
+          "languages": ["C++", "Java"],
+          "practiceLink": "https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["/Pictures/microsoft.png"]
+        },
+        {
+          "id": 95,
+          "title": "Edit Distance",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Hard",
+          "languages": ["Python", "Java"],
+          "practiceLink": "https://www.geeksforgeeks.org/edit-distance-dp-5/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["/Pictures/amazon.jpeg"]
+        },
+        {
+          "id": 96,
+          "title": "Boolean Parenthesization",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Hard",
+          "languages": ["Java", "Python"],
+          "practiceLink": "https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["../Pictures/tcs.jpg"]
+        },
+        {
+          "id": 97,
+          "title": "Wildcard Matching",
+          "chapter": "Dynamic Programming",
+          "subtopic": "Hard",
+          "languages": ["C++", "Java"],
+          "practiceLink": "https://www.geeksforgeeks.org/wildcard-pattern-matching/",
+          "practiceSite": "/Pictures/gfg.png",
+          "status": "Unattempted",
+          "companies": ["/Pictures/amazon.jpeg"]
+        }
+      ]
+    }
+  ]
+}
+
+  ]
+}

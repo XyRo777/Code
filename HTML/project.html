@@ -1,0 +1,1866 @@
+<html lang="en" data-bs-theme="dark" data-bs-navigation-position="sidenav"><head><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script><style data-fullcalendar=""></style><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+  
+  <!-- Settings -->
+  <script>
+    /*!
+     * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+     * Copyright 2011-2024 The Bootstrap Authors
+     * Licensed under the Creative Commons Attribution 3.0 Unported License.
+     * Modified by Simpleqode
+     */
+
+    
+  
+    (() => {
+      'use strict';
+  
+      const getStoredTheme = () => localStorage.getItem('theme');
+      const setStoredTheme = (theme) => localStorage.setItem('theme', theme);
+  
+      const getStoredNavigationPosition = () => localStorage.getItem('navigationPosition');
+      const setStoredNavigationPosition = (navigationPosition) => localStorage.setItem('navigationPosition', navigationPosition);
+  
+      const getPreferredTheme = () => {
+        const storedTheme = getStoredTheme();
+        if (storedTheme) {
+          return storedTheme;
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
+  
+      const getPreferredNavigationPosition = () => {
+        const storedNavigationPosition = getStoredNavigationPosition();
+        if (storedNavigationPosition) {
+          return storedNavigationPosition;
+        }
+        return 'sidenav';
+      };
+  
+      const setTheme = (theme) => {
+        if (theme === 'auto') {
+          document.documentElement.setAttribute('data-bs-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } else {
+          document.documentElement.setAttribute('data-bs-theme', theme);
+        }
+      };
+  
+      const setNavigationPosition = (navigationPosition) => {
+        document.documentElement.setAttribute('data-bs-navigation-position', navigationPosition);
+      };
+  
+      setTheme(getPreferredTheme());
+      setNavigationPosition(getPreferredNavigationPosition());
+  
+      const showActiveTheme = (theme, settingsSwitcher) => {
+        document.querySelectorAll('[data-bs-theme-value]').forEach((element) => {
+          element.classList.remove('active');
+          element.setAttribute('aria-pressed', 'false');
+  
+          if (element.getAttribute('data-bs-theme-value') === theme) {
+            element.classList.add('active');
+            element.setAttribute('aria-pressed', 'true');
+          }
+        });
+        if (settingsSwitcher) {
+          settingsSwitcher.focus();
+        }
+      };
+  
+      const showActiveNavigationPosition = (navigationPosition, settingsSwitcher) => {
+        document.querySelectorAll('[data-bs-navigation-position-value]').forEach((element) => {
+          element.classList.remove('active');
+          element.setAttribute('aria-pressed', 'false');
+  
+          if (element.getAttribute('data-bs-navigation-position-value') === navigationPosition) {
+            element.classList.add('active');
+            element.setAttribute('aria-pressed', 'true');
+          }
+        });
+  
+        if (settingsSwitcher) {
+          settingsSwitcher.focus();
+        }
+      };
+  
+      const refreshCharts = () => {
+        const charts = document.querySelectorAll('.chart-canvas');
+  
+        charts.forEach((chart) => {
+          const chartId = chart.getAttribute('id');
+          const instance = Chart.getChart(chartId);
+  
+          if (!instance) {
+            return;
+          }
+  
+          if (instance.options.scales.y) {
+            instance.options.scales.y.grid.color = getComputedStyle(document.documentElement).getPropertyValue('--bs-border-color');
+            instance.options.scales.y.ticks.color = getComputedStyle(document.documentElement).getPropertyValue('--bs-secondary-color');
+          }
+  
+          if (instance.options.scales.x) {
+            instance.options.scales.x.ticks.color = getComputedStyle(document.documentElement).getPropertyValue('--bs-secondary-color');
+          }
+  
+          if (instance.options.elements.arc) {
+            instance.options.elements.arc.borderColor = getComputedStyle(document.documentElement).getPropertyValue('--bs-body-bg');
+            instance.options.elements.arc.hoverBorderColor = getComputedStyle(document.documentElement).getPropertyValue('--bs-body-bg');
+          }
+  
+          instance.update();
+        });
+      };
+  
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        const storedTheme = getStoredTheme();
+        if (storedTheme !== 'light' && storedTheme !== 'dark') {
+          setTheme(getPreferredTheme());
+        }
+      });
+  
+      window.addEventListener('DOMContentLoaded', () => {
+        showActiveTheme(getPreferredTheme());
+        showActiveNavigationPosition(getPreferredNavigationPosition());
+  
+        document.querySelectorAll('[data-bs-theme-value]').forEach((toggle) => {
+          toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const theme = toggle.getAttribute('data-bs-theme-value');
+            const settingsSwitcher = toggle.closest('.nav-item').querySelector('[data-bs-settings-switcher]');
+            console.log(settingsSwitcher);
+            setStoredTheme(theme);
+            setTheme(theme);
+            showActiveTheme(theme, settingsSwitcher);
+            refreshCharts();
+          });
+        });
+  
+        document.querySelectorAll('[data-bs-navigation-position-value]').forEach((toggle) => {
+          toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const navigationPosition = toggle.getAttribute('data-bs-navigation-position-value');
+            const settingsSwitcher = toggle.closest('.nav-item').querySelector('[data-bs-settings-switcher]');
+            setStoredNavigationPosition(navigationPosition);
+            setNavigationPosition(navigationPosition);
+            showActiveNavigationPosition(navigationPosition, settingsSwitcher);
+          });
+        });
+      });
+    })();
+    
+ 
+   
+
+document.addEventListener("DOMContentLoaded", function () {
+  const statusDropdowns = document.querySelectorAll('.status-select');
+  const checkboxes = document.querySelectorAll('.review-checkbox');
+  const completedCountElement = document.getElementById('completedCount');
+  const totalPrograms = statusDropdowns.length;
+  const searchInput = document.getElementById('questionSearch');
+  const tableRows = document.querySelectorAll('.table tbody tr');
+
+  function updateCompletedCount() {
+    const completedCount = Array.from(statusDropdowns).filter(select => select.value === 'Completed').length;
+    completedCountElement.textContent = `${completedCount} out of ${totalPrograms} programs completed`;
+  }
+
+  function applyColorClass(select) {
+    select.classList.remove('text-danger', 'text-warning', 'text-success', 'text-primary');
+
+    switch (select.value) {
+      case 'Untouched':
+        select.classList.add('text-danger');
+        break;
+      case 'In Progress':
+        select.classList.add('text-warning');
+        break;
+      case 'Completed':
+        select.classList.add('text-success');
+        break;
+      case 'Review':
+        select.classList.add('text-primary');
+        break;
+    }
+  }
+
+  function handleStatusChange(select, index) {
+  const value = select.value;
+  const checkbox = checkboxes[index];
+
+  // Checkbox logic
+  if (value === 'Completed' || value === 'Review') {
+    checkbox.checked = true;
+  } else {
+    checkbox.checked = false;
+  }
+
+  updateCompletedCount();
+  applyColorClass(select);
+
+  // If status is Review, open the review link but don't reset status
+  if (value === 'Review') {
+    const reviewLink = select.getAttribute('data-review-link');
+    if (reviewLink) {
+      window.open(reviewLink, '_blank'); // Just open the review link
+    }
+  }
+}
+
+
+  // Initialize all dropdowns
+  statusDropdowns.forEach((select, index) => {
+    applyColorClass(select);
+
+    // Initial checkbox sync
+    if (select.value === 'Completed' || select.value === 'Review') {
+      checkboxes[index].checked = true;
+    }
+
+    select.addEventListener('change', () => handleStatusChange(select, index));
+  });
+
+  updateCompletedCount();
+
+  // Search feature
+  if (searchInput) {
+  searchInput.addEventListener('input', function () {
+    const searchTerm = this.value.toLowerCase();
+
+    tableRows.forEach(row => {
+      // Question text
+      const questionCell = row.cells[1];
+      const titleDiv = questionCell.querySelector('div.ms-4 > div');
+      const questionText = titleDiv ? titleDiv.textContent.toLowerCase() : "";
+
+      // Status value
+      const statusSelect = row.querySelector('.status-select');
+      const statusText = statusSelect ? statusSelect.value.toLowerCase() : "";
+
+      // Company logos
+      const companyCell = row.cells[row.cells.length - 1];
+      const companyImgs = companyCell ? companyCell.querySelectorAll('img') : [];
+      let companyMatch = false;
+
+      companyImgs.forEach(img => {
+        const src = img.getAttribute('src').toLowerCase();
+        if (src.includes(searchTerm)) {
+          companyMatch = true;
+        }
+      });
+
+      // Match logic
+      const matches = questionText.includes(searchTerm) || statusText.includes(searchTerm) || companyMatch;
+      row.style.display = matches ? '' : 'none';
+    });
+  });
+}
+});
+</script>
+
+
+   <!-- Favicon -->
+  <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
+
+  <!-- Fonts and icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
+
+  <!-- Libs CSS -->
+  <link rel="stylesheet" href="/CSS/libs.bundle.css">
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="/CSS/theme.bundle.css">
+  
+  <!-- Title -->
+  <title>Classroom</title>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1217.0" data-gr-ext-installed="">
+
+  <!-- Sign-IN Modal -->
+  <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 pt-0">
+          <h1 class="h4 mb-4 text-center">Sign in</h1>
+          <br>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="you@example.com">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="••••••••">
+            </div>
+            <hr class="my-4">
+            <button type="submit" class="btn w-100 mb-3" style="background-color: #f9bc06; color: #000;">Sign
+              In</button>
+            <div class="text-center">
+              <a href="#" class="d-block text-muted small mb-2">Forget password?</a>
+              <span class="text-muted small">or</span>
+              <a href="#" class="d-block text-muted small mt-2">Don't have an account? Sign up</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Up Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 pt-0">
+          <h1 class="h4 mb-4 text-center">Sign up</h1>
+          <br>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" placeholder="Enter you name">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="you@example.com">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="••••••••">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" placeholder="••••••••">
+            </div>
+            <hr class="my-4">
+            <button type="submit" class="btn w-100 mb-3" style="background-color: #f9bc06; color: #000;">Create
+              Account</button>
+            <div class="text-center">
+              <span class="text-muted small">Already have an account?</span>
+              <a href="#" class="d-block text-muted small mt-2" data-bs-toggle="modal" data-bs-target="#signinModal">Sign in</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Required Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Sidenav -->
+  <!-- Sidenav (toolbar) -->
+  <aside class="aside aside-sm sidenav-toolbar d-none d-xl-flex">
+    <nav class="navbar navbar-expand-xl navbar-vertical">
+      <div class="container-fluid">
+        <!-- Nav -->
+        <nav class="navbar-nav nav-pills h-100">
+          <div class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Go to product page">
+            <a class="nav-link" href="https://themes.getbootstrap.com/product/dashbrd/" target="_blank">
+              <span class="material-symbols-outlined">local_mall</span>
+            </a>
+          </div>
+          <div class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Contact us">
+            <a class="nav-link" href="mailto:yevgenysim+simpleqode@gmail.com">
+              <span class="material-symbols-outlined">support</span>
+            </a>
+          </div>
+          <div class="nav-item dropend mt-auto">
+            <a href="#" role="button" data-bs-toggle="dropdown" data-bs-settings-switcher="" aria-expanded="false">
+              <div class="nav-link">
+                <span class="material-symbols-outlined">settings</span>
+              </div>
+            </a>
+            <div class="dropdown-menu top-auto bottom-0 ms-xl-3">
+              <!-- Color mode -->
+              <h6 class="dropdown-header">Color mode</h6>
+              <a class="dropdown-item d-flex" data-bs-theme-value="light" href="#" role="button" aria-pressed="false"> <span class="material-symbols-outlined me-2">light_mode</span> Light </a>
+              <a class="dropdown-item d-flex active" data-bs-theme-value="dark" href="#" role="button" aria-pressed="true"> <span class="material-symbols-outlined me-2">dark_mode</span> Dark </a>
+              <a class="dropdown-item d-flex" data-bs-theme-value="auto" href="#" role="button" aria-pressed="false"> <span class="material-symbols-outlined me-2">contrast</span> Auto </a>
+            
+              <!-- Navigation position -->
+              <hr class="dropdown-divider">
+              <h6 class="dropdown-header">Navigation position</h6>
+              <a class="dropdown-item d-flex active" data-bs-navigation-position-value="sidenav" href="#" role="button" aria-pressed="true">
+                <span class="material-symbols-outlined me-2">keyboard_tab_rtl</span> Sidenav
+              </a>
+              <a class="dropdown-item d-flex" data-bs-navigation-position-value="topnav" href="#" role="button" aria-pressed="false">
+                <span class="material-symbols-outlined me-2">vertical_align_top</span> Topnav
+              </a>
+            
+              <!-- Sidenav sizing -->
+              <div class="sidenav-sizing">
+                <hr class="dropdown-divider">
+                <h6 class="dropdown-header">Sidenav sizing</h6>
+                <a class="dropdown-item d-flex active" data-bs-sidenav-sizing-value="base" href="#" role="button" aria-pressed="true">
+                  <span class="material-symbols-outlined me-2">density_large</span> Base
+                </a>
+                <a class="dropdown-item d-flex" data-bs-sidenav-sizing-value="md" href="#" role="button" aria-pressed="false">
+                  <span class="material-symbols-outlined me-2">density_medium</span> Medium
+                </a>
+                <a class="dropdown-item d-flex" data-bs-sidenav-sizing-value="sm" href="#" role="button" aria-pressed="false">
+                  <span class="material-symbols-outlined me-2">density_small</span> Small
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </nav>
+  </aside>
+  
+ <!-- Sidenav (lg) -->
+<aside class="aside" id="sidenav-lg">
+  <nav class="navbar navbar-expand-xl navbar-vertical">
+    <div class="container-lg">
+      <!-- Brand -->
+      <a class="navbar-brand" href="./index.html">
+        <img src="/Pictures/classroom.png" alt="Classroom Logo" style="width: 221px; height: auto; margin-left: 1vw; margin-top: -2vh;">
+      </a>
+
+
+
+      <!-- User -->
+      <div class="ms-auto d-xl-none">
+        <div class="dropdown my-n2">
+          <a class="btn btn-link d-inline-flex align-items-center dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="avatar avatar-sm avatar-status avatar-status-success me-3">
+              <img class="avatar-img" src="https://yevgenysim-turkey.github.io/dashbrd/assets/img/photos/photo-6.jpg" alt="...">
+            </span>
+            John Williams
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Account</a></li>
+            <li><a class="dropdown-item" href="#">Change password</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidenavLargeCollapse" aria-controls="sidenavLargeCollapse" aria-expanded="false" aria-label="Toggle navigation" fdprocessedid="luceeq">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="sidenavLargeCollapse">
+        <!-- Search -->
+        <div class="input-group d-xl-none my-4 my-xl-0">
+          <input class="form-control" id="topnavSearchInputMobile" type="search" placeholder="Search" aria-label="Search" aria-describedby="navbarSearchMobile">
+          <span class="input-group-text" id="navbarSearchMobile">
+            <span class="material-symbols-outlined"> search </span>
+          </span>
+        </div>
+
+        <!-- Nav -->
+        <nav class="navbar-nav nav-pills mb-7">
+          <div class="nav-item">
+            <a class="nav-link" href="index.html" role="button">
+              <span class="material-symbols-outlined me-3">space_dashboard</span> Dashboards
+            </a>
+          </div>
+
+          <div class="nav-item">
+            <a class="nav-link" href="leaderboard.html" role="button">
+              <span class="material-symbols-outlined me-3">space_dashboard</span> Leaderboard
+            </a>
+          </div>
+
+
+          <div class="nav-item">
+            <a class="nav-link " href="#" data-bs-toggle="collapse" data-bs-target="#projects" role="button" aria-expanded="false" aria-controls="projects">
+              <span class="material-symbols-outlined me-3">list_alt</span> Arrays
+            </a>
+            <div class="collapse show" id="projects" data-bs-parent="#sidenavLargeCollapse">
+              <nav class="nav nav-pills">
+                <a class="nav-link" href="projects.html">Easy</a>
+                <a class="nav-link active" href="project.html">Medium</a>
+                <a class="nav-link " href="project-new.html">Hard</a>
+              </nav>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link " href="#" data-bs-toggle="collapse" data-bs-target="#strings" role="button" aria-expanded="false" aria-controls="strings">
+              <span class="material-symbols-outlined">text_fields</span>&nbsp;
+              Strings
+            </a>
+            <div class="collapse " id="strings" data-bs-parent="#sidenavLargeCollapse">
+              <nav class="nav nav-pills">
+                <a class="nav-link " href="string1.html">Easy</a>
+                <a class="nav-link " href="string2.html">Medium</a>
+                <a class="nav-link " href="string3.html">Hard</a>
+              </nav>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link " href="#" data-bs-toggle="collapse" data-bs-target="#linkedlist" role="button" aria-expanded="false" aria-controls="linkedlist">
+              <span class="material-symbols-outlined">merge_type</span>&nbsp; Linked List
+            </a>
+            <div class="collapse " id="linkedlist" data-bs-parent="#sidenavLargeCollapse">
+              <nav class="nav nav-pills">
+                <a class="nav-link " href="ll1.html">Easy</a>
+                <a class="nav-link " href="ll2.html">Medium</a>
+                <a class="nav-link " href="ll3.html">Hard</a>
+              </nav>
+            </div>
+          </div>
+
+          <div class="nav-item">
+            <a class="nav-link " href="#" data-bs-toggle="collapse" data-bs-target="#trees" role="button" aria-expanded="false" aria-controls="trees">
+              <span class="material-symbols-outlined">share</span>&nbsp; Trees
+            </a>
+            <div class="collapse " id="trees" data-bs-parent="#sidenavLargeCollapse">
+              <nav class="nav nav-pills">
+                <a class="nav-link " href="trees1.html">Easy</a>
+                <a class="nav-link " href="trees2.html">Medium</a>
+                <a class="nav-link " href="trees3.html">Hard</a>
+              </nav>
+            </div>
+          </div>
+
+          <div class="nav-item">
+            <a class="nav-link " href="#" data-bs-toggle="collapse" data-bs-target="#graphs" role="button" aria-expanded="false" aria-controls="graphs">
+              <span class="material-symbols-outlined">account_tree</span>&nbsp; Graphs
+            </a>
+            <div class="collapse " id="graphs" data-bs-parent="#sidenavLargeCollapse">
+              <nav class="nav nav-pills">
+                <a class="nav-link " href="graph1.html">Easy</a>
+                <a class="nav-link " href="graph2.html">Medium</a>
+                <a class="nav-link " href="graph3.html">Hard</a>
+              </nav>
+            </div>
+          </div>
+
+          <div class="nav-item">
+            <a class="nav-link " href="#" data-bs-toggle="collapse" data-bs-target="#dps" role="button" aria-expanded="false" aria-controls="projects">
+              <span class="material-symbols-outlined">grid_on</span>&nbsp; Dynamic Programming
+
+            </a>
+            <div class="collapse " id="dps" data-bs-parent="#sidenavLargeCollapse">
+              <nav class="nav nav-pills">
+                <a class="nav-link " href="DP1.html">Easy</a>
+                <a class="nav-link " href="DP2.html">Medium</a>
+                <a class="nav-link " href="DP3.html">Hard</a>
+              </nav>
+            </div>
+          </div>
+          <div class="nav-item">
+  <a class="nav-link" href="post.html" role="button">
+    <span class="material-symbols-outlined me-3" style="font-variation-settings: 'FILL' 1, 'wght' 400;">post_add</span> Posts
+  </a>
+</div>
+
+          
+
+                     <div class="nav-item">
+  <a class="nav-link" href="account.html" role="button">
+    <span class="material-symbols-outlined me-3">person</span> Account
+  </a>
+</div>
+
+
+          <div class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#mdoals" role="button" aria-expanded="false" aria-controls="mdoals">
+              <span class="material-symbols-outlined me-3">login</span> Authentication
+            </a>
+            <div class="collapse" id="mdoals">
+              <nav class="nav nav-pills">
+                <!-- Corrected Modal Trigger -->
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signinModal">Sign In</a>
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a>
+
+              </nav>
+            </div>
+          </div>
+        </nav>
+
+
+
+
+        <!-- Heading -->
+        <h3 class="fs-base px-3 mb-4">About Us</h3>
+
+        <!-- Nav -->
+        <nav class="navbar-nav nav-pills mb-xl-7">
+          <div class="nav-item">
+            <a class="nav-link " href="faqs.html" target="_blank">
+              <span class="material-symbols-outlined me-3">sticky_note_2</span>Common FAQs</a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link " href="contactus.html" target="_blank">
+              <span class="material-symbols-outlined">support_agent</span>&nbsp; &nbsp;Contact Us</a>
+          </div>
+        </nav>
+
+        <!-- Divider -->
+        <hr class="my-4 d-xl-none">
+
+        <!-- Nav -->
+        <nav class="navbar-nav nav-pills d-xl-none mb-7">
+          <div class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" data-bs-settings-switcher="" aria-expanded="false">
+              <span class="material-symbols-outlined"> settings </span> <span class="d-xl-none ms-3">Settings</span>
+            </a>
+            <div class="dropdown-menu">
+              <!-- Color mode -->
+              <h6 class="dropdown-header">Color mode</h6>
+              <a class="dropdown-item d-flex" data-bs-theme-value="light" href="#" role="button" aria-pressed="false">
+                <span class="material-symbols-outlined me-2"> light_mode </span> Light
+              </a>
+              <a class="dropdown-item d-flex active" data-bs-theme-value="dark" href="#" role="button" aria-pressed="true"> <span class="material-symbols-outlined me-2"> dark_mode
+                </span> Dark </a>
+              <a class="dropdown-item d-flex" data-bs-theme-value="auto" href="#" role="button" aria-pressed="false">
+                <span class="material-symbols-outlined me-2"> contrast </span>
+                Auto </a>
+
+              <!-- Divider -->
+              <hr class="dropdown-divider">
+
+              <!-- Navigation position -->
+              <h6 class="dropdown-header">Navigation position</h6>
+              <a class="dropdown-item d-flex active" data-bs-navigation-position-value="sidenav" href="#" role="button" aria-pressed="true">
+                <span class="material-symbols-outlined me-2"> thumbnail_bar </span> Sidenav
+              </a>
+              <a class="dropdown-item d-flex" data-bs-navigation-position-value="topnav" href="#" role="button" aria-pressed="false">
+                <span class="material-symbols-outlined me-2"> toolbar </span> Topnav
+              </a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" href="https://themes.getbootstrap.com/product/dashbrd/" target="_blank">
+              <span class="material-symbols-outlined me-3">local_mall</span> Go to product page
+            </a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" href="mailto:yevgenysim+simpleqode@gmail.com">
+              <span class="material-symbols-outlined me-3">alternate_email</span> Contact us
+            </a>
+          </div>
+        </nav>
+
+        <!-- Card -->
+        <div class="card mt-auto">
+          <div class="card-body">
+            <!-- Heading -->
+            <h6>Need help?</h6>
+
+            <!-- Text -->
+            <p class="text-body-secondary mb-0">Feel free to reach out to us via the 'Contact Us' option, or click<a href="contactus.html" target="_blank"> here.</a>
+          </p></div>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    
+  </nav>
+</aside>
+
+  <!-- Topnav -->
+  <!-- Topnav (lg) -->
+  <nav class="navbar navbar-expand-xl" id="topnav-lg">
+    <div class="container-lg">
+      <!-- Brand -->
+      <a class="navbar-brand fs-5 fw-bold" href="../index.html"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fs-4 text-secondary me-1 duo-icon duo-icon-box-2" data-duoicon="box-2"><path fill="currentColor" d="m20.765 7.982.022.19.007.194v7.268a2.5 2.5 0 0 1-1.099 2.07l-.15.095-6.295 3.634-.124.067-.126.06v-8.99l7.765-4.588Z" class="duoicon-secondary-layer" opacity=".3"></path><path fill="currentColor" d="m13.25 2.567 6.294 3.634c.05.03.1.06.148.092L12 10.838 4.308 6.293a2.81 2.81 0 0 1 .148-.092l6.294-3.634a2.498 2.498 0 0 1 2.5 0Z" class="duoicon-primary-layer"></path><path fill="currentColor" d="M3.235 7.982 11 12.571v8.988a2.339 2.339 0 0 1-.25-.126l-6.294-3.634a2.502 2.502 0 0 1-1.25-2.165V8.366c0-.13.01-.258.03-.384h-.001Z" class="duoicon-secondary-layer" opacity=".3"></path></svg> Classroom</a>
+  
+      <!-- User -->
+      <div class="ms-auto d-xl-none">
+        <div class="dropdown my-n2">
+          <a class="btn btn-link d-inline-flex align-items-center dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="avatar avatar-sm avatar-status avatar-status-success me-3">
+              <img class="avatar-img" src="../freepik__upload__71749-512x512.jpg" alt="...">
+            </span>
+            Satyaki Majumdar
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Account</a></li>
+            <li><a class="dropdown-item" href="#">Change password</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Toggler -->
+      <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#topnavLargeCollapse" aria-controls="topnavLargeCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="topnavLargeCollapse">
+        <!-- Search -->
+        <div class="input-group d-xl-none my-4 my-xl-0">
+          <input class="form-control" id="topnavSearchInputMobile" type="search" placeholder="Search" aria-label="Search" aria-describedby="navbarSearchMobile">
+          <span class="input-group-text" id="navbarSearchMobile">
+            <span class="material-symbols-outlined"> search </span>
+          </span>
+        </div>
+  
+         <!-- Nav -->
+         <nav class="navbar-nav nav-pills mx-auto">
+         <div class="nav-item">
+    <a class="nav-link" href="index.html">
+        <span class="material-symbols-outlined me-3">space_dashboard</span> Dashboards
+    </a>
+</div>
+<div class="nav-item">
+  <a class="nav-link" href="leaderboard.html" role="button">
+    <span class="material-symbols-outlined me-3">space_dashboard</span> Leaderboard
+  </a>
+</div>
+
+          <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="material-symbols-outlined me-3">list_alt</span> Arrays
+              </a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item " href="projects.html">Easy</a>
+                  <a class="dropdown-item " href="project.html">Medium</a>
+                  <a class="dropdown-item " href="project-new.html">Hard</a>
+              </div>
+          </div>
+          <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="material-symbols-outlined">text_fields</span>&nbsp; Strings
+              </a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item " href="string1.html">Easy</a>
+                  <a class="dropdown-item " href="string2.html">Medium</a>
+                  <a class="dropdown-item " href="string3.html">Hard</a>
+              </div>
+          </div>
+          <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="material-symbols-outlined">merge_type</span>&nbsp;  Linked List
+              </a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item " href="ll1.html">Easy</a>
+                  <a class="dropdown-item " href="ll2.html">Medium</a>
+                  <a class="dropdown-item " href="ll3.html">Hard</a>
+              </div>
+          </div>
+          <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="material-symbols-outlined">share</span>&nbsp; Trees
+              </a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item " href="trees1.html">Easy</a>
+                  <a class="dropdown-item " href="trees2.html">Medium</a>
+                  <a class="dropdown-item " href="trees3.html">Hard</a>
+              </div>
+          </div>
+          <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="material-symbols-outlined">account_tree</span>&nbsp; Graphs
+              </a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item " href="graph1.html">Easy</a>
+                  <a class="dropdown-item " href="graph2.html">Medium</a>
+                  <a class="dropdown-item " href="graph3.html">Hard</a>
+              </div>
+          </div>
+          <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="material-symbols-outlined">grid_on</span>&nbsp; DP
+              </a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item " href="DP1.html">Easy</a>
+                  <a class="dropdown-item " href="DP2.html">Medium</a>
+                  <a class="dropdown-item " href="DP3.html">Hard</a>
+              </div>
+          </div>
+          <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="material-symbols-outlined">draw</span>&nbsp; Gen. Prac.
+              </a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item " href="coding.html">Coding</a>
+                  <a class="dropdown-item " href="post.html">Posts</a>
+             
+              </div>
+          </div>
+          <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle  " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="material-symbols-outlined me-3">person</span> Account
+              </a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item " href=".account.html">Account overview</a>
+                  <a class="dropdown-item " href="account-settings.html">Account settings</a>
+              </div>
+          </div>
+          
+          <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span class="material-symbols-outlined me-3">login</span> Authetic.</a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="./auth/sign-in.html">Sign in</a>
+                  <a class="dropdown-item" href="./auth/sign-up.html">Sign up</a>
+              </div>
+          </div>
+          <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  About Us
+              </a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item " href="./docs/getting-started.html"> Common FAQs </a>
+                  <a class="dropdown-item " href="./docs/components.html">Contact Us</a>
+                  
+              </div>
+          </div>
+      </nav>
+
+        <!-- Divider -->
+        <hr class="my-4 d-xl-none">
+  
+        <!-- Nav -->
+        <nav class="navbar-nav nav-pills">
+          <div class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" data-bs-settings-switcher="" aria-expanded="false">
+              <span class="material-symbols-outlined"> settings </span> <span class="d-xl-none ms-3">Settings</span>
+            </a>
+            <div class="dropdown-menu">
+              <!-- Color mode -->
+              <h6 class="dropdown-header">Color mode</h6>
+              <a class="dropdown-item d-flex" data-bs-theme-value="light" href="#" role="button" aria-pressed="false">
+                <span class="material-symbols-outlined me-2"> light_mode </span> Light
+              </a>
+              <a class="dropdown-item d-flex active" data-bs-theme-value="dark" href="#" role="button" aria-pressed="true"> <span class="material-symbols-outlined me-2"> dark_mode </span> Dark </a>
+              <a class="dropdown-item d-flex" data-bs-theme-value="auto" href="#" role="button" aria-pressed="false"> <span class="material-symbols-outlined me-2"> contrast </span> Auto </a>
+            
+              <!-- Divider -->
+              <hr class="dropdown-divider">
+            
+              <!-- Navigation position -->
+              <h6 class="dropdown-header">Navigation position</h6>
+              <a class="dropdown-item d-flex active" data-bs-navigation-position-value="sidenav" href="#" role="button" aria-pressed="true">
+                <span class="material-symbols-outlined me-2"> thumbnail_bar </span> Sidenav
+              </a>
+              <a class="dropdown-item d-flex" data-bs-navigation-position-value="topnav" href="#" role="button" aria-pressed="false">
+                <span class="material-symbols-outlined me-2"> toolbar </span> Topnav
+              </a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" href="https://themes.getbootstrap.com/product/dashbrd/" target="_blank">
+              <span class="material-symbols-outlined">local_mall</span> <span class="d-xl-none ms-3">Go to product page</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" href="mailto:yevgenysim+simpleqode@gmail.com">
+              <span class="material-symbols-outlined">alternate_email</span> <span class="d-xl-none ms-3">Contact us</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Topnav (sm) -->
+  <nav class="navbar d-none d-xl-flex px-xl-6" id="topnav-sm">
+    <div class="container flex-column align-items-stretch">
+      <div class="row">
+        <div class="col">
+          <!-- Search -->
+          <!-- <div class="input-group" style="max-width: 400px">
+            <input class="form-control" id="topnavSearchInput" type="search" placeholder="Search" aria-label="Search" aria-describedby="navbarSearch">
+            <span class="input-group-text" id="navbarSearch">
+              <kbd class="badge bg-body-secondary text-body">⌘</kbd>
+              <kbd class="badge bg-body-secondary text-body ms-1">K</kbd>
+            </span>
+          </div>
+          -->
+        </div>
+        <div class="col-auto">
+          <!-- User -->
+          <div class="dropdown my-n2">
+  <a class="btn btn-link d-inline-flex align-items-center dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="avatar avatar-sm avatar-status avatar-status-success me-3">
+      <img id="userDropdownImage" class="avatar-img rounded-circle" src="" alt="User">
+    </span>
+    <span id="userDropdownName">Guest User</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><a class="dropdown-item" href="account.html">Account</a></li>
+   
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#" id="signOutButton">Sign out</a></li>
+  </ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="main px-lg-6">
+    <!-- Content -->
+    <div class="container-lg">
+      <!-- Page header -->
+      
+      <div class="row align-items-center mb-7">
+        <div class="col-auto">
+          <!-- Avatar -->
+          <div class="avatar avatar-xl rounded text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fs-2 duo-icon duo-icon-clipboard" data-duoicon="clipboard"><path fill="currentColor" d="M7 3v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V3h1a2 2 0 0 1 2 2v11a6 6 0 0 1-6 6H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h1Z" class="duoicon-secondary-layer" opacity=".3"></path><path fill="currentColor" d="M14 2a1 1 0 0 1 .117 1.993L14 4h-4a1 1 0 0 1-.117-1.993L10 2h4Zm1 8H9a1 1 0 0 0-.117 1.993L9 12h6a1 1 0 1 0 0-2Zm-3 4H9a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2Z" class="duoicon-primary-layer"></path></svg>
+          </div>
+        </div>
+        <div class="col">
+          
+          <!-- Breadcrumb -->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-2">
+              <li class="breadcrumb-item"><a class="text-body-secondary" href="#">Arrays</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Medium</li>
+            </ol>
+          </nav>
+
+          <!-- Heading -->
+          <h1 class="fs-4 mb-0">Programs</h1>
+        </div>
+        
+      </div>
+      <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+        @keyframes bake-pie {
+            from {
+                transform: rotate(0deg) translate3d(0, 0, 0);
+            }
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .pieID.pie {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.pieID.pie .slice {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip: rect(0px, 180px, 180px, 90px);
+}
+
+.pieID.pie .slice span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip: rect(0px, 90px, 180px, 0px);
+  border-radius: 50%;
+}
+
+        .pieID {
+            display: inline-block;
+            vertical-align: top;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0px;
+        }
+
+        .pie {
+            height: 200px;
+            width: 200px;
+            position: relative;
+            margin: 0 30px 30px 0;
+        }
+
+        .pie::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 1;
+            width: 100px;
+            height: 100px;
+            background: #17191c;
+            border-radius: 50%;
+            top: 50px;
+            left: 50px;
+        }
+
+        .slice {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            clip: rect(0px, 200px, 200px, 100px);
+            animation: bake-pie 2.5s;
+        }
+
+        .slice span {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #17191c;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            clip: rect(0px, 200px, 200px, 100px);
+        }
+
+        .legend {
+            list-style-type: none;
+            padding: 15px;
+            width: auto;
+            text-align: left;
+        }
+
+        .legend li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 200px;
+            height: 1.5em;
+            margin-bottom: 0.7em;
+            padding-left: 0.5em;
+            border-left: 1.25em solid black;
+            font-size: 16px;
+        }
+
+        .legend em {
+            font-style: normal;
+            flex-grow: 1;
+        }
+
+        .legend span {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        /* Dark theme styles */
+        body {
+            background-color: #121212f3;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border-color: #333;
+        }
+
+        .card-header {
+            border-bottom-color: #333;
+            background-color: #252525;
+        }
+
+        
+    </style>
+
+
+    
+    <div class="row">
+        <!-- Weekly Activity Line Chart -->
+        <div class="col-12 col-xxl-8">
+            <div class="card mb-6">
+                <div class="card-header">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h3 class="fs-6 mb-0">Weekly Activity</h3>
+                        </div>
+                        <div class="col-auto fs-sm me-n3">
+                            <span class="material-symbols-outlined" style="color: #4e73df;">
+                                circle
+                            </span>
+                            Your Submissions
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="card-body">
+                    <canvas id="dateWiseSubmissionsChart" height="300" width="256" style="display: block; box-sizing: border-box; height: 300px; width: 256px;"></canvas>
+                <div id="chart-tooltip" role="tooltip" class="popover bs-popover-top" style="visibility: hidden; left: 738.388px; top: 186.634px; transform: translateX(-50%) translateY(-100%) translateY(-1rem);"><div class="popover-arrow translate-middle-x"></div><div class="popover-content"><h3 class="popover-header"><span class="d-block text-center text-nowrap">Sat</span></h3><div class="popover-body d-flex flex-column gap-1"><div class="d-flex text-nowrap justify-content-left"><span class="material-symbols-outlined me-1" style="color: rgb(78, 115, 223);">circle</span><span>Your Submissions: 20</span></div><div class="d-flex text-nowrap justify-content-left"><span class="material-symbols-outlined me-1" style="color: rgb(133, 135, 150);">circle</span><span>Community Average: 15</span></div></div></div></div></div>
+            </div>
+        </div>
+
+        <!-- Problem Analysis Pie Chart -->
+        <div class="col-12 col-xxl-4">
+            <div class="card mb-4">  <!-- Changed mb-6 to mb-4 for smaller bottom margin -->
+    <div class="card-header">
+        <h3 class="fs-6 mb-0">Problem Analysis</h3>
+    </div>
+    <div class="card-body py-2">  <!-- Reduced padding from py-3 to py-2 -->
+        <section style="margin-top: -10px; margin-bottom: -10px;">  <!-- Adjusted margins -->
+            <div class="pieID pie" style="height: 180px; width: 180px; margin-bottom: 5px;">  <!-- Reduced pie size -->
+                <div class="slice s1-0-0" style="transform: rotate(-1deg) translate3d(0px, 0px, 0px);">
+                    <span style="transform: rotate(-158.574deg) translate3d(0px, 0px, 0px); background-color: red;"></span>
+                </div>
+                <div class="slice s1-1-0" style="transform: rotate(19.4255deg) translate3d(0px, 0px, 0px);">
+                    <span style="transform: rotate(-125.383deg) translate3d(0px, 0px, 0px); background-color: rgb(255, 193, 7);"></span>
+                </div>
+                
+                <div class="slice s1-3-0" style="transform: rotate(246.66deg) translate3d(0px, 0px, 0px);">
+                    <span style="transform: rotate(-66.6596deg) translate3d(0px, 0px, 0px); background-color: rgb(12, 155, 25);"></span>
+                </div>
+            <div class="slice s1-0-0" style="transform: rotate(-1deg) translate3d(0px, 0px, 0px);"><span style="transform: rotate(-158.574deg) translate3d(0px, 0px, 0px); background-color: red;"></span></div><div class="slice s1-1-0" style="transform: rotate(19.4255deg) translate3d(0px, 0px, 0px);"><span style="transform: rotate(-125.383deg) translate3d(0px, 0px, 0px); background-color: rgb(0, 102, 204);"></span></div><div class="slice s1-2-0" style="transform: rotate(73.0426deg) translate3d(0px, 0px, 0px);"><span style="transform: rotate(-5.38298deg) translate3d(0px, 0px, 0px); background-color: rgb(255, 193, 7);"></span></div><div class="slice s1-3-0" style="transform: rotate(246.66deg) translate3d(0px, 0px, 0px);"><span style="transform: rotate(-66.6596deg) translate3d(0px, 0px, 0px); background-color: rgb(12, 155, 25);"></span></div></div>
+            <ul class="pieID legend" style="margin-top: 5px; margin-bottom: 5px;">  <!-- Reduced legend margins -->
+                <li style="border-color: red; padding: 0.25em 0.5em;">  <!-- Reduced padding -->
+                    <em>Unattempted
+
+                    </em>
+                    <span>8</span>
+                </li>
+                <li style="border-color: rgb(255, 193, 7); padding: 0.25em 0.5em;">
+                    <em>Attempted</em>
+                    <span>21</span>
+                </li>
+                
+                <li style="border-color: rgb(12, 155, 25); padding: 0.25em 0.5em;">
+                    <em>Completed</em>
+                    <span>44</span>
+                </li>
+            </ul>
+        </section>
+    </div>
+</div>
+
+<style>
+  
+  
+
+    .pie {
+        position: relative;
+        margin: 0 auto;  /* Center the pie chart */
+    }
+    .pie::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 1;
+        width: 90px;  /* Adjusted for smaller size */
+        height: 90px;
+        background: #17191c;
+        border-radius: 50%;
+        top: 45px;  /* Half of height */
+        left: 45px; /* Half of width */
+    }
+    .slice {
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        clip: rect(0px, 180px, 180px, 90px);
+    }
+    .slice span {
+        width: 180px;
+        height: 180px;
+        clip: rect(0px, 180px, 180px, 90px);
+    }
+    .legend {
+        padding: 5px 10px;  /* Reduced padding */
+    }
+    .legend li {
+        font-size: 14px;  /* Slightly smaller font */
+        height: 1.25em;   /* Reduced height */
+        margin-bottom: 0.5em;  /* Reduced spacing */
+    }
+</style>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Date-wise Submissions (Line Chart)
+            const dateWiseCtx = document.getElementById('dateWiseSubmissionsChart').getContext('2d');
+            new Chart(dateWiseCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Your Submissions',
+                        data: [5, 8, 12, 7, 15, 20, 18],
+                        borderColor: '#4e73df',
+                        backgroundColor: 'rgba(78, 115, 223, 0.05)',
+                        tension: 0.3,
+                        fill: true,
+                        borderWidth: 2,
+                        pointBackgroundColor: '#4e73df',
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }, {
+                        label: 'Community Average',
+                        data: [8, 10, 14, 12, 18, 15, 22],
+                        borderColor: '#858796',
+                        backgroundColor: 'transparent',
+                        borderWidth: 2,
+                        borderDash: [5, 5],
+                        pointBackgroundColor: '#858796',
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Problems Solved',
+                                color: '#fff'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#fff'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Day of Week',
+                                color: '#fff'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#fff'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Pie Chart Functionality
+            function sliceSize1(dataNum, dataTotal) {
+                return (dataNum / dataTotal) * 360;
+            }
+
+            function addSlice1(sliceSize, pieElement, offset, sliceID, color) {
+                const slice = document.createElement("div");
+                slice.className = `slice ${sliceID}`;
+
+                const span = document.createElement("span");
+                slice.appendChild(span);
+                pieElement.appendChild(slice);
+
+                let adjustedOffset = offset - 1;
+                let sizeRotation = -179 + sliceSize;
+
+                slice.style.transform = `rotate(${adjustedOffset}deg) translate3d(0,0,0)`;
+                span.style.transform = `rotate(${sizeRotation}deg) translate3d(0,0,0)`;
+                span.style.backgroundColor = color;
+            }
+
+            function iterateSlices1(sliceSize, pieElement, offset, dataCount, sliceCount, color) {
+                let sliceID = `s1-${dataCount}-${sliceCount}`;
+                let maxSize = 179;
+
+                if (sliceSize <= maxSize) {
+                    addSlice1(sliceSize, pieElement, offset, sliceID, color);
+                } else {
+                    addSlice1(maxSize, pieElement, offset, sliceID, color);
+                    iterateSlices1(sliceSize - maxSize, pieElement, offset + maxSize, dataCount, sliceCount + 1, color);
+                }
+            }
+
+            function createPie1(dataElement, pieElement) {
+                let listData = [];
+                let dataItems = document.querySelectorAll(`${dataElement} span`);
+
+                dataItems.forEach(item => {
+                    listData.push(Number(item.textContent));
+                });
+
+                let listTotal = listData.reduce((sum, num) => sum + num, 0);
+                let offset = 0;
+
+                let colors = ["red","#FFC107","#198754"];
+
+                let pie = document.querySelector(pieElement);
+                let legendItems = document.querySelectorAll(`${dataElement} li`);
+
+                listData.forEach((data, i) => {
+                    let size = sliceSize1(data, listTotal);
+                    iterateSlices1(size, pie, offset, i, 0, colors[i]);
+                    legendItems[i].style.borderColor = colors[i];
+                    offset += size;
+                });
+            }
+
+            createPie1(".pieID.legend", ".pieID.pie");
+        });
+    </script>
+      <!-- Page content -->
+      <div class="row">
+        <div class="col-12">
+          <!-- Filters -->
+          <div class="card card-line bg-body-tertiary border-transparent mb-7">
+            <div class="card-body p-4">
+              <div class="row align-items-center">
+                <div class="col-12 col-lg-auto mb-3 mb-lg-0">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <div class="text-body-secondary" id="completedCount">1 out of 10 programs completed</div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-12 col-lg">
+                  <div class="row gx-3">
+                    <div class="col col-lg-auto ms-auto">
+                      <div class="input-group bg-body">
+                        <input type="text" class="form-control" id="questionSearch" placeholder="Search questions, company, or status" fdprocessedid="rsqc1">
+
+
+                        <span class="input-group-text" id="search">
+                          <span class="material-symbols-outlined">search</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <div class="dropdown">
+                        
+                        <div class="dropdown-menu rounded-3 p-6" >
+                          <h4 class="fs-lg mb-4">Filter</h4>
+                          <form style="width: 350px" id="filterForm">
+                            <div class="row align-items-center mb-3">
+                              <div class="col-3">
+                                <label class="form-label mb-0" for="filterUser">User</label>
+                              </div>
+                              <div class="col-9">
+                                <div class="choices" data-type="select-one" tabindex="0" role="listbox" aria-label="User" aria-haspopup="true" aria-expanded="false"><div class="form-select"><select class="form-select form-control" id="filterUser" data-choices="{&quot;searchEnabled&quot;: false, &quot;choices&quot;: [
+                            {
+                              &quot;value&quot;: &quot;Emily Thompson&quot;,
+                              &quot;label&quot;: &quot;Emily Thompson&quot;,
+                              &quot;customProperties&quot;: {
+                                &quot;avatarSrc&quot;: &quot;../assets/img/photos/photo-1.jpg&quot;
+                              }
+                            },
+                            {
+                              &quot;value&quot;: &quot;Michael Johnson&quot;,
+                              &quot;label&quot;: &quot;Michael Johnson&quot;,
+                              &quot;customProperties&quot;: {
+                                &quot;avatarSrc&quot;: &quot;../assets/img/photos/photo-2.jpg&quot;
+                              }
+                            },
+                            {
+                              &quot;value&quot;: &quot;Robert Garcia&quot;,
+                              &quot;label&quot;: &quot;Robert Garcia&quot;,
+                              &quot;customProperties&quot;: {
+                                &quot;avatarSrc&quot;: &quot;../assets/img/photos/photo-3.jpg&quot;
+                              }
+                            },
+                            {
+                              &quot;value&quot;: &quot;Jessica Miller&quot;,
+                              &quot;label&quot;: &quot;Jessica Miller&quot;,
+                              &quot;customProperties&quot;: {
+                                &quot;avatarSrc&quot;: &quot;../assets/img/photos/photo-4.jpg&quot;
+                              }
+                            }
+                          ]}" hidden="" tabindex="-1" data-choice="active"><option value="Emily Thompson" data-custom-properties="{&quot;avatarSrc&quot;:&quot;../assets/img/photos/photo-1.jpg&quot;}" selected="">Emily Thompson</option><option value="Michael Johnson" data-custom-properties="{&quot;avatarSrc&quot;:&quot;../assets/img/photos/photo-2.jpg&quot;}">Michael Johnson</option><option value="Robert Garcia" data-custom-properties="{&quot;avatarSrc&quot;:&quot;../assets/img/photos/photo-3.jpg&quot;}">Robert Garcia</option><option value="Jessica Miller" data-custom-properties="{&quot;avatarSrc&quot;:&quot;../assets/img/photos/photo-4.jpg&quot;}">Jessica Miller</option></select><div class="choices_list choiceslist--single"><div class="choicesitem choicesitem--selectable" data-item="" data-id="1" data-value="Emily Thompson" data-custom-properties="{&quot;avatarSrc&quot;:&quot;../assets/img/photos/photo-1.jpg&quot;}" aria-selected="true" role="option">Emily Thompson</div></div></div><div class="choiceslist dropdown-menu" aria-expanded="false"><div class="choiceslist" role="listbox"><div class="choicesitem dropdown-item choices_item--selectable is-highlighted" data-select-text="Press to select" data-choice="" data-choice-selectable="" data-id="1" data-value="Emily Thompson" role="option" aria-selected="true">
+            
+          <div class="avatar avatar-xs me-3">
+            <img class="avatar-img" src="../assets/img/photos/photo-1.jpg" alt="Emily Thompson">
+          </div> Emily Thompson
+        
+          </div><div class="choices_item dropdown-item choices_item--selectable" data-select-text="Press to select" data-choice="" data-choice-selectable="" data-id="2" data-value="Michael Johnson" role="option">
+            
+          <div class="avatar avatar-xs me-3">
+            <img class="avatar-img" src="../assets/img/photos/photo-2.jpg" alt="Michael Johnson">
+          </div> Michael Johnson
+        
+          </div><div class="choices_item dropdown-item choices_item--selectable" data-select-text="Press to select" data-choice="" data-choice-selectable="" data-id="3" data-value="Robert Garcia" role="option">
+            
+          <div class="avatar avatar-xs me-3">
+            <img class="avatar-img" src="../assets/img/photos/photo-3.jpg" alt="Robert Garcia">
+          </div> Robert Garcia
+        
+          </div><div class="choices_item dropdown-item choices_item--selectable" data-select-text="Press to select" data-choice="" data-choice-selectable="" data-id="4" data-value="Jessica Miller" role="option">
+            
+          <div class="avatar avatar-xs me-3">
+            <img class="avatar-img" src="../assets/img/photos/photo-4.jpg" alt="Jessica Miller">
+          </div> Jessica Miller
+        
+          </div></div></div></div>
+                              </div>
+                            </div>
+                            <div class="row align-items-center mb-3">
+                              <div class="col-3">
+                                <label class="form-label mb-0" for="filterCompany">Company</label>
+                              </div>
+                              <div class="col-9">
+                                <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false"><div class="form-select"><select class="form-select form-control" id="filterCompany" data-choices="{&quot;placeholder&quot;: &quot;some&quot;}" hidden="" tabindex="-1" data-choice="active">
+                                  <option value="TechPinnacle Solutions" selected="">TechPinnacle Solutions</option>
+                                  <option value="Quantum Dynamics">Quantum Dynamics</option>
+                                  <option value="Pinnacle Technologies">Pinnacle Technologies</option>
+                                  <option value="Apex Innovations">Apex Innovations</option>
+                                </select><div class="choices_list choiceslist--single" role="listbox"><div class="choicesitem choicesitem--selectable" data-item="" data-id="1" data-value="TechPinnacle Solutions" aria-selected="true" role="option">TechPinnacle Solutions</div></div></div><div class="choiceslist dropdown-menu" aria-expanded="false"><input type="search" class="form-control form-control-sm" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="Company" placeholder=""><div class="choiceslist" role="listbox"><div class="choicesitem dropdown-item choices_item--selectable is-highlighted" data-select-text="Press to select" data-choice="" data-choice-selectable="" data-id="1" data-value="TechPinnacle Solutions" role="option" aria-selected="true">
+            TechPinnacle Solutions
+          </div><div class="choices_item dropdown-item choices_item--selectable" data-select-text="Press to select" data-choice="" data-choice-selectable="" data-id="2" data-value="Quantum Dynamics" role="option">
+            Quantum Dynamics
+          </div><div class="choices_item dropdown-item choices_item--selectable" data-select-text="Press to select" data-choice="" data-choice-selectable="" data-id="3" data-value="Pinnacle Technologies" role="option">
+            Pinnacle Technologies
+          </div><div class="choices_item dropdown-item choices_item--selectable" data-select-text="Press to select" data-choice="" data-choice-selectable="" data-id="4" data-value="Apex Innovations" role="option">
+            Apex Innovations
+          </div></div></div></div>
+                              </div>
+                            </div>
+                            <div class="row align-items-center">
+                              <div class="col-3">
+                                <label class="form-label mb-0" for="filterLocation">Location</label>
+                              </div>
+                              <div class="col-9">
+                                <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false"><div class="form-select"><select class="form-select form-control" id="filterLocation" data-choices="" hidden="" tabindex="-1" data-choice="active">
+                                  <option value="San Francisco, CA" selected="">San Francisco, CA</option>
+                                  <option value="Austin, TX">Austin, TX</option>
+                                  <option value="Miami, FL">Miami, FL</option>
+                                  <option value="Seattle, WA">Seattle, WA</option>
+                                </select><div class="choices_list choiceslist--single" role="listbox"><div class="choicesitem choicesitem--selectable" data-item="" data-id="1" data-value="San Francisco, CA" aria-selected="true" role="option">San Francisco, CA</div></div></div><div class="choiceslist dropdown-menu" aria-expanded="false"><input type="search" class="form-control form-control-sm" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="Location" placeholder=""><div class="choiceslist" role="listbox"><div class="choicesitem dropdown-item choices_item--selectable is-highlighted" data-select-text="Press to select" data-choice="" data-choice-selectable="" data-id="1" data-value="San Francisco, CA" role="option" aria-selected="true">
+            San Francisco, CA
+          </div><div class="choices_item dropdown-item choices_item--selectable" data-select-text="Press to select" data-choice="" data-choice-selectable="" data-id="2" data-value="Austin, TX" role="option">
+            Austin, TX
+          </div><div class="choices_item dropdown-item choices_item--selectable" data-select-text="Press to select" data-choice="" data-choice-selectable="" data-id="3" data-value="Miami, FL" role="option">
+            Miami, FL
+          </div><div class="choices_item dropdown-item choices_item--selectable" data-select-text="Press to select" data-choice="" data-choice-selectable="" data-id="4" data-value="Seattle, WA" role="option">
+            Seattle, WA
+          </div></div></div></div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table -->
+          <div class="table-responsive mb-7">
+  <table class="table table-selectable align-middle mb-0">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Practice</th>
+        <th>Status</th>
+        <th>Companies</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows will be inserted here by JavaScript -->
+    </tbody>
+  </table>
+</div>
+
+<div class="row align-items-center">
+  <div class="col">
+    <p class="text-body-secondary small"></p>
+  </div>
+  <div class="col-auto">
+    <nav aria-label="Page navigation">
+      <ul class="pagination mb-0" id="pagination">
+        <li class="page-item prev-next prev-page">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <!-- Page numbers will be inserted here by JavaScript -->
+        <li class="page-item prev-next next-page">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+  <!-- JAVASCRIPT -->
+
+  
+  <!-- Map JS -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+
+  <!-- Vendor JS -->
+  <script src="https://yevgenysim-turkey.github.io/dashbrd/assets/js/vendor.bundle.js"></script>
+
+  <!-- Theme JS -->
+  <script src="https://yevgenysim-turkey.github.io/dashbrd/assets/js/theme.bundle.js"></script>
+
+  <script src="/JS/sample.js"></script>
+
+  
+
+<!-- Code injected by live-server -->
+<script>
+// <![CDATA[  <-- For SVG support
+if ('WebSocket' in window) {
+  (function () {
+    function refreshCSS() {
+      var sheets = [].slice.call(document.getElementsByTagName("link"));
+      var head = document.getElementsByTagName("head")[0];
+      for (var i = 0; i < sheets.length; ++i) {
+        var elem = sheets[i];
+        var parent = elem.parentElement || head;
+        parent.removeChild(elem);
+        var rel = elem.rel;
+        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+          var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+          elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+        }
+        parent.appendChild(elem);
+      }
+    }
+    var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+    var address = protocol + window.location.host + window.location.pathname + '/ws';
+    var socket = new WebSocket(address);
+    socket.onmessage = function (msg) {
+      if (msg.data == 'reload') window.location.reload();
+      else if (msg.data == 'refreshcss') refreshCSS();
+    };
+    if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+      console.log('Live reload enabled.');
+      sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+    }
+  })();
+}
+else {
+  console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+}
+// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+    // <![CDATA[  <-- For SVG support
+    if ('WebSocket' in window) {
+        (function () {
+            function refreshCSS() {
+                var sheets = [].slice.call(document.getElementsByTagName("link"));
+                var head = document.getElementsByTagName("head")[0];
+                for (var i = 0; i < sheets.length; ++i) {
+                    var elem = sheets[i];
+                    var parent = elem.parentElement || head;
+                    parent.removeChild(elem);
+                    var rel = elem.rel;
+                    if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                        var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                        elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                    }
+                    parent.appendChild(elem);
+                }
+            }
+            var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+            var address = protocol + window.location.host + window.location.pathname + '/ws';
+            var socket = new WebSocket(address);
+            socket.onmessage = function (msg) {
+                if (msg.data == 'reload') window.location.reload();
+                else if (msg.data == 'refreshcss') refreshCSS();
+            };
+            if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                console.log('Live reload enabled.');
+                sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+            }
+        })();
+    }
+    else {
+        console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+    }
+    // ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+    // <![CDATA[  <-- For SVG support
+    if ('WebSocket' in window) {
+        (function () {
+            function refreshCSS() {
+                var sheets = [].slice.call(document.getElementsByTagName("link"));
+                var head = document.getElementsByTagName("head")[0];
+                for (var i = 0; i < sheets.length; ++i) {
+                    var elem = sheets[i];
+                    var parent = elem.parentElement || head;
+                    parent.removeChild(elem);
+                    var rel = elem.rel;
+                    if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                        var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                        elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                    }
+                    parent.appendChild(elem);
+                }
+            }
+            var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+            var address = protocol + window.location.host + window.location.pathname + '/ws';
+            var socket = new WebSocket(address);
+            socket.onmessage = function (msg) {
+                if (msg.data == 'reload') window.location.reload();
+                else if (msg.data == 'refreshcss') refreshCSS();
+            };
+            if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                console.log('Live reload enabled.');
+                sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+            }
+        })();
+    }
+    else {
+        console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+    }
+    // ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+    // <![CDATA[  <-- For SVG support
+    if ('WebSocket' in window) {
+        (function () {
+            function refreshCSS() {
+                var sheets = [].slice.call(document.getElementsByTagName("link"));
+                var head = document.getElementsByTagName("head")[0];
+                for (var i = 0; i < sheets.length; ++i) {
+                    var elem = sheets[i];
+                    var parent = elem.parentElement || head;
+                    parent.removeChild(elem);
+                    var rel = elem.rel;
+                    if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                        var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                        elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                    }
+                    parent.appendChild(elem);
+                }
+            }
+            var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+            var address = protocol + window.location.host + window.location.pathname + '/ws';
+            var socket = new WebSocket(address);
+            socket.onmessage = function (msg) {
+                if (msg.data == 'reload') window.location.reload();
+                else if (msg.data == 'refreshcss') refreshCSS();
+            };
+            if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                console.log('Live reload enabled.');
+                sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+            }
+        })();
+    }
+    else {
+        console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+    }
+    // ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+    // <![CDATA[  <-- For SVG support
+    if ('WebSocket' in window) {
+        (function () {
+            function refreshCSS() {
+                var sheets = [].slice.call(document.getElementsByTagName("link"));
+                var head = document.getElementsByTagName("head")[0];
+                for (var i = 0; i < sheets.length; ++i) {
+                    var elem = sheets[i];
+                    var parent = elem.parentElement || head;
+                    parent.removeChild(elem);
+                    var rel = elem.rel;
+                    if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                        var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                        elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                    }
+                    parent.appendChild(elem);
+                }
+            }
+            var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+            var address = protocol + window.location.host + window.location.pathname + '/ws';
+            var socket = new WebSocket(address);
+            socket.onmessage = function (msg) {
+                if (msg.data == 'reload') window.location.reload();
+                else if (msg.data == 'refreshcss') refreshCSS();
+            };
+            if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                console.log('Live reload enabled.');
+                sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+            }
+        })();
+    }
+    else {
+        console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+    }
+    // ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+// <![CDATA[  <-- For SVG support
+if ('WebSocket' in window) {
+  (function () {
+    function refreshCSS() {
+      var sheets = [].slice.call(document.getElementsByTagName("link"));
+      var head = document.getElementsByTagName("head")[0];
+      for (var i = 0; i < sheets.length; ++i) {
+        var elem = sheets[i];
+        var parent = elem.parentElement || head;
+        parent.removeChild(elem);
+        var rel = elem.rel;
+        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+          var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+          elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+        }
+        parent.appendChild(elem);
+      }
+    }
+    var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+    var address = protocol + window.location.host + window.location.pathname + '/ws';
+    var socket = new WebSocket(address);
+    socket.onmessage = function (msg) {
+      if (msg.data == 'reload') window.location.reload();
+      else if (msg.data == 'refreshcss') refreshCSS();
+    };
+    if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+      console.log('Live reload enabled.');
+      sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+    }
+  })();
+}
+else {
+  console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+}
+// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+
+  
+	// ]]>
+</script>
+
+<span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body></html>

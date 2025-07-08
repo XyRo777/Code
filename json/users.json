@@ -1,0 +1,65 @@
+{
+  "Users": [
+    {
+      "userID": "U001",
+      "firstName": "Alice",
+      "emailId": "alice.johnson@example.com",
+      "password": "alice@123",
+      "QuestionsCompleted": [["1", "Timestamp"], ["10", "Timestamp"]],
+      "QuestionsUnAttempted": [ 5, 8, 9],
+      "QuestionsAttempted": [ 5, 8, 9],
+      "TotalPoints": "QuestionsCompleted.length *10",
+      "Badges": ["ProblemSolver", "Gold"],
+      "Accuracy": "TotalQuestionsCompleted/TotalQuestionsAttempted+TotalQuestionsUnattempted"
+    },
+    {
+      "userID": "U002",
+      "firstName": "Brian",
+      "emailId": "brian.smith@example.com",
+      "password": "brian@456",
+     "QuestionsCompleted": [["1", "Timestamp"], ["10", "Timestamp"]],
+      "QuestionsUnAttempted": [ 5, 8, 9],
+      "QuestionsAttempted": [ 5, 8, 9],
+      "TotalPoints": "QuestionsCompleted.length *10",
+      "Badges": ["ProblemSolver", "Gold"],
+      "Accuracy": "TotalQuestionsCompleted/TotalQuestionsAttempted+TotalQuestionsUnattempted"
+    },
+    {
+      "userID": "U003",
+      "firstName": "Catherine",
+      "emailId": "catherine.williams@example.com",
+      "password": "cat@789",
+      "QuestionsCompleted": [["1", "Timestamp"], ["10", "Timestamp"]],
+      "QuestionsUnAttempted": [ 5, 8, 9],
+      "QuestionsAttempted": [ 5, 8, 9],
+      "TotalPoints": "QuestionsCompleted.length *10",
+      "Badges": ["ProblemSolver", "Gold"],
+      "Accuracy": "TotalQuestionsCompleted/TotalQuestionsAttempted+TotalQuestionsUnattempted"
+    },
+    {
+      "userID": "U004",
+      "firstName": "David",
+      "emailId": "david.brown@example.com",
+      "password": "david@321",
+      "QuestionsCompleted": [["1", "Timestamp"], ["10", "Timestamp"]],
+      "QuestionsUnAttempted": [ 5, 8, 9],
+      "QuestionsAttempted": [ 5, 8, 9],
+      "TotalPoints": "QuestionsCompleted.length *10",
+      "Badges": ["ProblemSolver", "Gold"],
+      "Accuracy": "TotalQuestionsCompleted/TotalQuestionsAttempted+TotalQuestionsUnattempted"
+    },
+    {
+      "userID": "U005",
+      "firstName": "Emily",
+      "emailId": "emily.davis@example.com",
+      "password": "emily@654",
+      "QuestionsCompleted": [["5", "Timestamp"]],
+      "QuestionsUnAttempted": [2, 4],
+      "QuestionsInProgress": [3],
+      "QuestionsReview": [1],
+      "TotalPoints": 190,
+      "Badges": ["Builder", "Bronze"],
+      "Accuracy": "TotalQuestionsAttempted/TotalQuestionsAttempted+TotalQuestionsInProgress+TotalQuestionsReview"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+<!-- Topic-wise Questions Solved (Horizontal Bar Chart) -->
+<div class="col-12 mb-6">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="fs-6 mb-0 text-start">Topic-wise Questions Solved</h3>
+        </div>
+        <div class="card-body">
+            <canvas id="topicWiseQuestionsSolvedChart" height="300"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Topic-wise Questions Solved (Horizontal Bar Chart)
+        const questionsSolvedCtx = document.getElementById('topicWiseQuestionsSolvedChart').getContext('2d');
+        const topicWiseQuestionsSolvedChart = new Chart(questionsSolvedCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Arrays', 'Strings', 'Graphs', 'Trees', 'DP', 'SQL', 'Recursion', 'Sorting'],
+                datasets: [{
+                    label: 'Problems Solved',
+                    data: [45, 30, 25, 20, 15, 40, 35, 10],
+                    backgroundColor: [
+                        '#4e73df', '#1cc88a', '#36b9cc', '#f6c23e', 
+                        '#e74a3b', '#858796', '#5a5c69', '#3a3b45'
+                    ],
+                    borderColor: [
+                        '#4e73df', '#1cc88a', '#36b9cc', '#f6c23e', 
+                        '#e74a3b', '#858796', '#5a5c69', '#3a3b45'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.x + ' problems';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Problems Solved'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Topics'
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>

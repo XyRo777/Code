@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | Classroom</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #22252a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .faq-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .faq-header h1 {
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        .faq-header p {
+            color: #9b9ea9;
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .faq-section {
+            margin-bottom: 40px;
+        }
+        .faq-section h2 {
+            color: #f9bc06;
+            border-bottom: 1px solid #34373c;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            background: #17191c;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        .faq-question:hover {
+            background-color: #1e2025;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5em;
+            color: #f9bc06;
+            transition: transform 0.3s;
+        }
+        .faq-question.active::after {
+            content: '-';
+        }
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: #9b9ea9;
+        }
+        .faq-answer.show {
+            padding: 0 20px 20px 20px;
+            max-height: 500px;
+        }
+        .faq-answer pre {
+            background-color: #22252a;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        .faq-answer code {
+            font-family: 'Courier New', monospace;
+            color: #f9bc06;
+        }
+        .contact-promo {
+            background: #17191c;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1);
+        }
+        .contact-promo h3 {
+            color: #ffffff;
+            margin-top: 0;
+        }
+        .contact-promo p {
+            color: #9b9ea9;
+            margin-bottom: 20px;
+        }
+        .contact-btn {
+            background-color: #f9bc06;
+            color: #000002;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .contact-btn:hover {
+            background-color: #daa919;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="faq-header">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about CodeCraft Academy, our coding platform, and learning resources.</p>
+        </div>
+
+        <div class="faq-section">
+            <h2>Getting Started</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I create a developer account?</div>
+                <div class="faq-answer">
+                    <p>To create your developer account:</p>
+                    <ol>
+                        <li>Click "Sign Up" in the top-right corner</li>
+                        <li>Choose between email registration or GitHub login</li>
+                        <li>Complete your profile (select your skill level and interests)</li>
+                        <li>Verify your email address</li>
+                        <li>Start your first coding challenge!</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What programming languages do you support?</div>
+                <div class="faq-answer">
+                    <p>Our platform currently supports:</p>
+                    <ul>
+                        <li>JavaScript (Node.js, React, Angular, Vue)</li>
+                        <li>Python (Django, Flask)</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                        <li>C#</li>
+                        <li>Ruby</li>
+                        <li>Go</li>
+                        <li>Swift</li>
+                        <li>PHP</li>
+                    </ul>
+                    <p>We're constantly adding new languages based on community demand.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is there a mobile app available?</div>
+                <div class="faq-answer">
+                    <p>Yes! Our mobile app is available for both iOS and Android:</p>
+                    <ul>
+                        <li><strong>iOS:</strong> Download from the App Store</li>
+                        <li><strong>Android:</strong> Available on Google Play</li>
+                    </ul>
+                    <p>The mobile app supports code editing, challenges, and learning on the go with our mobile-optimized IDE.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Coding Environment</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How does the online IDE work?</div>
+                <div class="faq-answer">
+                    <p>Our browser-based IDE features:</p>
+                    <ul>
+                        <li>Real-time code execution with instant feedback</li>
+                        <li>Syntax highlighting and intelligent code completion</li>
+                        <li>Terminal access for command-line operations</li>
+                        <li>Collaborative editing for pair programming</li>
+                        <li>Version control integration (Git)</li>
+                    </ul>
+                    <p>Example of running a simple Python program:</p>
+                    <pre><code># Welcome to CodeCraft
+print("Hello, World!")
+# Click 'Run' to see the output</code></pre>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I use my own development environment?</div>
+                <div class="faq-answer">
+                    <p>Yes! While our online IDE is fully featured, you can:</p>
+                    <ol>
+                        <li>Connect your local VS Code with our Live Share extension</li>
+                        <li>Use our CLI tool to sync challenges with your local machine</li>
+                        <li>Import/export projects via GitHub</li>
+                    </ol>
+                    <p>We recommend starting with our online IDE to take advantage of instant feedback and automated testing.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I debug my code?</div>
+                <div class="faq-answer">
+                    <p>Our debugging tools include:</p>
+                    <ul>
+                        <li>Step-through debugging with breakpoints</li>
+                        <li>Variable inspection</li>
+                        <li>Console output</li>
+                        <li>Error highlighting with suggested fixes</li>
+                    </ul>
+                    <p>To start debugging:</p>
+                    <pre><code>// Set breakpoints by clicking line numbers
+function calculateTotal(items) {
+    let total = 0;
+    for (let item of items) {
+        total += item.price;
+    }
+    return total;
+}
+// Use the debug panel to step through execution</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Learning Paths & Challenges</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How are the learning paths structured?</div>
+                <div class="faq-answer">
+                    <p>Our learning paths include:</p>
+                    <ul>
+                        <li><strong>Beginner:</strong> Fundamentals, syntax, basic algorithms</li>
+                        <li><strong>Intermediate:</strong> Data structures, frameworks, OOP</li>
+                        <li><strong>Advanced:</strong> System design, architecture, optimization</li>
+                        <li><strong>Specializations:</strong> Web Dev, Mobile, Data Science, AI</li>
+                    </ul>
+                    <p>Each path includes:</p>
+                    <ol>
+                        <li>Interactive lessons</li>
+                        <li>Hands-on projects</li>
+                        <li>Code reviews</li>
+                        <li>Certification upon completion</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Are there coding competitions?</div>
+                <div class="faq-answer">
+                    <p>Yes! We host regular coding competitions:</p>
+                    <ul>
+                        <li><strong>Weekly Challenges:</strong> Short problems with leaderboards</li>
+                        <li><strong>Monthly Hackathons:</strong> Team-based project competitions</li>
+                        <li><strong>Annual CodeCraft Cup:</strong> Our premier coding tournament</li>
+                    </ul>
+                    <p>Competitions feature:</p>
+                    <pre><code>// Example competition problem
+function findLongestSubstring(s) {
+    // Implement your solution here
+    // Winner is determined by efficiency and correctness
+}</code></pre>
+                    <p>Prizes include premium memberships, tech gadgets, and job opportunities.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do code reviews work?</div>
+                <div class="faq-answer">
+                    <p>Our code review system allows:</p>
+                    <ol>
+                        <li>Submit your project for review</li>
+                        <li>Get feedback from expert developers</li>
+                        <li>Learn best practices and optimization techniques</li>
+                        <li>Iterate based on suggestions</li>
+                    </ol>
+                    <p>Example review feedback:</p>
+                    <pre><code>// Instead of:
+for (let i = 0; i < array.length; i++) {
+    // do something
+}
+
+// Consider:
+array.forEach(item => {
+    // more readable functional approach
+});</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-promo">
+            <h3>Need coding help?</h3>
+            <p>Our developer support team is available 24/7 to help with any technical questions or platform issues.</p>
+            <a href="contactus.html" class="contact-btn" target="_blank">Contact Developer Support</a>
+        </div>
+    </div>
+
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('show');
+                });
+                
+                // Open current if it wasn't active
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.classList.add('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
