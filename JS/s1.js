@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-     fetch("/json/question.json")
+     fetch("json/question.json")
       .then(response => response.json())
       .then(data => {
         let totalQuestions = 0;
