@@ -235,7 +235,7 @@ function register(event) {
     const newId = users.length > 0 ? users[users.length - 1].id + 1 : 101;
 
     // Fetch all question IDs from question.json
-     fetch("/json/question.json")
+     fetch("json/question.json")
       .then(res => {
         if (!res.ok) throw new Error("Failed to load questions");
         return res.json();
