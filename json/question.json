@@ -13,9 +13,9 @@
               "subtopic": "Easy",
               "languages": ["Java", "C++", "Python", "C"],
               "practiceLink": "https://www.geeksforgeeks.org/problems/largest-element-in-array4009/0",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg", "/Pictures/accenture.png"]
+              "companies": ["../Pictures/tcs.jpg", "../Pictures/accenture.png"]
             },
             {
               "id": 2,
@@ -24,9 +24,9 @@
               "subtopic": "Easy",
               "languages": ["Java", "C++", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/find-second-largest-element-array/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/accenture.png", "/Pictures/tcs.jpg"]
+              "companies": ["../Pictures/accenture.png", "../Pictures/tcs.jpg"]
             }
           ]
         },
@@ -40,9 +40,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "Python", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/rotate-array-k-times/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg", "/Pictures/google.png"]
+              "companies": ["../Pictures/amazon.jpeg", "../Pictures/google.png"]
             },
             {
               "id": 4,
@@ -51,9 +51,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/find-the-missing-number/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png", "/Pictures/tcs.jpg"]
+              "companies": ["../Pictures/microsoft.png", "../Pictures/tcs.jpg"]
             }
           ]
         },
@@ -67,9 +67,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "C++", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/problems/trapping-rain-water/0",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg", "/Pictures/microsoft.png"]
+              "companies": ["../Pictures/amazon.jpeg", "../Pictures/microsoft.png"]
             },
             {
               "id": 6,
@@ -78,9 +78,9 @@
               "subtopic": "Hard",
               "languages": ["Python", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/word-ladder-set-1-graph/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png", "/Pictures/tcs.jpg"]
+              "companies": ["../Pictures/google.png", "../Pictures/tcs.jpg"]
             },
             {
               "id": 7,
@@ -89,9 +89,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/kth-smallest-element-in-a-row-wise-and-column-wise-sorted-2d-array/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg", "/Pictures/accenture.png"]
+              "companies": ["../Pictures/amazon.jpeg", "../Pictures/accenture.png"]
             },
             {
               "id": 8,
@@ -100,9 +100,9 @@
               "subtopic": "Hard",
               "languages": ["Python", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png", "/Pictures/netflix.png"]
+              "companies": ["../Pictures/google.png", "../Pictures/netflix.png"]
             },
             {
               "id": 9,
@@ -111,9 +111,9 @@
               "subtopic": "Hard",
               "languages": ["C++", "Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/largest-rectangle-under-histogram/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png","/Pictures/accenture.png"]
+              "companies": ["../Pictures/microsoft.png","../Pictures/accenture.png"]
             },
             {
               "id": 10,
@@ -122,9 +122,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "C++", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg", "/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/tcs.jpg", "../Pictures/amazon.jpeg"]
             }
           ]
         }
@@ -143,9 +143,9 @@
               "subtopic": "Easy",
               "languages": ["Java", "C++", "Python", "C"],
               "practiceLink": "https://www.geeksforgeeks.org/reverse-a-string/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/accenture.png", "/Pictures/tcs.jpg"]
+              "companies": ["../Pictures/accenture.png", "../Pictures/tcs.jpg"]
             },
             {
               "id": 12,
@@ -154,9 +154,9 @@
               "subtopic": "Easy",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/python-program-check-string-palindrome-not/",
-              "practiceSite": " /Pictures/gfg.png",
+              "practiceSite": " ../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg", "/Pictures/accenture.png"]
+              "companies": ["../Pictures/tcs.jpg", "../Pictures/accenture.png"]
             }
           ]
         },
@@ -170,9 +170,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "Python", "C++"],
               "practiceLink": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
-              "practiceSite": "/Pictures/leetcode.png",
+              "practiceSite": "../Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg", "/Pictures/google.png"]
+              "companies": ["../Pictures/amazon.jpeg", "../Pictures/google.png"]
             },
             {
               "id": 14,
@@ -181,9 +181,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "Python"],
               "practiceLink": "https://leetcode.com/problems/group-anagrams/",
-              "practiceSite": "/Pictures/leetcode.png",
+              "practiceSite": "../Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/netflix.png"]
+              "companies": ["../Pictures/netflix.png"]
             },
             {
               "id": 15,
@@ -192,9 +192,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "C++", "Python"],
               "practiceLink": "https://leetcode.com/problems/longest-palindromic-substring/",
-              "practiceSite": "/Pictures/leetcode.png",
+              "practiceSite": "../Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             },
             {
               "id": 16,
@@ -203,9 +203,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "Python"],
               "practiceLink": "https://leetcode.com/problems/zigzag-conversion/",
-              "practiceSite": "/Pictures/leetcode.png",
+              "practiceSite": "../Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png"]
+              "companies": ["../Pictures/microsoft.png"]
             },
             {
               "id": 17,
@@ -214,9 +214,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "C++", "Python"],
               "practiceLink": "https://leetcode.com/problems/string-to-integer-atoi/",
-              "practiceSite": "/Pictures/leetcode.png",
+              "practiceSite": "../Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+              "companies": ["../Pictures/tcs.jpg", "../Pictures/Capgemini.png"]
             },
             {
               "id": 18,
@@ -225,9 +225,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "Python", "C++"],
               "practiceLink": "https://leetcode.com/problems/multiply-strings/",
-              "practiceSite": "/Pictures/leetcode.png",
+              "practiceSite": "../Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png", "/Pictures/accenture.png"]
+              "companies": ["../Pictures/google.png", "../Pictures/accenture.png"]
             }
           ]
         },
@@ -241,9 +241,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "C++", "Python"],
               "practiceLink": "https://leetcode.com/problems/wildcard-matching/",
-              "practiceSite": "/Pictures/leetcode.png",
+              "practiceSite": "../Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg", "/Pictures/microsoft.png"]
+              "companies": ["../Pictures/amazon.jpeg", "../Pictures/microsoft.png"]
             },
             {
               "id": 20,
@@ -252,9 +252,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "C++", "Python"],
               "practiceLink": "https://leetcode.com/problems/regular-expression-matching/",
-              "practiceSite": "/Pictures/leetcode.png",
+              "practiceSite": "../Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png"]
+              "companies": ["../Pictures/google.png"]
             },
             {
               "id": 21,
@@ -263,9 +263,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "Python"],
               "practiceLink": "https://leetcode.com/problems/minimum-window-substring/",
-              "practiceSite": "/Pictures/leetcode.png",
+              "practiceSite": "../Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/netflix.png", "/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/netflix.png", "../Pictures/amazon.jpeg"]
             },
             {
               "id": 22,
@@ -274,9 +274,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "Python"],
               "practiceLink": "https://leetcode.com/problems/palindrome-pairs/",
-              "practiceSite": "/Pictures/leetcode.png",
+              "practiceSite": "../Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png"]
+              "companies": ["../Pictures/microsoft.png"]
             },
             {
               "id": 23,
@@ -285,9 +285,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "C++", "Python"],
               "practiceLink": "https://leetcode.com/problems/basic-calculator-ii/",
-              "practiceSite": "/Pictures/leetcode.png",
+              "practiceSite": "../Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg"]
+              "companies": ["../Pictures/tcs.jpg"]
             },
             {
               "id": 24,
@@ -296,9 +296,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/serialize-and-deserialize-strings/",
-              "practiceSite": " /Pictures/gfg.png",
+              "practiceSite": " ../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+              "companies": ["../Pictures/tcs.jpg", "../Pictures/Capgemini.png"]
             }
           ]
         }
@@ -317,9 +317,9 @@
               "subtopic": "Easy",
               "languages": ["Java", "Python", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/reverse-a-linked-list/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+              "companies": ["../Pictures/tcs.jpg", "../Pictures/Capgemini.png"]
             },
             {
               "id": 26,
@@ -328,9 +328,9 @@
               "subtopic": "Easy",
               "languages": ["C", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg", "/Pictures/accenture.png"]
+              "companies": ["../Pictures/tcs.jpg", "../Pictures/accenture.png"]
             },
             {
               "id": 27,
@@ -339,9 +339,9 @@
               "subtopic": "Easy",
               "languages": ["Python", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/finding-middle-element-linked-list/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/Capgemini.png"]
+              "companies": ["../Pictures/Capgemini.png"]
             },
             {
               "id": 28,
@@ -350,9 +350,9 @@
               "subtopic": "Easy",
               "languages": ["Java", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/count-nodes-in-a-linked-list/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg"]
+              "companies": ["../Pictures/tcs.jpg"]
             },
             {
               "id": 29,
@@ -361,9 +361,9 @@
               "subtopic": "Easy",
               "languages": ["C++", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/delete-a-node-in-linked-list/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg"]
+              "companies": ["../Pictures/tcs.jpg"]
             },
             {
               "id": 30,
@@ -372,9 +372,9 @@
               "subtopic": "Easy",
               "languages": ["C", "Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/search-an-element-in-a-linked-list/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             }
           ]
         },
@@ -388,9 +388,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/remove-duplicates-from-a-sorted-linked-list/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png"]
+              "companies": ["../Pictures/google.png"]
             },
             {
               "id": 32,
@@ -399,9 +399,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/write-a-function-to-get-the-intersection-point-of-two-linked-lists/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             },
             {
               "id": 33,
@@ -410,9 +410,9 @@
               "subtopic": "Medium",
               "languages": ["Python", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/merge-two-sorted-linked-lists/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/Capgemini.png"]
+              "companies": ["../Pictures/Capgemini.png"]
             },
             {
               "id": 34,
@@ -421,9 +421,9 @@
               "subtopic": "Medium",
               "languages": ["C++", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/add-two-numbers-represented-by-linked-lists/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png"]
+              "companies": ["../Pictures/microsoft.png"]
             },
             {
               "id": 35,
@@ -432,9 +432,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/clone-a-linked-list-with-next-and-random-pointer/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png"]
+              "companies": ["../Pictures/google.png"]
             },
             {
               "id": 36,
@@ -443,9 +443,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/function-to-check-if-a-singly-linked-list-is-palindrome/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             }
           ]
         },
@@ -459,9 +459,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "C++", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/flatten-a-linked-list-with-next-and-child-pointers/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png"]
+              "companies": ["../Pictures/google.png"]
             },
             {
               "id": 38,
@@ -470,9 +470,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/merge-sort-for-linked-list/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             },
             {
               "id": 39,
@@ -481,9 +481,9 @@
               "subtopic": "Hard",
               "languages": ["C++", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png"]
+              "companies": ["../Pictures/microsoft.png"]
             },
             {
               "id": 40,
@@ -492,9 +492,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/lru-cache-implementation/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png"]
+              "companies": ["../Pictures/google.png"]
             },
             {
               "id": 41,
@@ -503,9 +503,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/rearrange-a-given-linked-list-in-place/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             },
             {
               "id": 42,
@@ -514,9 +514,9 @@
               "subtopic": "Hard",
               "languages": ["C++", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/reverse-a-list-in-groups-of-given-size/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             }
           ]
         }
@@ -535,9 +535,9 @@
               "subtopic": "Easy",
               "languages": ["Java", "Python", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/inorder-tree-traversal/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+              "companies": ["../Pictures/tcs.jpg", "../Pictures/Capgemini.png"]
             },
             {
               "id": 44,
@@ -546,9 +546,9 @@
               "subtopic": "Easy",
               "languages": ["C", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/preorder-tree-traversal/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/Capgemini.png"]
+              "companies": ["../Pictures/Capgemini.png"]
             },
             {
               "id": 45,
@@ -557,9 +557,9 @@
               "subtopic": "Easy",
               "languages": ["Python", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/postorder-tree-traversal/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/Capgemini.png"]
+              "companies": ["../Pictures/Capgemini.png"]
             },
             {
               "id": 46,
@@ -568,9 +568,9 @@
               "subtopic": "Easy",
               "languages": ["Java", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/level-order-tree-traversal/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg"]
+              "companies": ["../Pictures/tcs.jpg"]
             },
             {
               "id": 47,
@@ -579,9 +579,9 @@
               "subtopic": "Easy",
               "languages": ["C++", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/height-of-binary-tree/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/netflix.png"]
+              "companies": ["../Pictures/netflix.png"]
             },
             {
               "id": 48,
@@ -590,9 +590,9 @@
               "subtopic": "Easy",
               "languages": ["C", "Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/count-leaves-in-binary-tree/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             }
           ]
         },
@@ -606,9 +606,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/diameter-of-a-binary-tree/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png"]
+              "companies": ["../Pictures/google.png"]
             },
             {
               "id": 50,
@@ -617,9 +617,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             },
             {
               "id": 51,
@@ -628,9 +628,9 @@
               "subtopic": "Medium",
               "languages": ["Python", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/print-right-view-binary-tree/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg"]
+              "companies": ["../Pictures/tcs.jpg"]
             },
             {
               "id": 52,
@@ -639,9 +639,9 @@
               "subtopic": "Medium",
               "languages": ["C++", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/print-left-view-binary-tree/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png"]
+              "companies": ["../Pictures/microsoft.png"]
             },
             {
               "id": 53,
@@ -650,9 +650,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/zigzag-tree-traversal/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png"]
+              "companies": ["../Pictures/google.png"]
             },
             {
               "id": 54,
@@ -661,9 +661,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/netflix.png"]
+              "companies": ["../Pictures/netflix.png"]
             }
           ]
         },
@@ -677,9 +677,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "C++", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/convert-a-given-binary-tree-to-doubly-linked-list/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png"]
+              "companies": ["../Pictures/google.png"]
             },
             {
               "id": 56,
@@ -688,9 +688,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/construct-tree-from-inorder-and-preorder-traversals/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             },
             {
               "id": 57,
@@ -699,9 +699,9 @@
               "subtopic": "Hard",
               "languages": ["C++", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/boundary-traversal-of-binary-tree/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png"]
+              "companies": ["../Pictures/microsoft.png"]
             },
             {
               "id": 58,
@@ -710,9 +710,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/find-maximum-path-sum-in-a-binary-tree/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png"]
+              "companies": ["../Pictures/microsoft.png"]
             },
             {
               "id": 59,
@@ -721,9 +721,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/serialize-deserialize-binary-tree/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png"]
+              "companies": ["../Pictures/microsoft.png"]
             },
             {
               "id": 60,
@@ -732,9 +732,9 @@
               "subtopic": "Hard",
               "languages": ["C++", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/vertical-order-traversal-binary-tree/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             }
           ]
         }
@@ -753,9 +753,9 @@
               "subtopic": "Easy",
               "languages": ["Java", "Python", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg", "/Pictures/accenture.png"]
+              "companies": ["../Pictures/tcs.jpg", "../Pictures/accenture.png"]
             },
             {
               "id": 62,
@@ -764,9 +764,9 @@
               "subtopic": "Easy",
               "languages": ["C", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg"]
+              "companies": ["../Pictures/tcs.jpg"]
             },
             {
               "id": 63,
@@ -775,9 +775,9 @@
               "subtopic": "Easy",
               "languages": ["Python", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/detect-cycle-undirected-graph/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/Capgemini.png"]
+              "companies": ["../Pictures/Capgemini.png"]
             },
             {
               "id": 64,
@@ -786,9 +786,9 @@
               "subtopic": "Easy",
               "languages": ["Java", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/number-of-provinces/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg"]
+              "companies": ["../Pictures/tcs.jpg"]
             },
             {
               "id": 65,
@@ -797,9 +797,9 @@
               "subtopic": "Easy",
               "languages": ["Python", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/find-the-town-judge/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             },
             {
               "id": 66,
@@ -808,9 +808,9 @@
               "subtopic": "Easy",
               "languages": ["C", "Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/find-if-path-exists-in-graph/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/Capgemini.png"]
+              "companies": ["../Pictures/Capgemini.png"]
             }
           ]
         },
@@ -824,9 +824,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/topological-sorting/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png"]
+              "companies": ["../Pictures/google.png"]
             },
             {
               "id": 68,
@@ -835,9 +835,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/course-schedule/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             },
             {
               "id": 69,
@@ -846,9 +846,9 @@
               "subtopic": "Medium",
               "languages": ["Python", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/rotting-oranges/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/tcs.jpg"]
+              "companies": ["../Pictures/tcs.jpg"]
             },
             {
               "id": 70,
@@ -857,9 +857,9 @@
               "subtopic": "Medium",
               "languages": ["C++", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/find-number-of-islands/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png"]
+              "companies": ["../Pictures/microsoft.png"]
             },
             {
               "id": 71,
@@ -868,9 +868,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "C++"],
               "practiceLink": "https://www.geeksforgeeks.org/clone-an-undirected-graph/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png"]
+              "companies": ["../Pictures/google.png"]
             },
             {
               "id": 72,
@@ -879,9 +879,9 @@
               "subtopic": "Medium",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/word-ladder-set-1/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             }
           ]
         },
@@ -895,9 +895,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "C++", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/kruskals-algorithm-simple-implementation-for-adjacency-matrix/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png"]
+              "companies": ["../Pictures/google.png"]
             },
             {
               "id": 74,
@@ -906,9 +906,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             },
             {
               "id": 75,
@@ -917,9 +917,9 @@
               "subtopic": "Hard",
               "languages": ["C++", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png"]
+              "companies": ["../Pictures/microsoft.png"]
             },
             {
               "id": 76,
@@ -928,9 +928,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png"]
+              "companies": ["../Pictures/microsoft.png"]
             },
             {
               "id":77,
@@ -939,9 +939,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png"]
+              "companies": ["../Pictures/google.png"]
             },
             {
               "id": 78,
@@ -950,9 +950,9 @@
               "subtopic": "Hard",
               "languages": ["Java", "Python"],
               "practiceLink": "https://www.geeksforgeeks.org/articulation-points-or-cut-vertices-in-a-graph/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             },
             {
               "id": 79,
@@ -961,9 +961,9 @@
               "subtopic": "Hard",
               "languages": ["C++", "Java"],
               "practiceLink": "https://www.geeksforgeeks.org/bridge-in-a-graph/",
-              "practiceSite": "/Pictures/gfg.png",
+              "practiceSite": "../Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg"]
+              "companies": ["../Pictures/amazon.jpeg"]
             }
           ]
         }
@@ -982,9 +982,9 @@
           "subtopic": "Easy",
           "languages": ["Python", "Java", "C++"],
           "practiceLink": "https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+          "companies": ["../Pictures/tcs.jpg", "../Pictures/Capgemini.png"]
         },
         {
           "id": 81,
@@ -993,9 +993,9 @@
           "subtopic": "Easy",
           "languages": ["Java", "Python"],
           "practiceLink": "https://www.geeksforgeeks.org/count-ways-reach-nth-stair/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/microsoft.png"]
+          "companies": ["../Pictures/microsoft.png"]
         },
         {
           "id": 82,
@@ -1004,9 +1004,9 @@
           "subtopic": "Easy",
           "languages": ["Python"],
           "practiceLink": "https://www.geeksforgeeks.org/find-maximum-sum-without-adjacent/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/Capgemini.png"]
+          "companies": ["../Pictures/Capgemini.png"]
         },
         {
           "id": 83,
@@ -1015,9 +1015,9 @@
           "subtopic": "Easy",
           "languages": ["Java", "C++"],
           "practiceLink": "https://www.geeksforgeeks.org/minimum-cost-climbing-stairs/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/tcs.jpg"]
+          "companies": ["../Pictures/tcs.jpg"]
         },
         {
           "id": 84,
@@ -1026,9 +1026,9 @@
           "subtopic": "Easy",
           "languages": ["Python", "C++"],
           "practiceLink": "https://www.geeksforgeeks.org/tribonacci-numbers/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/amazon.jpeg"]
+          "companies": ["../Pictures/amazon.jpeg"]
         },
         {
           "id": 85,
@@ -1037,9 +1037,9 @@
           "subtopic": "Easy",
           "languages": ["Java", "Python"],
           "practiceLink": "https://www.geeksforgeeks.org/count-ways-reach-nth-stair/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/Capgemini.png"]
+          "companies": ["../Pictures/Capgemini.png"]
         }
       ]
     },
@@ -1053,9 +1053,9 @@
           "subtopic": "Medium",
           "languages": ["C++", "Java"],
           "practiceLink": "https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/google.png"]
+          "companies": ["../Pictures/google.png"]
         },
         {
           "id": 87,
@@ -1064,9 +1064,9 @@
           "subtopic": "Medium",
           "languages": ["Python", "C++"],
           "practiceLink": "https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/amazon.jpeg"]
+          "companies": ["../Pictures/amazon.jpeg"]
         },
         {
           "id": 88,
@@ -1075,9 +1075,9 @@
           "subtopic": "Medium",
           "languages": ["Java", "Python"],
           "practiceLink": "https://www.geeksforgeeks.org/subset-sum-problem-dp-25/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/tcs.jpg"]
+          "companies": ["../Pictures/tcs.jpg"]
         },
         {
           "id": 89,
@@ -1086,9 +1086,9 @@
           "subtopic": "Medium",
           "languages": ["C++", "Java"],
           "practiceLink": "https://www.geeksforgeeks.org/partition-problem-dp-18/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/microsoft.png"]
+          "companies": ["../Pictures/microsoft.png"]
         },
         {
           "id": 90,
@@ -1097,9 +1097,9 @@
           "subtopic": "Medium",
           "languages": ["Python", "Java"],
           "practiceLink": "https://www.geeksforgeeks.org/target-sum-dp-20/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/google.png"]
+          "companies": ["../Pictures/google.png"]
         },
         {
           "id": 91,
@@ -1108,9 +1108,9 @@
           "subtopic": "Medium",
           "languages": ["Java", "Python"],
           "practiceLink": "https://www.geeksforgeeks.org/coin-change-dp-7/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/amazon.jpeg"]
+          "companies": ["../Pictures/amazon.jpeg"]
         }
       ]
     },
@@ -1124,9 +1124,9 @@
           "subtopic": "Hard",
           "languages": ["Java", "Python"],
           "practiceLink": "https://www.geeksforgeeks.org/egg-dropping-puzzle-dp-11/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/google.png"]
+          "companies": ["../Pictures/google.png"]
         },
         {
           "id": 93,
@@ -1135,9 +1135,9 @@
           "subtopic": "Hard",
           "languages": ["Java", "C++"],
           "practiceLink": "https://www.geeksforgeeks.org/matrix-chain-multiplication-dp-8/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/amazon.jpeg"]
+          "companies": ["../Pictures/amazon.jpeg"]
         },
         {
           "id": 94,
@@ -1146,9 +1146,9 @@
           "subtopic": "Hard",
           "languages": ["C++", "Java"],
           "practiceLink": "https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/microsoft.png"]
+          "companies": ["../Pictures/microsoft.png"]
         },
         {
           "id": 95,
@@ -1157,9 +1157,9 @@
           "subtopic": "Hard",
           "languages": ["Python", "Java"],
           "practiceLink": "https://www.geeksforgeeks.org/edit-distance-dp-5/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/amazon.jpeg"]
+          "companies": ["../Pictures/amazon.jpeg"]
         },
         {
           "id": 96,
@@ -1168,9 +1168,9 @@
           "subtopic": "Hard",
           "languages": ["Java", "Python"],
           "practiceLink": "https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/tcs.jpg"]
+          "companies": ["../Pictures/tcs.jpg"]
         },
         {
           "id": 97,
@@ -1179,9 +1179,9 @@
           "subtopic": "Hard",
           "languages": ["C++", "Java"],
           "practiceLink": "https://www.geeksforgeeks.org/wildcard-pattern-matching/",
-          "practiceSite": "/Pictures/gfg.png",
+          "practiceSite": "../Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["/Pictures/amazon.jpeg"]
+          "companies": ["../Pictures/amazon.jpeg"]
         }
       ]
     }
