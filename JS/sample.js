@@ -57,7 +57,7 @@ if (!pageConfig) {
   console.error("No config found for this page:", currentPage);
 } else {
   document.addEventListener("DOMContentLoaded", function () {
-    fetch("/json/question.json")
+    fetch("../json/question.json")
       .then(res => {
         if (!res.ok) throw new Error("Failed to fetch questions");
         return res.json();
@@ -490,7 +490,7 @@ document.addEventListener("DOMContentLoaded", function() {
       e.preventDefault();
       localStorage.removeItem('loggedInUser');
       sessionStorage.clear();
-      window.location.href = 'index.html';
+      window.location.href = '../index.html';
     });
   }
 });
