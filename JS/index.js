@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
         latestSix.forEach(q => {
           const companyHTML = (q.companies || []).map(company => `
             <div class="avatar avatar-xs">
-              <img class="avatar-img" src="${company}" alt="company">
+              <img class="avatar-img" src="Pictures/${company}" alt="company">
             </div>
           `).join('');
 
