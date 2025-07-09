@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       localStorage.removeItem('loggedInUser');
       sessionStorage.clear();
-      window.location.href = '/index.html';
+      window.location.href = '../index.html';
     });
   }
 });
