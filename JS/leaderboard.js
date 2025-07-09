@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     navbarUsername.textContent = loggedInUser.fullname || 'Guest';
   } else {
     // If no user logged in, redirect to dashboard (or login)
-    window.location.href = '/index.html';
+    window.location.href = '../index.html';
   }
 
   // Logout functionality
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     logoutBtn.addEventListener('click', function(e) {
       e.preventDefault();
       localStorage.removeItem('loggedInUser');
-      window.location.href = '/index.html'; // Redirect to dashboard
+      window.location.href = '../index.html'; // Redirect to dashboard
     });
   }
 });
