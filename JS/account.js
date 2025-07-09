@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (!loggedInUser) {
     alert('No user is logged in!');
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
     return;
   }
 
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
       localStorage.setItem('users', JSON.stringify(users));
       localStorage.removeItem('loggedInUser');
       showToast('Account deleted. Redirecting to login...');
-      setTimeout(() => window.location.href = 'index.html', 2000);
+      setTimeout(() => window.location.href = '../index.html', 2000);
     }
   });
 
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
     logoutBtn.addEventListener('click', function () {
       localStorage.removeItem('loggedInUser');
       showToast('Logged out successfully! Redirecting...');
-      setTimeout(() => window.location.href = 'index.html', 1500);
+      setTimeout(() => window.location.href = '../index.html', 1500);
     });
   }
 });
