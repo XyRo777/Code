@@ -13,9 +13,9 @@
               "subtopic": "Easy",
               "languages": ["Java", "C++", "Python", "C"],
               "practiceLink": "https://www.geeksforgeeks.org/problems/largest-element-in-array4009/0",
-              "practiceSite": "../Pictures/gfg.png",
+              "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg", "../Pictures/accenture.png"]
+              "companies": ["/Pictures/tcs.jpg", "/Pictures/accenture.png"]
             },
             {
               "id": 2,
@@ -26,7 +26,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/find-second-largest-element-array/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/accenture.png", "../Pictures/tcs.jpg"]
+              "companies": ["/Pictures/accenture.png", "/Pictures/tcs.jpg"]
             }
           ]
         },
@@ -53,7 +53,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/find-the-missing-number/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png", "../Pictures/tcs.jpg"]
+              "companies": ["/Pictures/microsoft.png", "/Pictures/tcs.jpg"]
             }
           ]
         },
@@ -80,7 +80,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/word-ladder-set-1-graph/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png", "../Pictures/tcs.jpg"]
+              "companies": ["/Pictures/google.png", "/Pictures/tcs.jpg"]
             },
             {
               "id": 7,
@@ -91,7 +91,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/kth-smallest-element-in-a-row-wise-and-column-wise-sorted-2d-array/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/amazon.jpeg", "../Pictures/accenture.png"]
+              "companies": ["/Pictures/amazon.jpeg", "/Pictures/accenture.png"]
             },
             {
               "id": 8,
@@ -113,7 +113,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/largest-rectangle-under-histogram/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/microsoft.png","../Pictures/accenture.png"]
+              "companies": ["/Pictures/microsoft.png","/Pictures/accenture.png"]
             },
             {
               "id": 10,
@@ -124,7 +124,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg", "/Pictures/amazon.jpeg"]
+              "companies": ["/Pictures/tcs.jpg", "/Pictures/amazon.jpeg"]
             }
           ]
         }
@@ -145,7 +145,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/reverse-a-string/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/accenture.png", "../Pictures/tcs.jpg"]
+              "companies": ["/Pictures/accenture.png", "/Pictures/tcs.jpg"]
             },
             {
               "id": 12,
@@ -156,7 +156,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/python-program-check-string-palindrome-not/",
               "practiceSite": " /Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg", "../Pictures/accenture.png"]
+              "companies": ["/Pictures/tcs.jpg", "/Pictures/accenture.png"]
             }
           ]
         },
@@ -172,7 +172,7 @@
               "practiceLink": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
               "practiceSite": "/Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/amazon.jpeg", "/Pictures/google.png"]
+              "companies": ["/Pictures/amazon.jpeg", "/Pictures/google.png"]
             },
             {
               "id": 14,
@@ -194,7 +194,7 @@
               "practiceLink": "https://leetcode.com/problems/longest-palindromic-substring/",
               "practiceSite": "/Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/amazon.jpeg"]
+              "companies": ["/Pictures/amazon.jpeg"]
             },
             {
               "id": 16,
@@ -216,7 +216,7 @@
               "practiceLink": "https://leetcode.com/problems/string-to-integer-atoi/",
               "practiceSite": "/Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+              "companies": ["/Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
             },
             {
               "id": 18,
@@ -227,7 +227,7 @@
               "practiceLink": "https://leetcode.com/problems/multiply-strings/",
               "practiceSite": "/Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/google.png", "../Pictures/accenture.png"]
+              "companies": ["/Pictures/google.png", "/Pictures/accenture.png"]
             }
           ]
         },
@@ -265,7 +265,7 @@
               "practiceLink": "https://leetcode.com/problems/minimum-window-substring/",
               "practiceSite": "/Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["/Pictures/netflix.png", "../Pictures/amazon.jpeg"]
+              "companies": ["/Pictures/netflix.png", "/Pictures/amazon.jpeg"]
             },
             {
               "id": 22,
@@ -287,7 +287,7 @@
               "practiceLink": "https://leetcode.com/problems/basic-calculator-ii/",
               "practiceSite": "/Pictures/leetcode.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg"]
+              "companies": ["/Pictures/tcs.jpg"]
             },
             {
               "id": 24,
@@ -298,7 +298,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/serialize-and-deserialize-strings/",
               "practiceSite": " /Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+              "companies": ["/Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
             }
           ]
         }
@@ -319,7 +319,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/reverse-a-linked-list/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+              "companies": ["/Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
             },
             {
               "id": 26,
@@ -330,7 +330,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg", "../Pictures/accenture.png"]
+              "companies": ["/Pictures/tcs.jpg", "/Pictures/accenture.png"]
             },
             {
               "id": 27,
@@ -352,7 +352,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/count-nodes-in-a-linked-list/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg"]
+              "companies": ["/Pictures/tcs.jpg"]
             },
             {
               "id": 29,
@@ -363,7 +363,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/delete-a-node-in-linked-list/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg"]
+              "companies": ["/Pictures/tcs.jpg"]
             },
             {
               "id": 30,
@@ -505,7 +505,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/rearrange-a-given-linked-list-in-place/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/amazon.jpeg"]
+              "companies": ["/Pictures/amazon.jpeg"]
             },
             {
               "id": 42,
@@ -537,7 +537,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/inorder-tree-traversal/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+              "companies": ["/Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
             },
             {
               "id": 44,
@@ -570,7 +570,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/level-order-tree-traversal/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg"]
+              "companies": ["/Pictures/tcs.jpg"]
             },
             {
               "id": 47,
@@ -592,7 +592,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/count-leaves-in-binary-tree/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/amazon.jpeg"]
+              "companies": ["/Pictures/amazon.jpeg"]
             }
           ]
         },
@@ -630,7 +630,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/print-right-view-binary-tree/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg"]
+              "companies": ["/Pictures/tcs.jpg"]
             },
             {
               "id": 52,
@@ -755,7 +755,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg", "../Pictures/accenture.png"]
+              "companies": ["/Pictures/tcs.jpg", "/Pictures/accenture.png"]
             },
             {
               "id": 62,
@@ -766,7 +766,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg"]
+              "companies": ["/Pictures/tcs.jpg"]
             },
             {
               "id": 63,
@@ -788,7 +788,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/number-of-provinces/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg"]
+              "companies": ["/Pictures/tcs.jpg"]
             },
             {
               "id": 65,
@@ -848,7 +848,7 @@
               "practiceLink": "https://www.geeksforgeeks.org/rotting-oranges/",
               "practiceSite": "/Pictures/gfg.png",
               "status": "Unattempted",
-              "companies": ["../Pictures/tcs.jpg"]
+              "companies": ["/Pictures/tcs.jpg"]
             },
             {
               "id": 70,
@@ -984,7 +984,7 @@
           "practiceLink": "https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/",
           "practiceSite": "/Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["../Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
+          "companies": ["/Pictures/tcs.jpg", "/Pictures/Capgemini.png"]
         },
         {
           "id": 81,
@@ -1017,7 +1017,7 @@
           "practiceLink": "https://www.geeksforgeeks.org/minimum-cost-climbing-stairs/",
           "practiceSite": "/Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["../Pictures/tcs.jpg"]
+          "companies": ["/Pictures/tcs.jpg"]
         },
         {
           "id": 84,
@@ -1077,7 +1077,7 @@
           "practiceLink": "https://www.geeksforgeeks.org/subset-sum-problem-dp-25/",
           "practiceSite": "/Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["../Pictures/tcs.jpg"]
+          "companies": ["/Pictures/tcs.jpg"]
         },
         {
           "id": 89,
@@ -1170,7 +1170,7 @@
           "practiceLink": "https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/",
           "practiceSite": "/Pictures/gfg.png",
           "status": "Unattempted",
-          "companies": ["../Pictures/tcs.jpg"]
+          "companies": ["/Pictures/tcs.jpg"]
         },
         {
           "id": 97,
