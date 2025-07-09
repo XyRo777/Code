@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-   fetch("json/question.json")
+   fetch("../json/question.json")
     .then(res => res.json())
     .then(data => {
       const allQuestions = [];
