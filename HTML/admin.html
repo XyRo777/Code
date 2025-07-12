@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add New Question</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 800px;
+      margin: auto;
+      background: #1f1f1f;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="url"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      background-color: #2c2c2c;
+      border: 1px solid #444;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    input[type="submit"],
+    button {
+      background-color: #007acc;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    .table-container {
+      margin-top: 30px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #444;
+      text-align: left;
+    }
+
+    th {
+      background-color: #333;
+    }
+
+    .action-buttons button {
+      background-color: #ff5722;
+      margin-right: 5px;
+    }
+
+    .small-note {
+      font-size: 0.8em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Add New Question</h2>
+  <form id="questionForm">
+    <label>Title:</label>
+    <input type="text" name="title" required>
+
+    <label>Chapter:</label>
+    <select name="chapter" required>
+      <option value="">Select</option>
+      <option value="Arrays">Arrays</option>
+      <option value="Strings">Strings</option>
+      <option value="Graph">Graph</option>
+      <option value="Trees">Trees</option>
+      <option value="Dynamic Programming">Dynamic Programming</option>
+      <option value="Linked List">Linked List</option>
+    </select>
+
+    <label>Subtopic:</label>
+    <select name="subtopic" required>
+      <option value="">Select</option>
+      <option value="Easy">Easy</option>
+      <option value="Medium">Medium</option>
+      <option value="Hard">Hard</option>
+    </select>
+
+    <label>Languages:</label>
+    <select name="languages" required>
+      <option value="">Select Language</option>
+      <option value="Java">Java</option>
+      <option value="C++">C++</option>
+      <option value="Python">Python</option>
+      <option value="C">C</option>
+    </select>
+
+    <label>Practice Link:</label>
+    <input type="url" name="practiceLink" required>
+
+    <label>Practice Site Image:</label>
+    <select name="practiceSite" required>
+      <option value="">Select Image</option>
+      <option value="leetcode.png">Leetcode</option>
+      <option value="gfg.png">GeeksforGeeks</option>
+      <option value="codeforces.png">Codeforces</option>
+    </select>
+
+    <label>Company Name:</label>
+    <select name="companyNames" required>
+      <option value="">Select Company</option>
+      <option value="TCS">TCS</option>
+      <option value="Amazon">Amazon</option>
+      <option value="Google">Google</option>
+      <option value="Microsoft">Microsoft</option>
+      <option value="Accenture">Accenture</option>
+    </select>
+
+    <label>Company Image:</label>
+    <select name="companyImages" required>
+      <option value="">Select Image</option>
+      <option value="tcs.jpg">TCS</option>
+      <option value="amazon.jpeg">Amazon</option>
+      <option value="google.png">Google</option>
+      <option value="microsoft.png">Microsoft</option>
+      <option value="accenture.png">Accenture</option>
+    </select>
+
+    <input type="submit" value="Add Question">
+  </form>
+
+  <div class="table-container">
+    <table id="questionTable">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Chapter</th>
+          <th>Subtopic</th>
+          <th>Language</th>
+          <th>Practice Link</th>
+          <th>Company</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <button id="downloadJsonBtn">Download JSON</button>
+
+  <script>
+    let questions = [];
+
+    document.getElementById("questionForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      const question = {
+        title: formData.get("title"),
+        chapter: formData.get("chapter"),
+        subtopic: formData.get("subtopic"),
+        languages: formData.get("languages"),
+        practiceLink: formData.get("practiceLink"),
+        practiceSite: formData.get("practiceSite"),
+        company: {
+          name: formData.get("companyNames"),
+          image: formData.get("companyImages")
+        }
+      };
+
+      questions.push(question);
+      addQuestionToTable(question);
+      this.reset();
+    });
+
+    function addQuestionToTable(question) {
+      const tableBody = document.querySelector("#questionTable tbody");
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td>${question.title}</td>
+        <td>${question.chapter}</td>
+        <td>${question.subtopic}</td>
+        <td>${question.languages}</td>
+        <td><a href="${question.practiceLink}" target="_blank">Practice Link</a></td>
+        <td>${question.company.name}</td>
+        <td class="action-buttons">
+          <button onclick="editQuestion(${questions.length - 1})">Edit</button>
+          <button onclick="deleteQuestion(${questions.length - 1})">Delete</button>
+        </td>
+      `;
+
+      tableBody.appendChild(row);
+    }
+
+    function editQuestion(index) {
+      const question = questions[index];
+      const form = document.getElementById("questionForm");
+
+      form.title.value = question.title;
+      form.chapter.value = question.chapter;
+      form.subtopic.value = question.subtopic;
+      form.languages.value = question.languages;
+      form.practiceLink.value = question.practiceLink;
+      form.practiceSite.value = question.practiceSite;
+      form.companyNames.value = question.company.name;
+      form.companyImages.value = question.company.image;
+
+      questions.splice(index, 1); // Remove the old question
+      document.querySelector("#questionTable tbody").deleteRow(index); // Remove from table
+    }
+
+    function deleteQuestion(index) {
+      questions.splice(index, 1); // Remove the question from the array
+      document.querySelector("#questionTable tbody").deleteRow(index); // Remove from table
+    }
+
+    document.getElementById("downloadJsonBtn").addEventListener("click", function() {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(questions, null, 2));
+      const downloadAnchorNode = document.createElement("a");
+      downloadAnchorNode.setAttribute("href", dataStr);
+      downloadAnchorNode.setAttribute("download", "questions.json");
+      downloadAnchorNode.click();
+    });
+  </script>
+
+</body>
+</html>

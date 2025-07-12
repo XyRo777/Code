@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Tracker</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .subtopic-title { font-weight: bold; margin-top: 30px; font-size: 18px; }
+    .search-box {
+      padding: 8px 12px;
+      font-size: 14px;
+      margin: 10px 0 15px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      outline: none;
+    }
+    .table-wrapper {
+      overflow-x: auto;
+      border: 1px solid #ccc;
+      margin-bottom: 40px;
+    }
+    table {
+      border-collapse: collapse;
+      min-width: 900px;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 5px;
+      min-width: 60px;
+    }
+    .circle {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin: 2px auto;
+    }
+    .circle.completed { background-color: #4CAF50; }
+    .circle.attempted { background-color: #FFC107; }
+    .circle.unattempted { background-color: #F44336; }
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      cursor: pointer;
+      margin-right: 4px;
+    }
+    .fixed-col-name {
+      position: sticky;
+      left: 0;
+      background: #fff;
+      z-index: 2;
+      white-space: nowrap;
+    }
+    .fixed-col-id {
+      position: sticky;
+      left: 140px;
+      background: #fff;
+      z-index: 2;
+      white-space: nowrap;
+    }
+    thead th.fixed-col-name {
+      z-index: 3;
+      cursor: pointer;
+      text-align: left;
+      padding-left: 10px;
+    }
+    .sort-arrow {
+      font-size: 12px;
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+    td:nth-child(3n+2), th:nth-child(3n+2) { background-color: #f9f9f9; }
+    td:nth-child(3n+3), th:nth-child(3n+3) { background-color: #ffffff; }
+    td:nth-child(3n+4), th:nth-child(3n+4) { background-color: #f9f9f9; }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+<div id="tracker-container"></div>
+<button onclick="downloadResponses()" style="padding: 10px 20px; font-size: 14px; margin-top: 20px; border: none; background-color: #4CAF50; color: white; border-radius: 6px; cursor: pointer;">
+  🗕️ Download Responses (JSON)
+</button>
+
+<script>
+  const topics = {
+    Array: { Easy: 5, Medium: 6, Hard: 9 },
+    String: { Easy: 5, Medium: 6, Hard: 9 }
+  };
+
+  const students = Array.from({ length: 20 }, (_, i) => ({ id: `U${(i+1).toString().padStart(3, '0')}`, name: `Demo ${i + 1}` }));
+  const statuses = ["Completed", "Attempted", "Unattempted"];
+  const container = document.getElementById("tracker-container");
+  const sortStates = {};
+
+  Object.entries(topics).forEach(([topicName, subtopics]) => {
+    const topicTitle = document.createElement("h2");
+    topicTitle.textContent = `Topic name: ${topicName}`;
+    container.appendChild(topicTitle);
+
+    Object.entries(subtopics).forEach(([subtopic, questionCount], subIdx) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "table-wrapper";
+
+      const title = document.createElement("div");
+      title.className = "subtopic-title";
+      title.textContent = `Subtopic Name: ${subtopic}`;
+      container.appendChild(title);
+
+      const searchBox = document.createElement("input");
+      searchBox.type = "text";
+      searchBox.className = "search-box";
+      searchBox.placeholder = "🔍 Search student name...";
+      container.appendChild(searchBox);
+
+      const table = document.createElement("table");
+      const tableId = `table-${topicName}-${subIdx}`;
+      table.id = tableId;
+
+      const thead = document.createElement("thead");
+      const row1 = document.createElement("tr");
+      const row2 = document.createElement("tr");
+
+      const thName = document.createElement("th");
+      thName.className = "fixed-col-name";
+      thName.rowSpan = 2;
+      thName.innerHTML = `Student Name <span class="sort-arrow" id="arrow-${tableId}">⬇</span>`;
+      thName.onclick = () => toggleSort(table);
+      row1.appendChild(thName);
+
+      const thId = document.createElement("th");
+      thId.className = "fixed-col-id";
+      thId.rowSpan = 2;
+      thId.textContent = `Student ID`;
+      row1.appendChild(thId);
+
+      for (let i = 1; i <= questionCount; i++) {
+        const uniqueId = `Q_${topicName}_${subtopic}_${i}`;
+        const th = document.createElement("th");
+        th.colSpan = 3;
+        const titleDiv = document.createElement("div");
+        titleDiv.textContent = `Question ID: ${uniqueId}`;
+        const idDiv = document.createElement("div");
+        idDiv.style.fontSize = '10px';
+        idDiv.style.marginTop = '2px';
+        idDiv.textContent = `${uniqueId}`;
+        th.appendChild(titleDiv);
+        th.appendChild(idDiv);
+        row1.appendChild(th);
+      }
+
+      for (let i = 1; i <= questionCount; i++) {
+        statuses.forEach(status => {
+          const th = document.createElement("th");
+          const circle = document.createElement("div");
+          circle.className = `circle ${status.toLowerCase()}`;
+          th.appendChild(circle);
+          row2.appendChild(th);
+        });
+      }
+
+      thead.appendChild(row1);
+      thead.appendChild(row2);
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+      students.forEach(({ id, name }) => {
+        const tr = document.createElement("tr");
+        const tdName = document.createElement("td");
+        tdName.className = "fixed-col-name";
+        tdName.textContent = name;
+        tr.appendChild(tdName);
+
+        const tdID = document.createElement("td");
+        tdID.className = "fixed-col-id";
+        tdID.textContent = id;
+        tr.appendChild(tdID);
+
+        for (let qIdx = 0; qIdx < questionCount; qIdx++) {
+          const uniqueId = `Q_${topicName}_${subtopic}_${qIdx + 1}`;
+          for (let s = 0; s < statuses.length; s++) {
+            const td = document.createElement("td");
+            const label = document.createElement("label");
+            label.className = "checkbox-label";
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.name = `${topicName}_${subtopic}_${id}_${uniqueId}`;
+            checkbox.dataset.status = statuses[s];
+            checkbox.dataset.questionId = uniqueId;
+            checkbox.onclick = () => {
+              const boxes = document.getElementsByName(checkbox.name);
+              boxes.forEach(box => { if (box !== checkbox) box.checked = false; });
+            };
+            if (statuses[s] === "Unattempted") checkbox.checked = true;
+            label.appendChild(checkbox);
+            td.appendChild(label);
+            tr.appendChild(td);
+          }
+        }
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(tbody);
+      wrapper.appendChild(table);
+      container.appendChild(wrapper);
+
+      searchBox.addEventListener("keyup", () => {
+        const filter = searchBox.value.toLowerCase();
+        const rows = table.tBodies[0].getElementsByTagName("tr");
+        for (let row of rows) {
+          const name = row.cells[0].textContent.toLowerCase();
+          row.style.display = name.includes(filter) ? "" : "none";
+        }
+      });
+    });
+  });
+
+  function toggleSort(table) {
+    const id = table.id;
+    const tbody = table.tBodies[0];
+    const rows = Array.from(tbody.rows);
+    sortStates[id] = !sortStates[id];
+    rows.sort((a, b) => {
+      const nameA = a.cells[0].textContent.toLowerCase();
+      const nameB = b.cells[0].textContent.toLowerCase();
+      return sortStates[id] ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+    });
+    rows.forEach(row => tbody.appendChild(row));
+    const arrowSpan = document.getElementById(`arrow-${id}`);
+    arrowSpan.textContent = sortStates[id] ? "⬆" : "⬇";
+  }
+
+  function downloadResponses() {
+    const data = {};
+    Object.entries(topics).forEach(([topicName, subtopics]) => {
+      data[topicName] = {};
+      Object.entries(subtopics).forEach(([subtopic, questionCount]) => {
+        data[topicName][subtopic] = {};
+        students.forEach(({ id }) => {
+          const studentData = {};
+          for (let q = 1; q <= questionCount; q++) {
+            const uniqueId = `Q_${topicName}_${subtopic}_${q}`;
+            const checkboxes = document.getElementsByName(`${topicName}_${subtopic}_${id}_${uniqueId}`);
+            for (const box of checkboxes) {
+              if (box.checked) {
+                studentData[uniqueId] = { status: box.dataset.status };
+                break;
+              }
+            }
+          }
+          data[topicName][subtopic][id] = studentData;
+        });
+      });
+    });
+
+    const jsonString = JSON.stringify(data, null, 2);
+    const blob = new Blob([jsonString], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "student_responses.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+</script>
+</body>
+</html>
